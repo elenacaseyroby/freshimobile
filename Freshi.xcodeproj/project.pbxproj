@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		784F0F35263753C300AE240D /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F34263753C300AE240D /* FreshiApp.swift */; };
+		784F0F37263753C300AE240D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F36263753C300AE240D /* ContentView.swift */; };
+		784F0F39263753C400AE240D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784F0F38263753C400AE240D /* Assets.xcassets */; };
+		784F0F3C263753C400AE240D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784F0F3B263753C400AE240D /* Preview Assets.xcassets */; };
+		784F0F3E263753C400AE240D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F3D263753C400AE240D /* Persistence.swift */; };
+		784F0F41263753C400AE240D /* Freshi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F3F263753C400AE240D /* Freshi.xcdatamodeld */; };
+		784F0F4C263753C400AE240D /* FreshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F4B263753C400AE240D /* FreshiTests.swift */; };
+		784F0F57263753C400AE240D /* FreshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F56263753C400AE240D /* FreshiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		784F0F48263753C400AE240D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 784F0F29263753C300AE240D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 784F0F30263753C300AE240D;
+			remoteInfo = Freshi;
+		};
+		784F0F53263753C400AE240D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 784F0F29263753C300AE240D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 784F0F30263753C300AE240D;
+			remoteInfo = Freshi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		784F0F31263753C300AE240D /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		784F0F34263753C300AE240D /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
+		784F0F36263753C300AE240D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		784F0F38263753C400AE240D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		784F0F3B263753C400AE240D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		784F0F3D263753C400AE240D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		784F0F40263753C400AE240D /* Freshi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Freshi.xcdatamodel; sourceTree = "<group>"; };
+		784F0F42263753C400AE240D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		784F0F47263753C400AE240D /* FreshiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		784F0F4B263753C400AE240D /* FreshiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiTests.swift; sourceTree = "<group>"; };
+		784F0F4D263753C400AE240D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		784F0F52263753C400AE240D /* FreshiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		784F0F56263753C400AE240D /* FreshiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiUITests.swift; sourceTree = "<group>"; };
+		784F0F58263753C400AE240D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		784F0F2E263753C300AE240D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784F0F44263753C400AE240D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784F0F4F263753C400AE240D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		784F0F28263753C300AE240D = {
+			isa = PBXGroup;
+			children = (
+				784F0F33263753C300AE240D /* Freshi */,
+				784F0F4A263753C400AE240D /* FreshiTests */,
+				784F0F55263753C400AE240D /* FreshiUITests */,
+				784F0F32263753C300AE240D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		784F0F32263753C300AE240D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				784F0F31263753C300AE240D /* Freshi.app */,
+				784F0F47263753C400AE240D /* FreshiTests.xctest */,
+				784F0F52263753C400AE240D /* FreshiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		784F0F33263753C300AE240D /* Freshi */ = {
+			isa = PBXGroup;
+			children = (
+				784F0F34263753C300AE240D /* FreshiApp.swift */,
+				784F0F36263753C300AE240D /* ContentView.swift */,
+				784F0F38263753C400AE240D /* Assets.xcassets */,
+				784F0F3D263753C400AE240D /* Persistence.swift */,
+				784F0F42263753C400AE240D /* Info.plist */,
+				784F0F3F263753C400AE240D /* Freshi.xcdatamodeld */,
+				784F0F3A263753C400AE240D /* Preview Content */,
+			);
+			path = Freshi;
+			sourceTree = "<group>";
+		};
+		784F0F3A263753C400AE240D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				784F0F3B263753C400AE240D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		784F0F4A263753C400AE240D /* FreshiTests */ = {
+			isa = PBXGroup;
+			children = (
+				784F0F4B263753C400AE240D /* FreshiTests.swift */,
+				784F0F4D263753C400AE240D /* Info.plist */,
+			);
+			path = FreshiTests;
+			sourceTree = "<group>";
+		};
+		784F0F55263753C400AE240D /* FreshiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				784F0F56263753C400AE240D /* FreshiUITests.swift */,
+				784F0F58263753C400AE240D /* Info.plist */,
+			);
+			path = FreshiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		784F0F30263753C300AE240D /* Freshi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784F0F5B263753C400AE240D /* Build configuration list for PBXNativeTarget "Freshi" */;
+			buildPhases = (
+				784F0F2D263753C300AE240D /* Sources */,
+				784F0F2E263753C300AE240D /* Frameworks */,
+				784F0F2F263753C300AE240D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Freshi;
+			productName = Freshi;
+			productReference = 784F0F31263753C300AE240D /* Freshi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		784F0F46263753C400AE240D /* FreshiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784F0F5E263753C400AE240D /* Build configuration list for PBXNativeTarget "FreshiTests" */;
+			buildPhases = (
+				784F0F43263753C400AE240D /* Sources */,
+				784F0F44263753C400AE240D /* Frameworks */,
+				784F0F45263753C400AE240D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				784F0F49263753C400AE240D /* PBXTargetDependency */,
+			);
+			name = FreshiTests;
+			productName = FreshiTests;
+			productReference = 784F0F47263753C400AE240D /* FreshiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		784F0F51263753C400AE240D /* FreshiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 784F0F61263753C400AE240D /* Build configuration list for PBXNativeTarget "FreshiUITests" */;
+			buildPhases = (
+				784F0F4E263753C400AE240D /* Sources */,
+				784F0F4F263753C400AE240D /* Frameworks */,
+				784F0F50263753C400AE240D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				784F0F54263753C400AE240D /* PBXTargetDependency */,
+			);
+			name = FreshiUITests;
+			productName = FreshiUITests;
+			productReference = 784F0F52263753C400AE240D /* FreshiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		784F0F29263753C300AE240D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					784F0F30263753C300AE240D = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					784F0F46263753C400AE240D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 784F0F30263753C300AE240D;
+					};
+					784F0F51263753C400AE240D = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 784F0F30263753C300AE240D;
+					};
+				};
+			};
+			buildConfigurationList = 784F0F2C263753C300AE240D /* Build configuration list for PBXProject "Freshi" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 784F0F28263753C300AE240D;
+			productRefGroup = 784F0F32263753C300AE240D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				784F0F30263753C300AE240D /* Freshi */,
+				784F0F46263753C400AE240D /* FreshiTests */,
+				784F0F51263753C400AE240D /* FreshiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		784F0F2F263753C300AE240D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784F0F3C263753C400AE240D /* Preview Assets.xcassets in Resources */,
+				784F0F39263753C400AE240D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784F0F45263753C400AE240D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784F0F50263753C400AE240D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		784F0F2D263753C300AE240D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784F0F41263753C400AE240D /* Freshi.xcdatamodeld in Sources */,
+				784F0F3E263753C400AE240D /* Persistence.swift in Sources */,
+				784F0F37263753C300AE240D /* ContentView.swift in Sources */,
+				784F0F35263753C300AE240D /* FreshiApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784F0F43263753C400AE240D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784F0F4C263753C400AE240D /* FreshiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		784F0F4E263753C400AE240D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				784F0F57263753C400AE240D /* FreshiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		784F0F49263753C400AE240D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 784F0F30263753C300AE240D /* Freshi */;
+			targetProxy = 784F0F48263753C400AE240D /* PBXContainerItemProxy */;
+		};
+		784F0F54263753C400AE240D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 784F0F30263753C300AE240D /* Freshi */;
+			targetProxy = 784F0F53263753C400AE240D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		784F0F59263753C400AE240D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		784F0F5A263753C400AE240D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		784F0F5C263753C400AE240D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Freshi/Preview Content\"";
+				DEVELOPMENT_TEAM = YYZPQ76M64;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Freshi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.freshi.Freshi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		784F0F5D263753C400AE240D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Freshi/Preview Content\"";
+				DEVELOPMENT_TEAM = YYZPQ76M64;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Freshi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.freshi.Freshi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		784F0F5F263753C400AE240D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YYZPQ76M64;
+				INFOPLIST_FILE = FreshiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.freshi.FreshiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freshi.app/Freshi";
+			};
+			name = Debug;
+		};
+		784F0F60263753C400AE240D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YYZPQ76M64;
+				INFOPLIST_FILE = FreshiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.freshi.FreshiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Freshi.app/Freshi";
+			};
+			name = Release;
+		};
+		784F0F62263753C400AE240D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YYZPQ76M64;
+				INFOPLIST_FILE = FreshiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.freshi.FreshiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Freshi;
+			};
+			name = Debug;
+		};
+		784F0F63263753C400AE240D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YYZPQ76M64;
+				INFOPLIST_FILE = FreshiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.freshi.FreshiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Freshi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		784F0F2C263753C300AE240D /* Build configuration list for PBXProject "Freshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784F0F59263753C400AE240D /* Debug */,
+				784F0F5A263753C400AE240D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		784F0F5B263753C400AE240D /* Build configuration list for PBXNativeTarget "Freshi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784F0F5C263753C400AE240D /* Debug */,
+				784F0F5D263753C400AE240D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		784F0F5E263753C400AE240D /* Build configuration list for PBXNativeTarget "FreshiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784F0F5F263753C400AE240D /* Debug */,
+				784F0F60263753C400AE240D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		784F0F61263753C400AE240D /* Build configuration list for PBXNativeTarget "FreshiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				784F0F62263753C400AE240D /* Debug */,
+				784F0F63263753C400AE240D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		784F0F3F263753C400AE240D /* Freshi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				784F0F40263753C400AE240D /* Freshi.xcdatamodel */,
+			);
+			currentVersion = 784F0F40263753C400AE240D /* Freshi.xcdatamodel */;
+			path = Freshi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 784F0F29263753C300AE240D /* Project object */;
+}
