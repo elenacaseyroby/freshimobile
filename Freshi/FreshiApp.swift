@@ -13,8 +13,9 @@ struct FreshiApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandingView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .font(.system(.title2, design: .rounded))
         }
     }
 }
