@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		784F0F35263753C300AE240D /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F34263753C300AE240D /* FreshiApp.swift */; };
-		784F0F37263753C300AE240D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F36263753C300AE240D /* ContentView.swift */; };
 		784F0F39263753C400AE240D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784F0F38263753C400AE240D /* Assets.xcassets */; };
 		784F0F3C263753C400AE240D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 784F0F3B263753C400AE240D /* Preview Assets.xcassets */; };
 		784F0F3E263753C400AE240D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F3D263753C400AE240D /* Persistence.swift */; };
 		784F0F41263753C400AE240D /* Freshi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F3F263753C400AE240D /* Freshi.xcdatamodeld */; };
 		784F0F4C263753C400AE240D /* FreshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F4B263753C400AE240D /* FreshiTests.swift */; };
 		784F0F57263753C400AE240D /* FreshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784F0F56263753C400AE240D /* FreshiUITests.swift */; };
+		786775B92650BF2400716DCE /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775B82650BF2400716DCE /* LandingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 /* Begin PBXFileReference section */
 		784F0F31263753C300AE240D /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784F0F34263753C300AE240D /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
-		784F0F36263753C300AE240D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		784F0F38263753C400AE240D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		784F0F3B263753C400AE240D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		784F0F3D263753C400AE240D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		784F0F52263753C400AE240D /* FreshiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		784F0F56263753C400AE240D /* FreshiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiUITests.swift; sourceTree = "<group>"; };
 		784F0F58263753C400AE240D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		786775B82650BF2400716DCE /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				784F0F34263753C300AE240D /* FreshiApp.swift */,
-				784F0F36263753C300AE240D /* ContentView.swift */,
+				786775B82650BF2400716DCE /* LandingView.swift */,
 				784F0F38263753C400AE240D /* Assets.xcassets */,
 				784F0F3D263753C400AE240D /* Persistence.swift */,
 				784F0F42263753C400AE240D /* Info.plist */,
@@ -266,8 +266,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				784F0F41263753C400AE240D /* Freshi.xcdatamodeld in Sources */,
+				786775B92650BF2400716DCE /* LandingView.swift in Sources */,
 				784F0F3E263753C400AE240D /* Persistence.swift in Sources */,
-				784F0F37263753C300AE240D /* ContentView.swift in Sources */,
 				784F0F35263753C300AE240D /* FreshiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
