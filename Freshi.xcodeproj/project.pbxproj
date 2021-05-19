@@ -14,6 +14,9 @@
 		786775D92655B78700716DCE /* FreshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775D82655B78700716DCE /* FreshiTests.swift */; };
 		786775E42655B78700716DCE /* FreshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775E32655B78700716DCE /* FreshiUITests.swift */; };
 		786775F22655B84800716DCE /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775F12655B84800716DCE /* LandingView.swift */; };
+		789CA52F2655C44600A1CD5E /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA52E2655C44600A1CD5E /* AuthStore.swift */; };
+		789CA5332655CC7900A1CD5E /* FreshiAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5322655CC7900A1CD5E /* FreshiAPIRequest.swift */; };
+		789CA5372655D41500A1CD5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5362655D41500A1CD5E /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		786775E32655B78700716DCE /* FreshiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiUITests.swift; sourceTree = "<group>"; };
 		786775E52655B78700716DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786775F12655B84800716DCE /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		789CA52E2655C44600A1CD5E /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
+		789CA5322655CC7900A1CD5E /* FreshiAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiAPIRequest.swift; sourceTree = "<group>"; };
+		789CA5362655D41500A1CD5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +103,12 @@
 		786775C52655B78100716DCE /* Freshi */ = {
 			isa = PBXGroup;
 			children = (
+				789CA5292655C29800A1CD5E /* Views */,
+				789CA5282655C25100A1CD5E /* Stores */,
+				789CA5262655C23800A1CD5E /* Models */,
 				786775C62655B78100716DCE /* FreshiApp.swift */,
-				786775C82655B78100716DCE /* ContentView.swift */,
-				786775F12655B84800716DCE /* LandingView.swift */,
 				786775CA2655B78600716DCE /* Assets.xcassets */,
+				789CA5242655C22300A1CD5E /* API */,
 				786775CF2655B78600716DCE /* Info.plist */,
 				786775CC2655B78600716DCE /* Preview Content */,
 			);
@@ -131,6 +139,63 @@
 				786775E52655B78700716DCE /* Info.plist */,
 			);
 			path = FreshiUITests;
+			sourceTree = "<group>";
+		};
+		789CA5242655C22300A1CD5E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				789CA5322655CC7900A1CD5E /* FreshiAPIRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		789CA5262655C23800A1CD5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				789CA5362655D41500A1CD5E /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		789CA5282655C25100A1CD5E /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				789CA52E2655C44600A1CD5E /* AuthStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		789CA5292655C29800A1CD5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				789CA52D2655C31900A1CD5E /* Screens */,
+				789CA52A2655C2D600A1CD5E /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		789CA52A2655C2D600A1CD5E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				789CA52C2655C30000A1CD5E /* UI */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		789CA52C2655C30000A1CD5E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		789CA52D2655C31900A1CD5E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				786775C82655B78100716DCE /* ContentView.swift */,
+				786775F12655B84800716DCE /* LandingView.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +328,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				786775F22655B84800716DCE /* LandingView.swift in Sources */,
+				789CA5332655CC7900A1CD5E /* FreshiAPIRequest.swift in Sources */,
+				789CA52F2655C44600A1CD5E /* AuthStore.swift in Sources */,
 				786775C92655B78100716DCE /* ContentView.swift in Sources */,
+				789CA5372655D41500A1CD5E /* UserModel.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
