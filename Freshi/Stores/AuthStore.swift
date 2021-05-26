@@ -10,12 +10,14 @@ import SwiftUI
 // Must conform to ObservableObject protocol so that it can announce to subscribing views that it has changed.
 class Auth: ObservableObject {
     // @Published tells the ObservableObject protocol which properties to publish changes for
-    @Published var code: String?
-    @Published var user: User?
+    @Published var creds: AuthCreds?
     
     // Clear Auth to log out.
     func logOut() {
-        code = nil
-        user = nil
+        // Publish changes from main thread, not background thread.
+        DispatchQueue.main.async {
+            self.creds = nil
+        }
+        
     }
 }

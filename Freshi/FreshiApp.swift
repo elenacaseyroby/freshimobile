@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct FreshiApp: App {
+    @StateObject var auth = Auth()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                // pass our order state into our Main view.
+                .environmentObject(auth)
         }
     }
 }
