@@ -11,6 +11,10 @@ import Foundation
 struct LandingView: View {
     @EnvironmentObject var auth: Auth
     
+    func printAuth(){
+        print(auth.creds ?? "no creds")
+    }
+    
     func submit() {
         fetchAuthCreds(username: "", password:"", completionHandler: { authCreds, requestError in
             if let authCreds = authCreds {
@@ -31,18 +35,19 @@ struct LandingView: View {
     var body: some View {
         HStack{
             Image("bar-logo")
-                
             Text("Freshi")
-                .font(.system(.title2, design: .rounded))
                 .foregroundColor(Color("highContrast"))
                 .fontWeight(.heavy)
             Text("label")
-                .font(.system(.title3, design: .rounded))
                 .foregroundColor(Color("highContrast"))
         }
         Image("landing-collage")
         Button("Fetch Auth") {
             self.submit()
+        }
+            .padding()
+        Button("Print Auth") {
+            self.printAuth()
         }
             .padding()
     }

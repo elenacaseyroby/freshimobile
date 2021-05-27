@@ -16,6 +16,7 @@ struct FreshiApp: App {
             ContentView()
                 // pass our order state into our Main view.
                 .environmentObject(auth)
+                .font(.system(.title2, design: .rounded))
         }
     }
 }
