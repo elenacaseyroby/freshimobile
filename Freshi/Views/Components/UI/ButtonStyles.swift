@@ -21,7 +21,7 @@ struct LargeButton: ButtonStyle {
             .foregroundColor(Color(backgroundColor))
             .background(Color(foregroundColor))
             .cornerRadius(15)
-            .padding(.horizontal, 10)
+            .padding(.horizontal, 25)
             .shadow(color: Color("shadow"), radius: 5)
     }
 }
