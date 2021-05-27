@@ -18,6 +18,8 @@
 		789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */; };
 		789CA5372655D41500A1CD5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5362655D41500A1CD5E /* UserModel.swift */; };
 		789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */; };
+		789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA53A2660027000A1CD5E /* ButtonStyles.swift */; };
+		789CA5472660471700A1CD5E /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* TextStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsRequest.swift; sourceTree = "<group>"; };
 		789CA5362655D41500A1CD5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsModel.swift; sourceTree = "<group>"; };
+		789CA53A2660027000A1CD5E /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		789CA5462660471700A1CD5E /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,8 @@
 		789CA52C2655C30000A1CD5E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				789CA53A2660027000A1CD5E /* ButtonStyles.swift */,
+				789CA5462660471700A1CD5E /* TextStyles.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -333,10 +339,12 @@
 				786775F22655B84800716DCE /* LandingView.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */,
+				789CA5472660471700A1CD5E /* TextStyles.swift in Sources */,
 				789CA52F2655C44600A1CD5E /* AuthStore.swift in Sources */,
 				786775C92655B78100716DCE /* ContentView.swift in Sources */,
 				789CA5372655D41500A1CD5E /* UserModel.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
+				789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

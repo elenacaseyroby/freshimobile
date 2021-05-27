@@ -33,25 +33,50 @@ struct LandingView: View {
     }
     
     var body: some View {
+        Spacer()
         HStack{
             Image("bar-logo")
             Text("Freshi")
                 .foregroundColor(Color("highContrast"))
                 .fontWeight(.heavy)
+                .fontStyle(fontStyle: .title2)
             Text("label")
                 .foregroundColor(Color("highContrast"))
+                .fontStyle(fontStyle: .title3)
         }
         Image("landing-collage")
-        Button("Fetch Auth") {
-            self.submit()
+        Button(action: {
+            print("Log in tapped!")
+        }) {
+            Text("Log in")
+        }.largeButton(
+            backgroundColor: "background",
+            foregroundColor: "interactiveFocus")
+        Button(action: {
+            print("Create account tapped!")
+        }) {
+            Text("Create an account")
+        }.largeButton(
+            backgroundColor: "interactiveFocus",
+            foregroundColor: "background")
+        Spacer()
+        HStack{
+            Button("Terms & Conditions"){}
+                .fontStyle(fontStyle: .callout)
+                .foregroundColor(Color("interactiveFocus"))
+            Text("-")
+                .fontStyle(fontStyle: .callout)
+                .foregroundColor(Color("highContrast"))
+            Button("Reset Password"){}
+                .fontStyle(fontStyle: .callout)
+                .foregroundColor(Color("interactiveFocus"))
         }
-            .padding()
-        Button("Print Auth") {
-            self.printAuth()
-        }
-            .padding()
+        Spacer()
+        Text("© freshi 2021")
+            .fontStyle(fontStyle: .caption)
+            .foregroundColor(Color("highContrast"))
+            .padding(.vertical, 5)
     }
-    
 }
 // strictly for dev previews in xcode.
 struct LandingView_Previews: PreviewProvider {
