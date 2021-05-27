@@ -49,16 +49,12 @@ struct LandingView: View {
             print("Log in tapped!")
         }) {
             Text("Log in")
-        }.largeButton(
-            backgroundColor: "background",
-            foregroundColor: "interactiveFocus")
+        }.focusedLargeButton()
         Button(action: {
             print("Create account tapped!")
         }) {
             Text("Create an account")
-        }.largeButton(
-            backgroundColor: "interactiveFocus",
-            foregroundColor: "background")
+        }.neutralLargeButton()
         Spacer()
         HStack{
             Button("Terms & Conditions"){}
