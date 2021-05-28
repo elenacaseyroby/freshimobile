@@ -55,21 +55,25 @@ struct NeutralHorizontalButton: ButtonStyle {
             .foregroundColor(Color("interactiveFocus"))
             .background(Color("background"))
             .cornerRadius(15)
-            .padding(.horizontal, GlobalStyles.padding)
             .shadow(color: Color("shadow"), radius: 5)
     }
 }
 struct FocusedHorizontalButton: ButtonStyle {
+    
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.system(.headline))
-            .frame(minWidth: 300, maxWidth: 500, maxHeight: 35)
-            .padding()
-            .foregroundColor(Color("background"))
-            .background(Color("interactiveFocus"))
-            .cornerRadius(15)
-            .padding(.horizontal, GlobalStyles.padding)
-            .shadow(color: Color("shadow"), radius: 5)
+            configuration.label
+                .font(.system(.headline))
+                .frame(
+                    minWidth: 0,
+                    // .infinity makes this view stretch to fill space as needed.
+                    maxWidth: .infinity,
+                    minHeight: 35,
+                    maxHeight: 35)
+                .padding()
+                .foregroundColor(Color("background"))
+                .background(Color("interactiveFocus"))
+                .cornerRadius(15)
+                .shadow(color: Color("shadow"), radius: 5)
     }
 }
 
