@@ -11,10 +11,10 @@ import SwiftUI
 struct FontStyle: ViewModifier {
     let fontStyle: Font.TextStyle
  
-  func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
     content
         .font(.system(fontStyle, design: .rounded))
-  }
+    }
 }
 
 // The extension allows us to use the modifier like this:

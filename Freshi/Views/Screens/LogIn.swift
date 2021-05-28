@@ -8,9 +8,13 @@ import SwiftUI
 import Foundation
 
 
-struct LogInView: View {
+struct LogIn: View {
     var body: some View {
         VStack{
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
+                Header(title: "Log in")
+                Line()
+            }
             HStack(alignment: .center, spacing: 10){
                 Button(action: {
                     print("Log in tapped!")
@@ -27,13 +31,15 @@ struct LogInView: View {
             }
             .padding(.leading, GlobalStyles.padding)
             .padding(.trailing, GlobalStyles.padding)
+            // Top align.
+            Spacer()
         }
     }
 }
 // strictly for dev previews in xcode.
-struct LogInView_Previews: PreviewProvider {
+struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView()
+        LogIn()
     }
 }
 

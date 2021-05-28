@@ -8,7 +8,7 @@ import SwiftUI
 import Foundation
 
 
-struct LandingView: View {
+struct Landing: View {
     @EnvironmentObject var auth: Auth
     
     func printAuth(){
@@ -84,8 +84,8 @@ struct LandingView: View {
     }
 }
 // strictly for dev previews in xcode.
-struct LandingView_Previews: PreviewProvider {
+struct Landing_Previews: PreviewProvider {
     static var previews: some View {
-        LandingView()
+        Landing()
     }
 }
