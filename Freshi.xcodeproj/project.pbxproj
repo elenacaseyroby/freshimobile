@@ -20,6 +20,7 @@
 		789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */; };
 		789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA53A2660027000A1CD5E /* ButtonStyles.swift */; };
 		789CA5472660471700A1CD5E /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* TextStyles.swift */; };
+		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsModel.swift; sourceTree = "<group>"; };
 		789CA53A2660027000A1CD5E /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		789CA5462660471700A1CD5E /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				789CA53A2660027000A1CD5E /* ButtonStyles.swift */,
+				789CA5482660694800A1CD5E /* GlobalStyles.swift */,
 				789CA5462660471700A1CD5E /* TextStyles.swift */,
 			);
 			path = UI;
@@ -344,6 +347,7 @@
 				786775C92655B78100716DCE /* ContentView.swift in Sources */,
 				789CA5372655D41500A1CD5E /* UserModel.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
+				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,
 				789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

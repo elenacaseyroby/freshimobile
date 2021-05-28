@@ -21,7 +21,7 @@ struct LargeButton: ViewModifier {
         .foregroundColor(Color(foregroundColor))
         .background(Color(backgroundColor))
         .cornerRadius(15)
-        .padding(.horizontal, 25)
+        .padding(.horizontal, GlobalStyles.padding)
         .shadow(color: Color("shadow"), radius: 5)
     }
 }
