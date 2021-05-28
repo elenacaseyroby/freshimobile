@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		784905C226619A9800344EAC /* StretchyButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C126619A9800344EAC /* StretchyButtonStyles.swift */; };
 		786775C72655B78100716DCE /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C62655B78100716DCE /* FreshiApp.swift */; };
 		786775C92655B78100716DCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C82655B78100716DCE /* ContentView.swift */; };
 		786775CB2655B78600716DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CA2655B78600716DCE /* Assets.xcassets */; };
@@ -18,7 +19,7 @@
 		789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */; };
 		789CA5372655D41500A1CD5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5362655D41500A1CD5E /* UserModel.swift */; };
 		789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */; };
-		789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA53A2660027000A1CD5E /* ButtonStyles.swift */; };
+		789CA53B2660027000A1CD5E /* SquareButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA53A2660027000A1CD5E /* SquareButtonStyles.swift */; };
 		789CA5472660471700A1CD5E /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* TextStyles.swift */; };
 		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
 		789CA54B26607E5700A1CD5E /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA54A26607E5700A1CD5E /* LogInView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		784905C126619A9800344EAC /* StretchyButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyButtonStyles.swift; sourceTree = "<group>"; };
 		786775C32655B78100716DCE /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786775C62655B78100716DCE /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
 		786775C82655B78100716DCE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsRequest.swift; sourceTree = "<group>"; };
 		789CA5362655D41500A1CD5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsModel.swift; sourceTree = "<group>"; };
-		789CA53A2660027000A1CD5E /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		789CA53A2660027000A1CD5E /* SquareButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareButtonStyles.swift; sourceTree = "<group>"; };
 		789CA5462660471700A1CD5E /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
 		789CA54A26607E5700A1CD5E /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
@@ -196,7 +198,8 @@
 		789CA52C2655C30000A1CD5E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				789CA53A2660027000A1CD5E /* ButtonStyles.swift */,
+				789CA53A2660027000A1CD5E /* SquareButtonStyles.swift */,
+				784905C126619A9800344EAC /* StretchyButtonStyles.swift */,
 				789CA5482660694800A1CD5E /* GlobalStyles.swift */,
 				789CA5462660471700A1CD5E /* TextStyles.swift */,
 			);
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				786775F22655B84800716DCE /* LandingView.swift in Sources */,
+				784905C226619A9800344EAC /* StretchyButtonStyles.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */,
 				789CA5472660471700A1CD5E /* TextStyles.swift in Sources */,
@@ -352,7 +356,7 @@
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				789CA54B26607E5700A1CD5E /* LogInView.swift in Sources */,
 				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,
-				789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */,
+				789CA53B2660027000A1CD5E /* SquareButtonStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

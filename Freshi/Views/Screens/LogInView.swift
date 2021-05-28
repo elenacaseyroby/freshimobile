@@ -17,13 +17,13 @@ struct LogInView: View {
                 }) {
                     Text("Log in")
                 }
-                    .neutralHorizontalButton()
+                    .neutralSquareButton()
                 Button(action: {
                     print("Create account tapped!")
                 }) {
                     Text("Create an account")
                 }
-                    .focusedHorizontalButton()
+                    .disabledStretchyButton()
             }
             .padding(.leading, GlobalStyles.padding)
             .padding(.trailing, GlobalStyles.padding)
