@@ -47,6 +47,7 @@ struct NeutralLargeButton: ButtonStyle {
     }
 }
 
+// This allow us to call ViewModifiers and ButtonStyles straight up like other style modifiers.
 extension View {
 //    func largeButton(backgroundColor: String, foregroundColor: String) -> some View {
 //        self.buttonStyle(LargeButton(backgroundColor: backgroundColor, foregroundColor: foregroundColor))

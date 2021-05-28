@@ -16,6 +16,7 @@ struct FreshiApp: App {
             ContentView()
                 // pass our order state into our Main view.
                 .environmentObject(auth)
+
         }
     }
 }

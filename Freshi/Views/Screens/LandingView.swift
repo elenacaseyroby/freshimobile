@@ -36,6 +36,7 @@ struct LandingView: View {
         Spacer()
         HStack{
             Image("bar-logo")
+                .padding(.leading, GlobalStyles.padding)
             Text("Freshi")
                 .foregroundColor(Color("highContrast"))
                 .fontWeight(.heavy)
@@ -43,6 +44,8 @@ struct LandingView: View {
             Text("label")
                 .foregroundColor(Color("highContrast"))
                 .fontStyle(fontStyle: .title3)
+            // Spacer pushes everything to the other end of the view
+            Spacer()
         }
         Image("landing-collage")
         Button(action: {
