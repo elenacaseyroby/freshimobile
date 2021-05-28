@@ -21,6 +21,7 @@
 		789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA53A2660027000A1CD5E /* ButtonStyles.swift */; };
 		789CA5472660471700A1CD5E /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* TextStyles.swift */; };
 		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
+		789CA54B26607E5700A1CD5E /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA54A26607E5700A1CD5E /* LogInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		789CA53A2660027000A1CD5E /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		789CA5462660471700A1CD5E /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
 		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
+		789CA54A26607E5700A1CD5E /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				786775C82655B78100716DCE /* ContentView.swift */,
+				789CA54A26607E5700A1CD5E /* LogInView.swift */,
 				786775F12655B84800716DCE /* LandingView.swift */,
 			);
 			path = Screens;
@@ -347,6 +350,7 @@
 				786775C92655B78100716DCE /* ContentView.swift in Sources */,
 				789CA5372655D41500A1CD5E /* UserModel.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
+				789CA54B26607E5700A1CD5E /* LogInView.swift in Sources */,
 				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,
 				789CA53B2660027000A1CD5E /* ButtonStyles.swift in Sources */,
 			);

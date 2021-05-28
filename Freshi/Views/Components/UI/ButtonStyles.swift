@@ -46,6 +46,32 @@ struct NeutralLargeButton: ButtonStyle {
             
     }
 }
+struct NeutralHorizontalButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(.headline))
+            .frame(minWidth: 35, maxWidth: 35, maxHeight: 35)
+            .padding()
+            .foregroundColor(Color("interactiveFocus"))
+            .background(Color("background"))
+            .cornerRadius(15)
+            .padding(.horizontal, GlobalStyles.padding)
+            .shadow(color: Color("shadow"), radius: 5)
+    }
+}
+struct FocusedHorizontalButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(.headline))
+            .frame(minWidth: 300, maxWidth: 500, maxHeight: 35)
+            .padding()
+            .foregroundColor(Color("background"))
+            .background(Color("interactiveFocus"))
+            .cornerRadius(15)
+            .padding(.horizontal, GlobalStyles.padding)
+            .shadow(color: Color("shadow"), radius: 5)
+    }
+}
 
 // This allow us to call ViewModifiers and ButtonStyles straight up like other style modifiers.
 extension View {
@@ -60,6 +86,12 @@ extension View {
     }
     func neutralLargeButton() -> some View {
         self.buttonStyle(NeutralLargeButton())
+    }
+    func focusedHorizontalButton() -> some View {
+        self.buttonStyle(FocusedHorizontalButton())
+    }
+    func neutralHorizontalButton() -> some View {
+        self.buttonStyle(NeutralHorizontalButton())
     }
 }
 
