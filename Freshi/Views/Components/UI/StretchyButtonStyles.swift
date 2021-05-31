@@ -46,6 +46,18 @@ struct NeutralStretchyButton: ButtonStyle {
     }
 }
 
+//struct StretchyButton: ButtonStyle {
+//    let buttonState: String = 
+//    func makeBody(configuration: Configuration) -> some View {
+//        configuration.label
+//            .stretchyButton(
+//                backgroundColor: "background",
+//                foregroundColor: "interactiveFocus")
+//            
+//            
+//    }
+//}
+
 struct DisabledStretchyButton: ViewModifier {
     
     func body(content: Content) -> some View {

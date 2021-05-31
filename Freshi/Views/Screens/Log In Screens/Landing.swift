@@ -48,19 +48,22 @@ struct Landing: View {
                 // Spacer pushes everything to the other end of the view
                 Spacer()
             }
+            Spacer()
             Image("landing-collage")
+            Spacer()
             VStack{
             Button(action: {
                 print("Log in tapped!")
             }) {
                 Text("Log in")
             }
-                .focusedStretchyButton()
+                .neutralStretchyButton()
             Button(action: {
                 print("Create account tapped!")
             }) {
                 Text("Create an account")
-            }.neutralStretchyButton()
+            }
+                .focusedStretchyButton()
             }
                 .padding(.horizontal, GlobalStyles.padding)
             Spacer()
@@ -68,9 +71,7 @@ struct Landing: View {
                 Button("Terms & Conditions"){}
                     .fontStyle(fontStyle: .callout)
                     .foregroundColor(Color("interactiveFocus"))
-                Text("-")
-                    .fontStyle(fontStyle: .callout)
-                    .foregroundColor(Color("highContrast"))
+                Image("dot")
                 Button("Reset Password"){}
                     .fontStyle(fontStyle: .callout)
                     .foregroundColor(Color("interactiveFocus"))
@@ -81,6 +82,7 @@ struct Landing: View {
                 .foregroundColor(Color("highContrast"))
                 .padding(.vertical, 5)
         }
+        .frame(maxWidth: 700)
     }
 }
 // strictly for dev previews in xcode.

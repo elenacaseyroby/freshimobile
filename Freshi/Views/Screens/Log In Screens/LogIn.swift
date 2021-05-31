@@ -9,6 +9,7 @@ import Foundation
 
 
 struct LogIn: View {
+    @State var isActive: Bool = true
     var body: some View {
         VStack{
             // Header
@@ -19,9 +20,9 @@ struct LogIn: View {
             // Buttons
             HStack(alignment: .center, spacing: 10){
                 Button(action: {
-                    print("Log in tapped!")
+                    print("back arrow tapped!")
                 }) {
-                    Text("Log in")
+                    Image("back-arrow")
                 }
                     .neutralSquareButton()
                 Button(action: {
@@ -30,6 +31,7 @@ struct LogIn: View {
                     Text("Create an account")
                 }
                     .disabledStretchyButton()
+                    
             }
             .padding(.leading, GlobalStyles.padding)
             .padding(.trailing, GlobalStyles.padding)

@@ -20,7 +20,7 @@ struct Header: View {
             Button(action: {
                 print("Exit tapped!")
             }) {
-                Text("X")
+                Image("exit-icon")
             }
         }
         .padding(.leading, GlobalStyles.padding)
