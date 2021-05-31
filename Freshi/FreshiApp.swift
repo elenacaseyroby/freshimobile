@@ -13,10 +13,9 @@ struct FreshiApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
                 // pass our order state into our Main view.
                 .environmentObject(auth)
-
         }
     }
 }

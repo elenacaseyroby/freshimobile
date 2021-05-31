@@ -10,8 +10,10 @@
 		784905C226619A9800344EAC /* StretchyButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C126619A9800344EAC /* StretchyButtonStyles.swift */; };
 		784905C42661A17E00344EAC /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C32661A17E00344EAC /* Header.swift */; };
 		784905C62661A62F00344EAC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C52661A62F00344EAC /* Line.swift */; };
+		784905C926653FFE00344EAC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C826653FFE00344EAC /* StartView.swift */; };
+		784905CB2665405B00344EAC /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905CA2665405B00344EAC /* LoggedInView.swift */; };
+		784905CD2665406800344EAC /* LoggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905CC2665406800344EAC /* LoggedOutView.swift */; };
 		786775C72655B78100716DCE /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C62655B78100716DCE /* FreshiApp.swift */; };
-		786775C92655B78100716DCE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C82655B78100716DCE /* ContentView.swift */; };
 		786775CB2655B78600716DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CA2655B78600716DCE /* Assets.xcassets */; };
 		786775CE2655B78600716DCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CD2655B78600716DCE /* Preview Assets.xcassets */; };
 		786775D92655B78700716DCE /* FreshiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775D82655B78700716DCE /* FreshiTests.swift */; };
@@ -48,9 +50,11 @@
 		784905C126619A9800344EAC /* StretchyButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyButtonStyles.swift; sourceTree = "<group>"; };
 		784905C32661A17E00344EAC /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		784905C52661A62F00344EAC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		784905C826653FFE00344EAC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		784905CA2665405B00344EAC /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
+		784905CC2665406800344EAC /* LoggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutView.swift; sourceTree = "<group>"; };
 		786775C32655B78100716DCE /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786775C62655B78100716DCE /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
-		786775C82655B78100716DCE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		786775CA2655B78600716DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		786775CD2655B78600716DCE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		786775CF2655B78600716DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		784905CE266541FC00344EAC /* Log In Screens */ = {
+			isa = PBXGroup;
+			children = (
+				789CA54A26607E5700A1CD5E /* LogIn.swift */,
+				786775F12655B84800716DCE /* Landing.swift */,
+			);
+			path = "Log In Screens";
+			sourceTree = "<group>";
+		};
 		786775BA2655B78000716DCE = {
 			isa = PBXGroup;
 			children = (
@@ -215,9 +228,10 @@
 		789CA52D2655C31900A1CD5E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				786775C82655B78100716DCE /* ContentView.swift */,
-				789CA54A26607E5700A1CD5E /* LogIn.swift */,
-				786775F12655B84800716DCE /* Landing.swift */,
+				784905CE266541FC00344EAC /* Log In Screens */,
+				784905CA2665405B00344EAC /* LoggedInView.swift */,
+				784905CC2665406800344EAC /* LoggedOutView.swift */,
+				784905C826653FFE00344EAC /* StartView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -352,13 +366,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
+				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
+				784905CD2665406800344EAC /* LoggedOutView.swift in Sources */,
 				784905C226619A9800344EAC /* StretchyButtonStyles.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
 				789CA5472660471700A1CD5E /* TextStyles.swift in Sources */,
+				784905C926653FFE00344EAC /* StartView.swift in Sources */,
 				789CA52F2655C44600A1CD5E /* Auth.swift in Sources */,
-				786775C92655B78100716DCE /* ContentView.swift in Sources */,
 				789CA5372655D41500A1CD5E /* User.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				789CA54B26607E5700A1CD5E /* LogIn.swift in Sources */,

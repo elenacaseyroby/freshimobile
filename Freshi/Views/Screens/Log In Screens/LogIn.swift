@@ -11,10 +11,12 @@ import Foundation
 struct LogIn: View {
     var body: some View {
         VStack{
+            // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
                 Header(title: "Log in")
                 Line()
             }
+            // Buttons
             HStack(alignment: .center, spacing: 10){
                 Button(action: {
                     print("Log in tapped!")
