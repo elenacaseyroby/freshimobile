@@ -49,7 +49,7 @@ struct Landing: View {
                 Spacer()
             }
             Spacer()
-            Image("landing-collage")
+            StretchyImage(imageName: "landing-collage")
             Spacer()
             VStack{
             Button(action: {
@@ -82,7 +82,6 @@ struct Landing: View {
                 .foregroundColor(Color("highContrast"))
                 .padding(.vertical, 5)
         }
-        .frame(maxWidth: 700)
     }
 }
 // strictly for dev previews in xcode.
