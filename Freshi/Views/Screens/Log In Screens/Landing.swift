@@ -10,6 +10,7 @@ import Foundation
 
 struct Landing: View {
     @EnvironmentObject var auth: Auth
+    @State private var destination: String? = nil
     
     func printAuth(){
         print(auth.creds ?? "no creds")
@@ -33,55 +34,85 @@ struct Landing: View {
     }
     
     var body: some View {
-        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
-            Spacer()
-            HStack{
-                Image("bar-logo")
+        NavigationView{
+            VStack(alignment: .center, spacing: 0){
+                Spacer(minLength: 30)
+                HStack{
+                    Image("bar-logo")
                     .padding(.leading, GlobalStyles.padding)
-                Text("Freshi")
+                    Text("Freshi")
                     .foregroundColor(Color("highContrast"))
                     .fontWeight(.heavy)
                     .fontStyle(fontStyle: .title2)
-                Text("label")
+                    Text("label")
                     .foregroundColor(Color("highContrast"))
                     .fontStyle(fontStyle: .title3)
-                // Spacer pushes everything to the other end of the view
-                Spacer()
-            }
-            Spacer()
-            StretchyImage(imageName: "landing-collage")
-            Spacer()
-            VStack{
-            Button(action: {
-                print("Log in tapped!")
-            }) {
-                Text("Log in")
-            }
-                .neutralStretchyButton()
-            Button(action: {
-                print("Create account tapped!")
-            }) {
-                Text("Create an account")
-            }
-                .focusedStretchyButton()
-            }
+                    // Spacer pushes everything to the other end of the view
+                    Spacer()
+                }
+                StretchyImage(imageName: "landing-collage")
+                VStack(alignment: .center, spacing: 4){
+                    NavigationLink(destination: LogIn(), tag: "LogIn", selection: $destination){
+                        EmptyView()
+                    }
+                    .navigationBarHidden(true)
+                    Button("Log in") {
+                        self.destination = "LogIn"
+                    }
+                    .stretchyButton(state: StretchyButtonState.neutral)
+                    
+                    NavigationLink(destination: SignUp(), tag: "SignUp", selection: $destination){
+                        EmptyView()
+                    }
+                    .navigationBarHidden(true)
+                    Button("Create an account"){
+                        self.destination = "SignUp"
+                    }
+                    .stretchyButton(state: StretchyButtonState.focused)
+                }
                 .padding(.horizontal, GlobalStyles.padding)
-            Spacer()
-            HStack{
-                Button("Terms & Conditions"){}
+                Spacer(minLength: 10)
+                HStack{
+                    NavigationLink(destination: TermsAndConditions(), tag: "t&c", selection: $destination){
+                        EmptyView()
+                    }
+                    .navigationBarHidden(true)
+                    Button("Terms & Conditions"){
+                        self.destination = "t&c"
+                    }
                     .fontStyle(fontStyle: .callout)
                     .foregroundColor(Color("interactiveFocus"))
-                Image("dot")
-                Button("Reset Password"){}
+                    Image("dot")
+                    NavigationLink(destination: PrivacyPolicy(), tag: "PrivacyPolicy", selection: $destination){
+                        EmptyView()
+                    }
+                    Button("Privacy Policy"){
+                        self.destination = "PrivacyPolicy"
+                    }
                     .fontStyle(fontStyle: .callout)
                     .foregroundColor(Color("interactiveFocus"))
-            }
-            Spacer()
-            Text("© freshi 2021")
+                }
+                HStack {
+                    NavigationLink(destination: PasswordReset(), tag: "PasswordReset", selection: $destination){
+                        EmptyView()
+                    }
+                    Button(
+                        action: {
+                            self.destination = "PasswordReset"
+                        },label: {
+                            Text("Reset Password")
+                        })
+                    .fontStyle(fontStyle: .callout)
+                    .foregroundColor(Color("interactiveFocus"))
+                }
+                Spacer(minLength: 10)
+                Text("© freshi 2021")
                 .fontStyle(fontStyle: .caption)
                 .foregroundColor(Color("highContrast"))
                 .padding(.vertical, 5)
+            }
         }
+        .navigationBarHidden(true)
     }
 }
 // strictly for dev previews in xcode.

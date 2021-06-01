@@ -5,7 +5,6 @@
 //  Created by Casey Roby on 5/27/21.
 //
 import SwiftUI
-import Foundation
 
 
 struct LogIn: View {
@@ -24,13 +23,13 @@ struct LogIn: View {
                 }) {
                     Image("back-arrow")
                 }
-                    .neutralSquareButton()
+                .stretchyButton(state: StretchyButtonState.neutral, isSquare: true)
                 Button(action: {
                     print("Create account tapped!")
                 }) {
                     Text("Create an account")
                 }
-                    .disabledStretchyButton()
+                .stretchyButton(state: StretchyButtonState.focused)
                     
             }
             .padding(.leading, GlobalStyles.padding)
@@ -38,6 +37,7 @@ struct LogIn: View {
             // Top align.
             Spacer()
         }
+
     }
 }
 // strictly for dev previews in xcode.

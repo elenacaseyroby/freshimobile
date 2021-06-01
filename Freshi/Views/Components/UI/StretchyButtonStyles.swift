@@ -8,88 +8,56 @@
 import Foundation
 import SwiftUI
 
-// Can't make custom button styles that inherit from each other, so this had to be a ViewModifier.
-struct StretchyButton: ViewModifier {
-    let backgroundColor: String
-    let foregroundColor: String
- 
-    func body(content: Content) -> some View {
-    content
-        .font(.system(.headline))
-        .frame(minWidth: 0, maxWidth: .infinity, maxHeight: 35)
-        .padding()
-        .foregroundColor(Color(foregroundColor))
-        .background(Color(backgroundColor))
-        .cornerRadius(15)
-        .shadow(color: Color("shadow"), radius: 5)
-    }
+enum StretchyButtonState {
+    case neutral, focused, disabled
 }
 
-struct FocusedStretchyButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .stretchyButton(
-                backgroundColor: "interactiveFocus",
-                foregroundColor: "background")
-            
+struct StretchyButton: ButtonStyle {
+    var state: StretchyButtonState
+    // Button is stretchy by default.
+    var isSquare: Bool = false
+    // Button height is always 35
+    private let height: CGFloat = 35
+    func backgroundColor (state: StretchyButtonState) -> String {
+        switch state {
+            case StretchyButtonState.disabled:
+                return "lowContrast"
+            case StretchyButtonState.focused:
+                return "interactiveFocus"
+            default:
+                return "background"
+        }
     }
-}
-
-struct NeutralStretchyButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .stretchyButton(
-                backgroundColor: "background",
-                foregroundColor: "interactiveFocus")
-            
-            
+    func foregroundColor (state: StretchyButtonState) -> String {
+        switch state {
+            case StretchyButtonState.disabled:
+                return "midContrast"
+            case StretchyButtonState.focused:
+                return "background"
+            default:
+                return "interactiveFocus"
+        }
     }
-}
-
-//struct StretchyButton: ButtonStyle {
-//    let buttonState: String = 
-//    func makeBody(configuration: Configuration) -> some View {
-//        configuration.label
-//            .stretchyButton(
-//                backgroundColor: "background",
-//                foregroundColor: "interactiveFocus")
-//            
-//            
-//    }
-//}
-
-struct DisabledStretchyButton: ViewModifier {
-    
-    func body(content: Content) -> some View {
-        content
-                .font(.system(.headline))
+    func makeBody(configuration: Self.Configuration) -> some View {
+            return configuration.label
                 .frame(
                     minWidth: 0,
-                    // .infinity makes this view stretch to fill space as needed.
-                    maxWidth: .infinity,
-                    minHeight: 35,
-                    maxHeight: 35)
+                    maxWidth: isSquare ? height : .infinity,
+                    maxHeight: height)
                 .padding()
-                .foregroundColor(Color("midContrast"))
-                .opacity(0.5)
-                .background(Color("lowContrast"))
+                .foregroundColor(Color(foregroundColor(state: state)))
+                .background(Color(backgroundColor(state: state)))
                 .cornerRadius(15)
+                .shadow(color: Color("shadow"), radius: 5)
+                .fontStyle(fontStyle: .headline)
     }
 }
 
 // This allow us to call ViewModifiers and ButtonStyles straight up like other style modifiers.
 extension View {
-    func stretchyButton(backgroundColor: String, foregroundColor: String) -> some View {
-        self.modifier(StretchyButton(backgroundColor: backgroundColor, foregroundColor: foregroundColor))
+    func stretchyButton(state: StretchyButtonState, isSquare: Bool = false) -> some View {
+        self.buttonStyle(StretchyButton(state: state, isSquare: isSquare))
     }
-    func focusedStretchyButton() -> some View {
-        self.buttonStyle(FocusedStretchyButton())
-    }
-    func neutralStretchyButton() -> some View {
-        self.buttonStyle(NeutralStretchyButton())
-    }
-    func disabledStretchyButton() -> some View {
-        self.modifier(DisabledStretchyButton())
-    }
+    
 }
 
