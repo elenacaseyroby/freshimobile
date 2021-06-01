@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Header: View {
+    @Environment(\.presentationMode) var presentationMode
     let title: String
     var body: some View {
         HStack{
@@ -18,7 +19,7 @@ struct Header: View {
                 .fontStyle(fontStyle: .title3)
             Spacer()
             Button(action: {
-                print("Exit tapped!")
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Image("exit-icon")
             }

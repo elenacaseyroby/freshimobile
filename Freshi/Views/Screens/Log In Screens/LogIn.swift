@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LogIn: View {
     @State var isActive: Bool = true
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack{
             // Header
@@ -19,7 +20,7 @@ struct LogIn: View {
             // Buttons
             HStack(alignment: .center, spacing: 10){
                 Button(action: {
-                    print("back arrow tapped!")
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Image("back-arrow")
                 }

@@ -37,6 +37,7 @@ struct Landing: View {
         NavigationView{
             VStack(alignment: .center, spacing: 0){
                 Spacer(minLength: 30)
+                // Header
                 HStack{
                     Image("bar-logo")
                     .padding(.leading, GlobalStyles.padding)
@@ -50,20 +51,35 @@ struct Landing: View {
                     // Spacer pushes everything to the other end of the view
                     Spacer()
                 }
+                // Image
                 StretchyImage(imageName: "landing-collage")
+                // Buttons
                 VStack(alignment: .center, spacing: 4){
-                    NavigationLink(destination: LogIn(), tag: "LogIn", selection: $destination){
-                        EmptyView()
-                    }
+                    NavigationLink(
+                        destination:
+                            LogIn()
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarHidden(true)
+                            ,
+                        tag: "LogIn",
+                        selection: $destination){
+                            EmptyView()
+                        }
                     .navigationBarHidden(true)
                     Button("Log in") {
                         self.destination = "LogIn"
                     }
                     .stretchyButton(state: StretchyButtonState.neutral)
                     
-                    NavigationLink(destination: SignUp(), tag: "SignUp", selection: $destination){
-                        EmptyView()
-                    }
+                    NavigationLink(
+                        destination:
+                            SignUp()
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarHidden(true),
+                        tag: "SignUp",
+                        selection: $destination){
+                            EmptyView()
+                        }
                     .navigationBarHidden(true)
                     Button("Create an account"){
                         self.destination = "SignUp"
@@ -72,30 +88,49 @@ struct Landing: View {
                 }
                 .padding(.horizontal, GlobalStyles.padding)
                 Spacer(minLength: 10)
+                // Links
                 HStack{
-                    NavigationLink(destination: TermsAndConditions(), tag: "t&c", selection: $destination){
-                        EmptyView()
-                    }
-                    .navigationBarHidden(true)
-                    Button("Terms & Conditions"){
-                        self.destination = "t&c"
-                    }
-                    .fontStyle(fontStyle: .callout)
-                    .foregroundColor(Color("interactiveFocus"))
-                    Image("dot")
-                    NavigationLink(destination: PrivacyPolicy(), tag: "PrivacyPolicy", selection: $destination){
-                        EmptyView()
-                    }
+                    NavigationLink(
+                        destination:
+                            TermsAndConditions()
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarHidden(true),
+                        tag: "t&c",
+                        selection: $destination){
+                            EmptyView()
+                        }
+                    NavigationLink(
+                        destination:
+                            PrivacyPolicy()
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarHidden(true),
+                        tag: "PrivacyPolicy",
+                        selection: $destination){
+                            EmptyView()
+                        }
+                    NavigationLink(
+                        destination:
+                            PasswordReset()
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarHidden(true),
+                        tag: "PasswordReset",
+                        selection: $destination){
+                            EmptyView()
+                        }
                     Button("Privacy Policy"){
                         self.destination = "PrivacyPolicy"
                     }
                     .fontStyle(fontStyle: .callout)
                     .foregroundColor(Color("interactiveFocus"))
-                }
-                HStack {
-                    NavigationLink(destination: PasswordReset(), tag: "PasswordReset", selection: $destination){
-                        EmptyView()
+                    Text("&")
+                        .fontStyle(fontStyle: .callout)
+                        .foregroundColor(Color("highContrast"))
+                    Button("Terms"){
+                        self.destination = "t&c"
                     }
+                    .fontStyle(fontStyle: .callout)
+                    .foregroundColor(Color("interactiveFocus"))
+                    Image("dot")
                     Button(
                         action: {
                             self.destination = "PasswordReset"
