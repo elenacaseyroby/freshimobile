@@ -16,6 +16,8 @@ struct FreshiApp: App {
             StartView()
                 // pass our order state into our Main view.
                 .environmentObject(auth)
+                // test dark mode:
+//                .preferredColorScheme(.dark)
         }
     }
 }

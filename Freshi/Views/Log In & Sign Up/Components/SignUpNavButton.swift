@@ -27,7 +27,7 @@ struct SignUpNavButton: View {
                         }
                 }
                 // Set up button to trigger navigation link to LogIn view destination.
-                Button("Sign Up"){
+                Button("Create an account"){
                     self.selection = "SignUp"
                 }
                 .stretchyButton(state: StretchyButtonState.focused)

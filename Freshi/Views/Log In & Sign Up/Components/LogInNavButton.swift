@@ -19,6 +19,7 @@ struct LogInNavButton: View {
                     NavigationLink(
                         destination:
                             LogIn()
+                            .transition(.move(edge: .bottom))
                             .navigationBarBackButtonHidden(true)
                             .navigationBarHidden(true),
                         tag: "LogIn",

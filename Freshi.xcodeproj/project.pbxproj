@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7829A4AC2668093500488394 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AB2668093500488394 /* LogIn.swift */; };
+		7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AE2668186C00488394 /* SignUpNavLink.swift */; };
 		784905C42661A17E00344EAC /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C32661A17E00344EAC /* Header.swift */; };
 		784905C62661A62F00344EAC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C52661A62F00344EAC /* Line.swift */; };
 		784905C926653FFE00344EAC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C826653FFE00344EAC /* StartView.swift */; };
 		784905CB2665405B00344EAC /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905CA2665405B00344EAC /* LoggedInView.swift */; };
-		784905CD2665406800344EAC /* LoggedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905CC2665406800344EAC /* LoggedOutView.swift */; };
 		784905D12665717C00344EAC /* StretchyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D02665717B00344EAC /* StretchyImage.swift */; };
-		784905D526658C2800344EAC /* StretchyButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D426658C2800344EAC /* StretchyButtonStyles.swift */; };
+		784905D526658C2800344EAC /* StretchyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D426658C2800344EAC /* StretchyButton.swift */; };
 		784905D72666B0EE00344EAC /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D62666B0EE00344EAC /* SignUp.swift */; };
 		784905D92666B36B00344EAC /* PasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D82666B36B00344EAC /* PasswordReset.swift */; };
 		784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DA2666B3CC00344EAC /* TermsAndConditions.swift */; };
@@ -34,9 +35,8 @@
 		789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */; };
 		789CA5372655D41500A1CD5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5362655D41500A1CD5E /* User.swift */; };
 		789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCreds.swift */; };
-		789CA5472660471700A1CD5E /* TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* TextStyles.swift */; };
+		789CA5472660471700A1CD5E /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* FontStyle.swift */; };
 		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
-		789CA54B26607E5700A1CD5E /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA54A26607E5700A1CD5E /* LogIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +57,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7829A4AB2668093500488394 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
+		7829A4AE2668186C00488394 /* SignUpNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavLink.swift; sourceTree = "<group>"; };
 		784905C32661A17E00344EAC /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		784905C52661A62F00344EAC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		784905C826653FFE00344EAC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		784905CA2665405B00344EAC /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
-		784905CC2665406800344EAC /* LoggedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutView.swift; sourceTree = "<group>"; };
 		784905D02665717B00344EAC /* StretchyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyImage.swift; sourceTree = "<group>"; };
-		784905D426658C2800344EAC /* StretchyButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyButtonStyles.swift; sourceTree = "<group>"; };
+		784905D426658C2800344EAC /* StretchyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyButton.swift; sourceTree = "<group>"; };
 		784905D62666B0EE00344EAC /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		784905D82666B36B00344EAC /* PasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReset.swift; sourceTree = "<group>"; };
 		784905DA2666B3CC00344EAC /* TermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
@@ -90,9 +91,8 @@
 		789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsRequest.swift; sourceTree = "<group>"; };
 		789CA5362655D41500A1CD5E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		789CA538265DAFFE00A1CD5E /* AuthCreds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCreds.swift; sourceTree = "<group>"; };
-		789CA5462660471700A1CD5E /* TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyles.swift; sourceTree = "<group>"; };
+		789CA5462660471700A1CD5E /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
-		789CA54A26607E5700A1CD5E /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,38 +120,114 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		784905CE266541FC00344EAC /* Log In Screens */ = {
+		7829A4B22668192700488394 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				789CA54A26607E5700A1CD5E /* LogIn.swift */,
-				784905DF26670A7000344EAC /* Landing */,
-				784905D82666B36B00344EAC /* PasswordReset.swift */,
-				784905D62666B0EE00344EAC /* SignUp.swift */,
+				784905E82667169A00344EAC /* ResetPWNavLink.swift */,
+				784905E22667106A00344EAC /* SignUpNavButton.swift */,
+				784905E026670AAD00344EAC /* LogInNavButton.swift */,
+				7829A4AE2668186C00488394 /* SignUpNavLink.swift */,
 			);
-			path = "Log In Screens";
+			path = Components;
 			sourceTree = "<group>";
 		};
-		784905DE2666B45600344EAC /* Terms Screens */ = {
+		7829A4B626681BAC00488394 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				784905E42667117B00344EAC /* PrivacyNavLink.swift */,
+				784905E6266711B900344EAC /* TermsNavLink.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7829A4B726681C3400488394 /* T&C Screen */ = {
 			isa = PBXGroup;
 			children = (
 				784905DA2666B3CC00344EAC /* TermsAndConditions.swift */,
-				784905DC2666B44600344EAC /* PrivacyPolicy.swift */,
 			);
-			path = "Terms Screens";
+			path = "T&C Screen";
 			sourceTree = "<group>";
 		};
-		784905DF26670A7000344EAC /* Landing */ = {
+		7829A4B826681C5200488394 /* PrivacyPolicy Screen */ = {
 			isa = PBXGroup;
 			children = (
-				786775F12655B84800716DCE /* Landing.swift */,
-				784905EA266720E100344EAC /* LandingHeader.swift */,
-				784905E026670AAD00344EAC /* LogInNavButton.swift */,
-				784905E22667106A00344EAC /* SignUpNavButton.swift */,
-				784905E42667117B00344EAC /* PrivacyNavLink.swift */,
-				784905E6266711B900344EAC /* TermsNavLink.swift */,
-				784905E82667169A00344EAC /* ResetPWNavLink.swift */,
+				784905DC2666B44600344EAC /* PrivacyPolicy.swift */,
 			);
-			path = Landing;
+			path = "PrivacyPolicy Screen";
+			sourceTree = "<group>";
+		};
+		7829A4B926681C6900488394 /* SignUp Screen */ = {
+			isa = PBXGroup;
+			children = (
+				784905D62666B0EE00344EAC /* SignUp.swift */,
+			);
+			path = "SignUp Screen";
+			sourceTree = "<group>";
+		};
+		7829A4BA26681C7A00488394 /* PasswordReset Screen */ = {
+			isa = PBXGroup;
+			children = (
+				784905D82666B36B00344EAC /* PasswordReset.swift */,
+			);
+			path = "PasswordReset Screen";
+			sourceTree = "<group>";
+		};
+		7829A4BB26681C8900488394 /* LogIn Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7829A4AB2668093500488394 /* LogIn.swift */,
+			);
+			path = "LogIn Screen";
+			sourceTree = "<group>";
+		};
+		7829A4BC26681FA900488394 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				784905C32661A17E00344EAC /* Header.swift */,
+				784905C52661A62F00344EAC /* Line.swift */,
+				784905D02665717B00344EAC /* StretchyImage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7829A4BD26681FB900488394 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				784905D426658C2800344EAC /* StretchyButton.swift */,
+				789CA5462660471700A1CD5E /* FontStyle.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		784905CE266541FC00344EAC /* Log In & Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				7829A4B22668192700488394 /* Components */,
+				784905DF26670A7000344EAC /* Landing Screen */,
+				7829A4B926681C6900488394 /* SignUp Screen */,
+				7829A4BA26681C7A00488394 /* PasswordReset Screen */,
+				7829A4BB26681C8900488394 /* LogIn Screen */,
+			);
+			path = "Log In & Sign Up";
+			sourceTree = "<group>";
+		};
+		784905DE2666B45600344EAC /* Terms & Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				7829A4B626681BAC00488394 /* Components */,
+				7829A4B726681C3400488394 /* T&C Screen */,
+				7829A4B826681C5200488394 /* PrivacyPolicy Screen */,
+			);
+			path = "Terms & Privacy";
+			sourceTree = "<group>";
+		};
+		784905DF26670A7000344EAC /* Landing Screen */ = {
+			isa = PBXGroup;
+			children = (
+				784905EA266720E100344EAC /* LandingHeader.swift */,
+				786775F12655B84800716DCE /* Landing.swift */,
+			);
+			path = "Landing Screen";
 			sourceTree = "<group>";
 		};
 		786775BA2655B78000716DCE = {
@@ -180,7 +256,6 @@
 				789CA5292655C29800A1CD5E /* Views */,
 				789CA5282655C25100A1CD5E /* Stores */,
 				789CA5262655C23800A1CD5E /* Models */,
-				786775C62655B78100716DCE /* FreshiApp.swift */,
 				786775CA2655B78600716DCE /* Assets.xcassets */,
 				789CA5242655C22300A1CD5E /* APIRequests */,
 				786775CF2655B78600716DCE /* Info.plist */,
@@ -243,43 +318,24 @@
 		789CA5292655C29800A1CD5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				789CA52D2655C31900A1CD5E /* Screens */,
-				789CA52A2655C2D600A1CD5E /* Components */,
+				786775C62655B78100716DCE /* FreshiApp.swift */,
+				784905C826653FFE00344EAC /* StartView.swift */,
+				784905CA2665405B00344EAC /* LoggedInView.swift */,
+				789CA52A2655C2D600A1CD5E /* FreshiApp */,
+				784905CE266541FC00344EAC /* Log In & Sign Up */,
+				784905DE2666B45600344EAC /* Terms & Privacy */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		789CA52A2655C2D600A1CD5E /* Components */ = {
+		789CA52A2655C2D600A1CD5E /* FreshiApp */ = {
 			isa = PBXGroup;
 			children = (
-				784905C32661A17E00344EAC /* Header.swift */,
-				784905C52661A62F00344EAC /* Line.swift */,
-				789CA52C2655C30000A1CD5E /* UI */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		789CA52C2655C30000A1CD5E /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				784905D426658C2800344EAC /* StretchyButtonStyles.swift */,
+				7829A4BC26681FA900488394 /* Components */,
+				7829A4BD26681FB900488394 /* Modifiers */,
 				789CA5482660694800A1CD5E /* GlobalStyles.swift */,
-				789CA5462660471700A1CD5E /* TextStyles.swift */,
-				784905D02665717B00344EAC /* StretchyImage.swift */,
 			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		789CA52D2655C31900A1CD5E /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				784905DE2666B45600344EAC /* Terms Screens */,
-				784905CE266541FC00344EAC /* Log In Screens */,
-				784905CA2665405B00344EAC /* LoggedInView.swift */,
-				784905CC2665406800344EAC /* LoggedOutView.swift */,
-				784905C826653FFE00344EAC /* StartView.swift */,
-			);
-			path = Screens;
+			path = FreshiApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,16 +468,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				784905DD2666B44600344EAC /* PrivacyPolicy.swift in Sources */,
-				784905D526658C2800344EAC /* StretchyButtonStyles.swift in Sources */,
+				784905D526658C2800344EAC /* StretchyButton.swift in Sources */,
 				784905E126670AAD00344EAC /* LogInNavButton.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				784905D92666B36B00344EAC /* PasswordReset.swift in Sources */,
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
-				784905CD2665406800344EAC /* LoggedOutView.swift in Sources */,
+				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
-				789CA5472660471700A1CD5E /* TextStyles.swift in Sources */,
+				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
+				7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */,
 				784905E7266711B900344EAC /* TermsNavLink.swift in Sources */,
 				784905C926653FFE00344EAC /* StartView.swift in Sources */,
 				784905EB266720E100344EAC /* LandingHeader.swift in Sources */,
@@ -430,7 +487,6 @@
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				784905E52667117B00344EAC /* PrivacyNavLink.swift in Sources */,
-				789CA54B26607E5700A1CD5E /* LogIn.swift in Sources */,
 				784905E92667169A00344EAC /* ResetPWNavLink.swift in Sources */,
 				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,
 				784905C62661A62F00344EAC /* Line.swift in Sources */,

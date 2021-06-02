@@ -49,7 +49,7 @@ struct Landing: View {
                         .foregroundColor(Color("highContrast"))
                     TermsNavLink()
                     Image("dot")
-                    ResetPWNavLink()
+                    ResetPWNavLink(label: "Reset Password")
                 }
                 Text("© freshi 2021")
                 .fontStyle(fontStyle: .caption)

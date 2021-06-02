@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ResetPWNavLink: View {
     @State private var selection: String? = nil
+    var label: String
     
     var body: some View {
         VStack{
@@ -25,7 +26,7 @@ struct ResetPWNavLink: View {
                         EmptyView()
                     }
             }
-            Button("Reset Password"){
+            Button(label){
                 self.selection = "PasswordReset"
             }
             .fontStyle(fontStyle: .callout)
@@ -36,6 +37,6 @@ struct ResetPWNavLink: View {
 // strictly for dev previews in xcode.
 struct ResetPWNavLink_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPWNavLink()
+        ResetPWNavLink(label: "Reset Password")
     }
 }
