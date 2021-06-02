@@ -13,15 +13,18 @@ struct ResetPWNavLink: View {
     
     var body: some View {
         VStack{
-            NavigationLink(
-                destination:
-                    PasswordReset()
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarHidden(true),
-                tag: "PasswordReset",
-                selection: $selection){
-                    EmptyView()
-                }
+            // Conditionally render Nav Link to fix "Unable to present. Please file a bug." error.
+            if selection == "PasswordReset" {
+                NavigationLink(
+                    destination:
+                        PasswordReset()
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true),
+                    tag: "PasswordReset",
+                    selection: $selection){
+                        EmptyView()
+                    }
+            }
             Button("Reset Password"){
                 self.selection = "PasswordReset"
             }

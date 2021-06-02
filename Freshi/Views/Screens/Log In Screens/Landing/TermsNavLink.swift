@@ -13,15 +13,18 @@ struct TermsNavLink: View {
     
     var body: some View {
         VStack{
-            NavigationLink(
-                destination:
-                    TermsAndConditions()
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarHidden(true),
-                tag: "t&c",
-                selection: $selection){
-                    EmptyView()
-                }
+            // Conditionally render Nav Link to fix "Unable to present. Please file a bug." error.
+            if selection == "t&c" {
+                NavigationLink(
+                    destination:
+                        TermsAndConditions()
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true),
+                    tag: "t&c",
+                    selection: $selection){
+                        EmptyView()
+                    }
+            }
             Button("Terms"){
                 self.selection = "t&c"
             }

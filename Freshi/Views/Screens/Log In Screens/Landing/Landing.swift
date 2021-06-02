@@ -5,12 +5,10 @@
 //  Created by Casey Roby on 4/21/21.
 //
 import SwiftUI
-import Foundation
 
 
 struct Landing: View {
     @EnvironmentObject var auth: Auth
-    @State private var destination: String? = nil
     
     func printAuth(){
         print(auth.creds ?? "no creds")

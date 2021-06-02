@@ -13,15 +13,18 @@ struct PrivacyNavLink: View {
     
     var body: some View {
         VStack{
-            NavigationLink(
-                destination:
-                    PrivacyPolicy()
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarHidden(true),
-                tag: "PrivacyPolicy",
-                selection: $selection){
-                    EmptyView()
-                }
+            // Conditionally render Nav Link to fix "Unable to present. Please file a bug." error.
+            if selection == "PrivacyPolicy" {
+                NavigationLink(
+                    destination:
+                        PrivacyPolicy()
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true),
+                    tag: "PrivacyPolicy",
+                    selection: $selection){
+                        EmptyView()
+                    }
+            }
             Button("Privacy"){
                 self.selection = "PrivacyPolicy"
             }

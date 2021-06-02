@@ -13,17 +13,20 @@ struct SignUpNavButton: View {
     
     var body: some View {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
-                // Set navigation destination as LogIn view
-                NavigationLink(
-                    destination:
-                        SignUp()
-                        .navigationBarBackButtonHidden(true)
-                        .navigationBarHidden(true),
-                    tag: "SignUp",
-                    selection: $selection){
-                        EmptyView()
-                    }
-                .navigationBarHidden(true)
+                // Conditionally render Nav Link to fix "Unable to present. Please file a bug." error.
+                if selection == "SignUp" {
+                    // Set navigation destination as SignUp view
+                    NavigationLink(
+                        destination:
+                            SignUp()
+                            .navigationBarBackButtonHidden(true)
+                            .navigationBarHidden(true),
+                        tag: "SignUp",
+                        selection: $selection){
+                            EmptyView()
+                        }
+                    .navigationBarHidden(true)
+                }
                 // Set up button to trigger navigation link to LogIn view destination.
                 Button("Sign Up"){
                     self.selection = "SignUp"
