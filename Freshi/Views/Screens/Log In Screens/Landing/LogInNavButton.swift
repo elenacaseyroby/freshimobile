@@ -1,5 +1,5 @@
 //
-//  LogInButton.swift
+//  LogInNavButton.swift
 //  Freshi
 //
 //  Created by Casey Roby on 6/1/21.
@@ -25,11 +25,9 @@ struct LogInNavButton: View {
                     }
                 .navigationBarHidden(true)
                 // Set up button to trigger navigation link to LogIn view destination.
-                Button(action: {
+                Button("Log in"){
                     self.selection = "LogIn"
-                }, label: {
-                    Text("Log in")
-                })
+                }
                 .stretchyButton(state: StretchyButtonState.neutral)
             }
     }
