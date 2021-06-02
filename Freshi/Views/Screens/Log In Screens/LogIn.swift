@@ -21,26 +21,13 @@ struct LogIn: View {
             }
             // Buttons
             HStack(alignment: .center, spacing: 10){
-                NavigationLink(
-                    destination:
-                        SignUp()
-                        .navigationBarBackButtonHidden(true)
-                        .navigationBarHidden(true)
-                        ,
-                    tag: "SignUp",
-                    selection: $destination){
-                        EmptyView()
-                    }
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }) {
                     Image("back-arrow")
                 }
                 .stretchyButton(state: StretchyButtonState.neutral, isSquare: true)
-                Button("Create an account") {
-                    self.destination = "SignUp"
-                }
-                .stretchyButton(state: StretchyButtonState.focused)
+                SignUpNavButton()
                     
             }
             .padding(.leading, GlobalStyles.padding)
