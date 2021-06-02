@@ -18,7 +18,12 @@ struct LogIn: View {
                 Header(title: "Log in")
                 Line()
             }
-            ResetPWNavLink(label: "Forgot username or password?")
+            // Links
+            HStack(alignment: .center, spacing: 5){
+                SignUpNavLink()
+                Image("dot")
+                ResetPWNavLink(label: "Forgot username or password?")
+            }
             // Buttons
             HStack(alignment: .center, spacing: 10){
                 Button("Log in") {

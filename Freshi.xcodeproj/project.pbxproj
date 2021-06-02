@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7829A4AC2668093500488394 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AB2668093500488394 /* LogIn.swift */; };
 		7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AE2668186C00488394 /* SignUpNavLink.swift */; };
+		7829A4C0266824CB00488394 /* Textbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4BF266824CB00488394 /* Textbox.swift */; };
 		784905C42661A17E00344EAC /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C32661A17E00344EAC /* Header.swift */; };
 		784905C62661A62F00344EAC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C52661A62F00344EAC /* Line.swift */; };
 		784905C926653FFE00344EAC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C826653FFE00344EAC /* StartView.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		7829A4AB2668093500488394 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		7829A4AE2668186C00488394 /* SignUpNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavLink.swift; sourceTree = "<group>"; };
+		7829A4BF266824CB00488394 /* Textbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Textbox.swift; sourceTree = "<group>"; };
 		784905C32661A17E00344EAC /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		784905C52661A62F00344EAC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		784905C826653FFE00344EAC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -120,74 +122,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7829A4B22668192700488394 /* Components */ = {
+		7829A4B726681C3400488394 /* T&C */ = {
 			isa = PBXGroup;
 			children = (
-				784905E82667169A00344EAC /* ResetPWNavLink.swift */,
-				784905E22667106A00344EAC /* SignUpNavButton.swift */,
-				784905E026670AAD00344EAC /* LogInNavButton.swift */,
-				7829A4AE2668186C00488394 /* SignUpNavLink.swift */,
+				784905E6266711B900344EAC /* TermsNavLink.swift */,
+				784905DA2666B3CC00344EAC /* TermsAndConditions.swift */,
 			);
-			path = Components;
+			path = "T&C";
 			sourceTree = "<group>";
 		};
-		7829A4B626681BAC00488394 /* Components */ = {
+		7829A4B826681C5200488394 /* PrivacyPolicy */ = {
 			isa = PBXGroup;
 			children = (
 				784905E42667117B00344EAC /* PrivacyNavLink.swift */,
-				784905E6266711B900344EAC /* TermsNavLink.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		7829A4B726681C3400488394 /* T&C Screen */ = {
-			isa = PBXGroup;
-			children = (
-				784905DA2666B3CC00344EAC /* TermsAndConditions.swift */,
-			);
-			path = "T&C Screen";
-			sourceTree = "<group>";
-		};
-		7829A4B826681C5200488394 /* PrivacyPolicy Screen */ = {
-			isa = PBXGroup;
-			children = (
 				784905DC2666B44600344EAC /* PrivacyPolicy.swift */,
 			);
-			path = "PrivacyPolicy Screen";
+			path = PrivacyPolicy;
 			sourceTree = "<group>";
 		};
-		7829A4B926681C6900488394 /* SignUp Screen */ = {
+		7829A4B926681C6900488394 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				7829A4AE2668186C00488394 /* SignUpNavLink.swift */,
+				784905E22667106A00344EAC /* SignUpNavButton.swift */,
 				784905D62666B0EE00344EAC /* SignUp.swift */,
 			);
-			path = "SignUp Screen";
+			path = SignUp;
 			sourceTree = "<group>";
 		};
-		7829A4BA26681C7A00488394 /* PasswordReset Screen */ = {
+		7829A4BA26681C7A00488394 /* PasswordReset */ = {
 			isa = PBXGroup;
 			children = (
+				784905E82667169A00344EAC /* ResetPWNavLink.swift */,
 				784905D82666B36B00344EAC /* PasswordReset.swift */,
 			);
-			path = "PasswordReset Screen";
+			path = PasswordReset;
 			sourceTree = "<group>";
 		};
-		7829A4BB26681C8900488394 /* LogIn Screen */ = {
+		7829A4BB26681C8900488394 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
+				784905E026670AAD00344EAC /* LogInNavButton.swift */,
 				7829A4AB2668093500488394 /* LogIn.swift */,
 			);
-			path = "LogIn Screen";
-			sourceTree = "<group>";
-		};
-		7829A4BC26681FA900488394 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				784905C32661A17E00344EAC /* Header.swift */,
-				784905C52661A62F00344EAC /* Line.swift */,
-				784905D02665717B00344EAC /* StretchyImage.swift */,
-			);
-			path = Components;
+			path = LogIn;
 			sourceTree = "<group>";
 		};
 		7829A4BD26681FB900488394 /* Modifiers */ = {
@@ -199,35 +177,37 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
-		784905CE266541FC00344EAC /* Log In & Sign Up */ = {
+		7829A4BE266824B400488394 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				7829A4B22668192700488394 /* Components */,
-				784905DF26670A7000344EAC /* Landing Screen */,
-				7829A4B926681C6900488394 /* SignUp Screen */,
-				7829A4BA26681C7A00488394 /* PasswordReset Screen */,
-				7829A4BB26681C8900488394 /* LogIn Screen */,
+				7829A4BF266824CB00488394 /* Textbox.swift */,
 			);
-			path = "Log In & Sign Up";
+			path = Forms;
 			sourceTree = "<group>";
 		};
-		784905DE2666B45600344EAC /* Terms & Privacy */ = {
+		7829A4C12668266C00488394 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
-				7829A4B626681BAC00488394 /* Components */,
-				7829A4B726681C3400488394 /* T&C Screen */,
-				7829A4B826681C5200488394 /* PrivacyPolicy Screen */,
+				789CA5482660694800A1CD5E /* GlobalStyles.swift */,
 			);
-			path = "Terms & Privacy";
+			path = Styles;
 			sourceTree = "<group>";
 		};
-		784905DF26670A7000344EAC /* Landing Screen */ = {
+		7829A4C22668288700488394 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
 				784905EA266720E100344EAC /* LandingHeader.swift */,
 				786775F12655B84800716DCE /* Landing.swift */,
 			);
-			path = "Landing Screen";
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		784905DF26670A7000344EAC /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				7829A4C22668288700488394 /* Landing */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 		786775BA2655B78000716DCE = {
@@ -318,24 +298,31 @@
 		789CA5292655C29800A1CD5E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7829A4C12668266C00488394 /* Styles */,
+				7829A4BD26681FB900488394 /* Modifiers */,
 				786775C62655B78100716DCE /* FreshiApp.swift */,
 				784905C826653FFE00344EAC /* StartView.swift */,
 				784905CA2665405B00344EAC /* LoggedInView.swift */,
-				789CA52A2655C2D600A1CD5E /* FreshiApp */,
-				784905CE266541FC00344EAC /* Log In & Sign Up */,
-				784905DE2666B45600344EAC /* Terms & Privacy */,
+				7829A4BE266824B400488394 /* Forms */,
+				789CA52A2655C2D600A1CD5E /* Common */,
+				7829A4B926681C6900488394 /* SignUp */,
+				7829A4BA26681C7A00488394 /* PasswordReset */,
+				7829A4BB26681C8900488394 /* LogIn */,
+				7829A4B726681C3400488394 /* T&C */,
+				7829A4B826681C5200488394 /* PrivacyPolicy */,
+				784905DF26670A7000344EAC /* Landing */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		789CA52A2655C2D600A1CD5E /* FreshiApp */ = {
+		789CA52A2655C2D600A1CD5E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				7829A4BC26681FA900488394 /* Components */,
-				7829A4BD26681FB900488394 /* Modifiers */,
-				789CA5482660694800A1CD5E /* GlobalStyles.swift */,
+				784905C32661A17E00344EAC /* Header.swift */,
+				784905C52661A62F00344EAC /* Line.swift */,
+				784905D02665717B00344EAC /* StretchyImage.swift */,
 			);
-			path = FreshiApp;
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +464,7 @@
 				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
+				7829A4C0266824CB00488394 /* Textbox.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
 				7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */,
 				784905E7266711B900344EAC /* TermsNavLink.swift in Sources */,
