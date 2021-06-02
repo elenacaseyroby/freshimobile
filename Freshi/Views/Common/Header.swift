@@ -24,8 +24,6 @@ struct Header: View {
                 Image("exit-icon")
             }
         }
-        .padding(.leading, GlobalStyles.padding)
-        .padding(.trailing, GlobalStyles.padding)
         .padding(.top, 15)
         .padding(.bottom, 10)
     }

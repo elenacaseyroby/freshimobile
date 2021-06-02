@@ -10,6 +10,7 @@ import SwiftUI
 struct LogIn: View {
     @State var isActive: Bool = true
     @State private var destination: String? = nil
+    @State var username: String = ""
     
     var body: some View {
         VStack(alignment: .center, spacing: 20){
@@ -18,6 +19,9 @@ struct LogIn: View {
                 Header(title: "Log in")
                 Line()
             }
+            // Textboxes
+            Textbox(username: username)
+            
             // Links
             HStack(alignment: .center, spacing: 5){
                 SignUpNavLink()
@@ -31,12 +35,13 @@ struct LogIn: View {
                 }
                 .stretchyButton(state: StretchyButtonState.focused)
             }
-            .padding(.leading, GlobalStyles.padding)
-            .padding(.trailing, GlobalStyles.padding)
+            
             // Top align.
             Spacer()
         }
         .background(Color("background"))
+        .padding(.leading, GlobalStyles.padding)
+        .padding(.trailing, GlobalStyles.padding)
     }
 }
 // strictly for dev previews in xcode.
