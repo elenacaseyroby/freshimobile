@@ -22,6 +22,8 @@
 		784905E32667106A00344EAC /* SignUpNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E22667106A00344EAC /* SignUpNavButton.swift */; };
 		784905E52667117B00344EAC /* PrivacyNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E42667117B00344EAC /* PrivacyNavLink.swift */; };
 		784905E7266711B900344EAC /* TermsNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E6266711B900344EAC /* TermsNavLink.swift */; };
+		784905E92667169A00344EAC /* ResetPWNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E82667169A00344EAC /* ResetPWNavLink.swift */; };
+		784905EB266720E100344EAC /* LandingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905EA266720E100344EAC /* LandingHeader.swift */; };
 		786775C72655B78100716DCE /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C62655B78100716DCE /* FreshiApp.swift */; };
 		786775CB2655B78600716DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CA2655B78600716DCE /* Assets.xcassets */; };
 		786775CE2655B78600716DCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CD2655B78600716DCE /* Preview Assets.xcassets */; };
@@ -70,6 +72,8 @@
 		784905E22667106A00344EAC /* SignUpNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavButton.swift; sourceTree = "<group>"; };
 		784905E42667117B00344EAC /* PrivacyNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyNavLink.swift; sourceTree = "<group>"; };
 		784905E6266711B900344EAC /* TermsNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsNavLink.swift; sourceTree = "<group>"; };
+		784905E82667169A00344EAC /* ResetPWNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPWNavLink.swift; sourceTree = "<group>"; };
+		784905EA266720E100344EAC /* LandingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeader.swift; sourceTree = "<group>"; };
 		786775C32655B78100716DCE /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786775C62655B78100716DCE /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
 		786775CA2655B78600716DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,10 +144,12 @@
 			isa = PBXGroup;
 			children = (
 				786775F12655B84800716DCE /* Landing.swift */,
+				784905EA266720E100344EAC /* LandingHeader.swift */,
 				784905E026670AAD00344EAC /* LogInNavButton.swift */,
 				784905E22667106A00344EAC /* SignUpNavButton.swift */,
 				784905E42667117B00344EAC /* PrivacyNavLink.swift */,
 				784905E6266711B900344EAC /* TermsNavLink.swift */,
+				784905E82667169A00344EAC /* ResetPWNavLink.swift */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -418,12 +424,14 @@
 				789CA5472660471700A1CD5E /* TextStyles.swift in Sources */,
 				784905E7266711B900344EAC /* TermsNavLink.swift in Sources */,
 				784905C926653FFE00344EAC /* StartView.swift in Sources */,
+				784905EB266720E100344EAC /* LandingHeader.swift in Sources */,
 				789CA52F2655C44600A1CD5E /* Auth.swift in Sources */,
 				789CA5372655D41500A1CD5E /* User.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				784905E52667117B00344EAC /* PrivacyNavLink.swift in Sources */,
 				789CA54B26607E5700A1CD5E /* LogIn.swift in Sources */,
+				784905E92667169A00344EAC /* ResetPWNavLink.swift in Sources */,
 				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,
 				784905C62661A62F00344EAC /* Line.swift in Sources */,
 				784905D72666B0EE00344EAC /* SignUp.swift in Sources */,

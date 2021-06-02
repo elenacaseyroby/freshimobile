@@ -22,7 +22,7 @@ struct PrivacyNavLink: View {
                 selection: $selection){
                     EmptyView()
                 }
-            Button("Privacy Policy"){
+            Button("Privacy"){
                 self.selection = "PrivacyPolicy"
             }
             .fontStyle(fontStyle: .callout)

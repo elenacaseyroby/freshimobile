@@ -35,85 +35,29 @@ struct Landing: View {
     
     var body: some View {
         NavigationView{
-            VStack(alignment: .center, spacing: 0){
-                Spacer(minLength: 30)
-                // Header
-                HStack{
-                    Image("bar-logo")
-                    .padding(.leading, GlobalStyles.padding)
-                    Text("Freshi")
-                    .foregroundColor(Color("highContrast"))
-                    .fontWeight(.heavy)
-                    .fontStyle(fontStyle: .title2)
-                    Text("label")
-                    .foregroundColor(Color("highContrast"))
-                    .fontStyle(fontStyle: .title3)
-                    // Spacer pushes everything to the other end of the view
-                    Spacer()
-                }
-                // Image
-                StretchyImage(imageName: "landing-collage")
-                // Buttons
-                VStack(alignment: .center, spacing: 4){
-                    LogInNavButton()
-                    SignUpNavButton()
-                }
-                .padding(.horizontal, GlobalStyles.padding)
+            VStack(alignment: .center, spacing: 20){
                 Spacer(minLength: 10)
+                LandingHeader()
+                StretchyImage(imageName: "landing-collage")
+                    .padding(.bottom, 0)
+                LogInNavButton()
+                SignUpNavButton()
                 // Links
                 HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5){
-//                    NavigationLink(
-//                        destination:
-//                            TermsAndConditions()
-//                            .navigationBarBackButtonHidden(true)
-//                            .navigationBarHidden(true),
-//                        tag: "t&c",
-//                        selection: $destination){
-//                            EmptyView()
-//                        }
-//                    NavigationLink(
-//                        destination:
-//                            PrivacyPolicy()
-//                            .navigationBarBackButtonHidden(true)
-//                            .navigationBarHidden(true),
-//                        tag: "PrivacyPolicy",
-//                        selection: $destination){
-//                            EmptyView()
-//                        }
-//                    NavigationLink(
-//                        destination:
-//                            PasswordReset()
-//                            .navigationBarBackButtonHidden(true)
-//                            .navigationBarHidden(true),
-//                        tag: "PasswordReset",
-//                        selection: $destination){
-//                            EmptyView()
-//                        }
                     PrivacyNavLink()
                     Text("&")
                         .fontStyle(fontStyle: .callout)
                         .foregroundColor(Color("highContrast"))
-                    Button("Terms"){
-                        self.destination = "t&c"
-                    }
-                    .fontStyle(fontStyle: .callout)
-                    .foregroundColor(Color("interactiveFocus"))
+                    TermsNavLink()
                     Image("dot")
-                    Button(
-                        action: {
-                            self.destination = "PasswordReset"
-                        },label: {
-                            Text("Reset Password")
-                        })
-                    .fontStyle(fontStyle: .callout)
-                    .foregroundColor(Color("interactiveFocus"))
+                    ResetPWNavLink()
                 }
-                Spacer(minLength: 10)
                 Text("© freshi 2021")
                 .fontStyle(fontStyle: .caption)
                 .foregroundColor(Color("highContrast"))
                 .padding(.vertical, 5)
             }
+            .padding(.horizontal, GlobalStyles.padding)
         }
         .navigationBarHidden(true)
     }

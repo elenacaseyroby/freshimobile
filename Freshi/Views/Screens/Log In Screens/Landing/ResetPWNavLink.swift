@@ -1,5 +1,5 @@
 //
-//  TermsNavLink.swift
+//  ResetPWNavLink.swift
 //  Freshi
 //
 //  Created by Casey Roby on 6/1/21.
@@ -8,22 +8,22 @@
 import SwiftUI
 
 
-struct TermsNavLink: View {
+struct ResetPWNavLink: View {
     @State private var selection: String? = nil
     
     var body: some View {
         VStack{
             NavigationLink(
                 destination:
-                    TermsAndConditions()
+                    PasswordReset()
                     .navigationBarBackButtonHidden(true)
                     .navigationBarHidden(true),
-                tag: "t&c",
+                tag: "PasswordReset",
                 selection: $selection){
                     EmptyView()
                 }
-            Button("Terms"){
-                self.selection = "t&c"
+            Button("Reset Password"){
+                self.selection = "PasswordReset"
             }
             .fontStyle(fontStyle: .callout)
             .foregroundColor(Color("interactiveFocus"))
@@ -31,9 +31,8 @@ struct TermsNavLink: View {
     }
 }
 // strictly for dev previews in xcode.
-struct TermsNavLink_Previews: PreviewProvider {
+struct ResetPWNavLink_Previews: PreviewProvider {
     static var previews: some View {
-        TermsNavLink()
+        ResetPWNavLink()
     }
 }
-
