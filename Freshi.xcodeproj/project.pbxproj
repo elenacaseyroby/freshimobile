@@ -18,6 +18,7 @@
 		784905D92666B36B00344EAC /* PasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D82666B36B00344EAC /* PasswordReset.swift */; };
 		784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DA2666B3CC00344EAC /* TermsAndConditions.swift */; };
 		784905DD2666B44600344EAC /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DC2666B44600344EAC /* PrivacyPolicy.swift */; };
+		784905E126670AAD00344EAC /* LogInNavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E026670AAD00344EAC /* LogInNavButton.swift */; };
 		786775C72655B78100716DCE /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C62655B78100716DCE /* FreshiApp.swift */; };
 		786775CB2655B78600716DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CA2655B78600716DCE /* Assets.xcassets */; };
 		786775CE2655B78600716DCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CD2655B78600716DCE /* Preview Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		784905D82666B36B00344EAC /* PasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReset.swift; sourceTree = "<group>"; };
 		784905DA2666B3CC00344EAC /* TermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
 		784905DC2666B44600344EAC /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
+		784905E026670AAD00344EAC /* LogInNavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInNavButton.swift; sourceTree = "<group>"; };
 		786775C32655B78100716DCE /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786775C62655B78100716DCE /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
 		786775CA2655B78600716DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				789CA54A26607E5700A1CD5E /* LogIn.swift */,
-				786775F12655B84800716DCE /* Landing.swift */,
+				784905DF26670A7000344EAC /* Landing */,
 				784905D82666B36B00344EAC /* PasswordReset.swift */,
 				784905D62666B0EE00344EAC /* SignUp.swift */,
 			);
@@ -126,6 +128,15 @@
 				784905DC2666B44600344EAC /* PrivacyPolicy.swift */,
 			);
 			path = "Terms Screens";
+			sourceTree = "<group>";
+		};
+		784905DF26670A7000344EAC /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				786775F12655B84800716DCE /* Landing.swift */,
+				784905E026670AAD00344EAC /* LogInNavButton.swift */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 		786775BA2655B78000716DCE = {
@@ -387,6 +398,7 @@
 			files = (
 				784905DD2666B44600344EAC /* PrivacyPolicy.swift in Sources */,
 				784905D526658C2800344EAC /* StretchyButtonStyles.swift in Sources */,
+				784905E126670AAD00344EAC /* LogInNavButton.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				784905D92666B36B00344EAC /* PasswordReset.swift in Sources */,
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,

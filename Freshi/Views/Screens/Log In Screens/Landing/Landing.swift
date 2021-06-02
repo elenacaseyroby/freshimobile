@@ -55,32 +55,17 @@ struct Landing: View {
                 StretchyImage(imageName: "landing-collage")
                 // Buttons
                 VStack(alignment: .center, spacing: 4){
-                    NavigationLink(
-                        destination:
-                            LogIn()
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarHidden(true)
-                            ,
-                        tag: "LogIn",
-                        selection: $destination){
-                            EmptyView()
-                        }
-                    .navigationBarHidden(true)
-                    Button("Log in") {
-                        self.destination = "LogIn"
-                    }
-                    .stretchyButton(state: StretchyButtonState.neutral)
-                    
-                    NavigationLink(
-                        destination:
-                            SignUp()
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarHidden(true),
-                        tag: "SignUp",
-                        selection: $destination){
-                            EmptyView()
-                        }
-                    .navigationBarHidden(true)
+                    LogInNavButton()
+//                    NavigationLink(
+//                        destination:
+//                            SignUp()
+//                            .navigationBarBackButtonHidden(true)
+//                            .navigationBarHidden(true),
+//                        tag: "SignUp",
+//                        selection: $destination){
+//                            EmptyView()
+//                        }
+//                    .navigationBarHidden(true)
                     Button("Create an account"){
                         self.destination = "SignUp"
                     }
@@ -90,33 +75,33 @@ struct Landing: View {
                 Spacer(minLength: 10)
                 // Links
                 HStack{
-                    NavigationLink(
-                        destination:
-                            TermsAndConditions()
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarHidden(true),
-                        tag: "t&c",
-                        selection: $destination){
-                            EmptyView()
-                        }
-                    NavigationLink(
-                        destination:
-                            PrivacyPolicy()
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarHidden(true),
-                        tag: "PrivacyPolicy",
-                        selection: $destination){
-                            EmptyView()
-                        }
-                    NavigationLink(
-                        destination:
-                            PasswordReset()
-                            .navigationBarBackButtonHidden(true)
-                            .navigationBarHidden(true),
-                        tag: "PasswordReset",
-                        selection: $destination){
-                            EmptyView()
-                        }
+//                    NavigationLink(
+//                        destination:
+//                            TermsAndConditions()
+//                            .navigationBarBackButtonHidden(true)
+//                            .navigationBarHidden(true),
+//                        tag: "t&c",
+//                        selection: $destination){
+//                            EmptyView()
+//                        }
+//                    NavigationLink(
+//                        destination:
+//                            PrivacyPolicy()
+//                            .navigationBarBackButtonHidden(true)
+//                            .navigationBarHidden(true),
+//                        tag: "PrivacyPolicy",
+//                        selection: $destination){
+//                            EmptyView()
+//                        }
+//                    NavigationLink(
+//                        destination:
+//                            PasswordReset()
+//                            .navigationBarBackButtonHidden(true)
+//                            .navigationBarHidden(true),
+//                        tag: "PasswordReset",
+//                        selection: $destination){
+//                            EmptyView()
+//                        }
                     Button("Privacy Policy"){
                         self.destination = "PrivacyPolicy"
                     }
