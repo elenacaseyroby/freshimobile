@@ -56,25 +56,12 @@ struct Landing: View {
                 // Buttons
                 VStack(alignment: .center, spacing: 4){
                     LogInNavButton()
-//                    NavigationLink(
-//                        destination:
-//                            SignUp()
-//                            .navigationBarBackButtonHidden(true)
-//                            .navigationBarHidden(true),
-//                        tag: "SignUp",
-//                        selection: $destination){
-//                            EmptyView()
-//                        }
-//                    .navigationBarHidden(true)
-                    Button("Create an account"){
-                        self.destination = "SignUp"
-                    }
-                    .stretchyButton(state: StretchyButtonState.focused)
+                    SignUpNavButton()
                 }
                 .padding(.horizontal, GlobalStyles.padding)
                 Spacer(minLength: 10)
                 // Links
-                HStack{
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5){
 //                    NavigationLink(
 //                        destination:
 //                            TermsAndConditions()
@@ -102,11 +89,7 @@ struct Landing: View {
 //                        selection: $destination){
 //                            EmptyView()
 //                        }
-                    Button("Privacy Policy"){
-                        self.destination = "PrivacyPolicy"
-                    }
-                    .fontStyle(fontStyle: .callout)
-                    .foregroundColor(Color("interactiveFocus"))
+                    PrivacyNavLink()
                     Text("&")
                         .fontStyle(fontStyle: .callout)
                         .foregroundColor(Color("highContrast"))
