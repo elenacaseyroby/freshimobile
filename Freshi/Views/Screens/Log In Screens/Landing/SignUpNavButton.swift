@@ -25,7 +25,6 @@ struct SignUpNavButton: View {
                         selection: $selection){
                             EmptyView()
                         }
-                    .navigationBarHidden(true)
                 }
                 // Set up button to trigger navigation link to LogIn view destination.
                 Button("Sign Up"){

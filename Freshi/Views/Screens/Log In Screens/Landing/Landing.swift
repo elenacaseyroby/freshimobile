@@ -36,6 +36,7 @@ struct Landing: View {
             VStack(alignment: .center, spacing: 20){
                 Spacer(minLength: 10)
                 LandingHeader()
+                .navigationBarHidden(true)
                 StretchyImage(imageName: "landing-collage")
                     .padding(.bottom, 0)
                 LogInNavButton()
