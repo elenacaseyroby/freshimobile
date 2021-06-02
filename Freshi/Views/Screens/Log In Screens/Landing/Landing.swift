@@ -57,6 +57,7 @@ struct Landing: View {
                 .padding(.vertical, 5)
             }
             .padding(.horizontal, GlobalStyles.padding)
+            .background(Color("background"))
         }
         .navigationBarHidden(true)
         // Fixes nav error: “displayModeButtonItem is internally managed and not exposed for DoubleColumn style. Returning an empty, disconnected UIBarButtonItem to fulfill the non-null contract.”

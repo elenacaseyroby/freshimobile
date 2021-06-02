@@ -35,6 +35,7 @@ struct LogIn: View {
             // Top align.
             Spacer()
         }
+        .background(Color("background"))
 
     }
 }
