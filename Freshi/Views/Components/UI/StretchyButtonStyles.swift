@@ -40,15 +40,23 @@ struct StretchyButton: ButtonStyle {
     }
     func makeBody(configuration: Self.Configuration) -> some View {
             return configuration.label
+                // button dimensions
                 .frame(
                     minWidth: 0,
                     maxWidth: isSquare ? height : .infinity,
                     maxHeight: height)
                 .padding()
+                // colors
                 .foregroundColor(Color(foregroundColor(state: state)))
                 .background(Color(backgroundColor(state: state)))
+                // rounded corners
                 .cornerRadius(15)
+                // raised button look
                 .shadow(color: Color("shadow"), radius: 5)
+                // on press button effect
+                .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
+                .opacity(configuration.isPressed ? 0.9 : 1.0)
+                // font
                 .fontStyle(fontStyle: .headline)
     }
 }
