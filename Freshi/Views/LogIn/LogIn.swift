@@ -175,9 +175,9 @@ struct LogIn: View {
         .onTapGesture {
             self.activeTextbox = LoginActiveTextbox.none
         }
-        .background(Color("background"))
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
+        .background(Color("background"))
     }
 }
 // strictly for dev previews in xcode.

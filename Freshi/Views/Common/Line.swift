@@ -15,8 +15,6 @@ struct Line: View {
             .fill(color)
             .frame(height: width)
             .edgesIgnoringSafeArea(.horizontal)
-            .padding(.leading, GlobalStyles.padding)
-            .padding(.trailing, GlobalStyles.padding)
     }
 }
 
