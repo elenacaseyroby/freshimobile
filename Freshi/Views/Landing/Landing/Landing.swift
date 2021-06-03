@@ -8,29 +8,6 @@ import SwiftUI
 
 
 struct Landing: View {
-    @EnvironmentObject var auth: Auth
-    
-    func printAuth(){
-        print(auth.creds ?? "no creds")
-    }
-    
-    func submit() {
-        fetchAuthCreds(username: "", password:"", completionHandler: { authCreds, requestError in
-            if let authCreds = authCreds {
-                // If we have data, send it back to the main thread with DispatchQueue.
-                DispatchQueue.main.async {
-                    // Update the state and thereby our UI
-                    auth.creds = authCreds
-                }
-                print(authCreds)
-                
-            }
-            if let requestError = requestError {
-                print(requestError)
-            }
-        })
-    }
-    
     var body: some View {
         NavigationView{
             VStack(alignment: .center, spacing: 20){
