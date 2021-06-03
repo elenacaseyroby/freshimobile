@@ -71,7 +71,7 @@ struct LogIn: View {
     }
     
     // log in through API
-    func logIn() {
+    func logIn(username: String, password: String) {
         // set loading state to true
         // hit api
         // wait for return
@@ -80,18 +80,17 @@ struct LogIn: View {
         // set error message if need be
         
         print("hit api!!")
-        fetchAuthCreds(username: "", password:"", completionHandler: { authCreds, requestError in
+        fetchAuthCreds(username: username, password: password, completionHandler: { authCreds, requestError in
             if let authCreds = authCreds {
                 // If we have data, send it back to the main thread with DispatchQueue.
                 DispatchQueue.main.async {
                     // Update the state and thereby our UI
                     auth.creds = authCreds
                 }
-                print(authCreds)
-                
             }
             if let requestError = requestError {
-                print(requestError)
+                self.apiErrorMessage = requestError.errorMessage
+                return
             }
         })
     }
@@ -103,6 +102,7 @@ struct LogIn: View {
             return
         }
         // else, log in.
+        self.logIn(username: self.username, password: self.password)
         
     }
     
