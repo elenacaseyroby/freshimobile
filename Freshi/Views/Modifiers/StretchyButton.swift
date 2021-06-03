@@ -47,8 +47,8 @@ struct StretchyButton: ButtonStyle {
                     maxHeight: height)
                 .padding()
                 // colors
-                .foregroundColor(Color(foregroundColor(state: state)))
-                .background(Color(backgroundColor(state: state)))
+                .foregroundColor(Color(foregroundColor(state: self.state)))
+                .background(Color(backgroundColor(state: self.state)))
                 // rounded corners
                 .cornerRadius(15)
                 // raised button look

@@ -8,9 +8,16 @@ import SwiftUI
 
 
 struct LogIn: View {
-    @State var isActive: Bool = true
-    @State private var destination: String? = nil
     @State var username: String = ""
+    @State var usernameErrorMessage: String? = nil
+    @State var usernameActive: Bool = false
+    
+    func usernameState(usernameActive: Bool) -> TextboxState {
+        if usernameActive {
+            return TextboxState.focused
+        }
+        return TextboxState.neutral
+    }
     
     var body: some View {
         VStack(alignment: .center, spacing: 20){
@@ -20,7 +27,19 @@ struct LogIn: View {
                 Line()
             }
             // Textboxes
-            Textbox(username: username)
+            TextField("Username", text: $username, onEditingChanged: { (editingChanged) in
+                    if editingChanged {
+                        self.usernameActive = true
+                    } else {
+                        self.usernameActive = false
+                    }
+                })
+            .freshiTextbox(
+//                state: usernameState(usernameActive: self.usernameActive),
+//                errorMessage: self.usernameErrorMessage
+                state: TextboxState.error,
+                errorMessage: "blah"
+            )
             
             // Links
             HStack(alignment: .center, spacing: 5){
