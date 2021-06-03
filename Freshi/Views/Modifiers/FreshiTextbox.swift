@@ -81,12 +81,7 @@ struct FreshiTextbox: ViewModifier {
             
             // render error message
             if let errorMessage = self.errorMessage {
-                HStack(alignment: .center, spacing: 5){
-                    Image(systemName: "square.and.pencil")
-                        .foregroundColor(Color("error"))
-                    Text(errorMessage)
-                        .foregroundColor(Color("error"))
-                }
+                FormErrorMessage(error: errorMessage)
             }
         }
     }

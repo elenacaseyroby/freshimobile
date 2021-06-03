@@ -141,17 +141,7 @@ struct LogIn: View {
                 }
             // render API error message
             if let apiErrorMessage = self.apiErrorMessage {
-                // left align
-                VStack(alignment: .leading) {
-                    HStack(alignment: .center, spacing: 5){
-                        Image(systemName: "square.and.pencil")
-                            .foregroundColor(Color("error"))
-                        Text(apiErrorMessage)
-                            .foregroundColor(Color("error"))
-                        // left align
-                        Spacer()
-                    }
-                }
+                FormErrorMessage(error: apiErrorMessage)
             }
     
             // Links

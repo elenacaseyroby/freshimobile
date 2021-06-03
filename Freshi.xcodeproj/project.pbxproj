@@ -10,6 +10,7 @@
 		7829A4AC2668093500488394 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AB2668093500488394 /* LogIn.swift */; };
 		7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AE2668186C00488394 /* SignUpNavLink.swift */; };
 		7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4C3266868E600488394 /* FreshiTextbox.swift */; };
+		7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4C52669287C00488394 /* FormErrorMessage.swift */; };
 		784905C42661A17E00344EAC /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C32661A17E00344EAC /* Header.swift */; };
 		784905C62661A62F00344EAC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C52661A62F00344EAC /* Line.swift */; };
 		784905C926653FFE00344EAC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C826653FFE00344EAC /* StartView.swift */; };
@@ -61,6 +62,7 @@
 		7829A4AB2668093500488394 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		7829A4AE2668186C00488394 /* SignUpNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavLink.swift; sourceTree = "<group>"; };
 		7829A4C3266868E600488394 /* FreshiTextbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiTextbox.swift; sourceTree = "<group>"; };
+		7829A4C52669287C00488394 /* FormErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormErrorMessage.swift; sourceTree = "<group>"; };
 		784905C32661A17E00344EAC /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		784905C52661A62F00344EAC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		784905C826653FFE00344EAC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				784905C32661A17E00344EAC /* Header.swift */,
 				784905C52661A62F00344EAC /* Line.swift */,
 				784905D02665717B00344EAC /* StretchyImage.swift */,
+				7829A4C52669287C00488394 /* FormErrorMessage.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
 				7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */,
+				7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */,
 				784905E7266711B900344EAC /* TermsNavLink.swift in Sources */,
 				784905C926653FFE00344EAC /* StartView.swift in Sources */,
 				784905EB266720E100344EAC /* LandingHeader.swift in Sources */,
