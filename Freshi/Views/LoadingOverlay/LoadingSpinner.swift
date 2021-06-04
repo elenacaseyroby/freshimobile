@@ -10,53 +10,50 @@ import SwiftUI
 struct LoadingSpinner: View {
     var backgroundColor: Color
     var foregroundColor: Color
+    private let animationSpeed: Double = 0.03
     
-    private let rotationTime: Double = 0.75
-    private let fullRotation: Angle = .degrees(360)
-    private let animationTime: Double = 1.9
-    private static let initialDegree: Angle = .degrees(270)
+    @State var spinnerAngle: Int = 0
     
-    @State var spinnerStart: CGFloat = 0.0
-    @State var spinnerEndS1: CGFloat = 0.03
-    @State var rotationDegreeS1 = initialDegree
-    
-    func animateSpinner(with timeInterval: Double, completion: @escaping (() -> Void)) {
-        Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false) { _ in
-            withAnimation(Animation.easeInOut(duration: rotationTime)) {
-                completion()
-            }
-        }
+    func moveSpinner() {
+        self.spinnerAngle = (self.spinnerAngle + 10) % 360
     }
-    
+
     var body: some View {
         ZStack {
             BackgroundCircle(
                 color: self.backgroundColor)
             SpinnerCircle(
-                start: spinnerStart,
-                end: spinnerEndS1,
-                rotation: rotationDegreeS1,
-                color: foregroundColor)
+                color: foregroundColor,
+                angle: self.spinnerAngle)
         }
         .onAppear() {
-            Timer.scheduledTimer(withTimeInterval: animationTime, repeats: true) { (mainTimer) in
-                self.animateSpinner(with: rotationTime) { self.spinnerEndS1 = 1.0 }
+            Timer.scheduledTimer(withTimeInterval: animationSpeed, repeats: true) {
+                (mainTimer) in
+                self.moveSpinner()
             }
         }
     }
 }
 
 struct SpinnerCircle: View {
-    var start: CGFloat
-    var end: CGFloat
-    var rotation: Angle
     var color: Color
+    // between 0 and 360
+    var angle: Int
+    
+    func adjustedDegrees(degrees: Int) -> Double {
+        // adjusted to start at top of circle
+        return Double(degrees - 90)
+    }
     
     var body: some View {
         VStack {
             Circle()
-                .trim(from: self.start, to: self.end)
+                .trim(from: 0.0, to: 0.2)
                 .stroke(self.color, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .rotationEffect(
+                    .degrees(
+                        adjustedDegrees(
+                            degrees: self.angle)))
         }
         .frame(width: 30, height: 30)
     }
