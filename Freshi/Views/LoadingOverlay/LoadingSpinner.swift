@@ -10,9 +10,12 @@ import SwiftUI
 struct LoadingSpinner: View {
     var backgroundColor: Color
     var foregroundColor: Color
-    private let animationSpeed: Double = 0.03
     
     @State var spinnerAngle: Int = 0
+    @State var animationsOn = true
+    
+    // every: dictates animation speed. closer to 0 is faster, closer to 1 is slower.
+    let timer = Timer.publish(every: 0.03, on: .main, in: .common).autoconnect()
     
     func moveSpinner() {
         self.spinnerAngle = (self.spinnerAngle + 10) % 360
@@ -26,11 +29,13 @@ struct LoadingSpinner: View {
                 color: foregroundColor,
                 angle: self.spinnerAngle)
         }
-        .onAppear() {
-            Timer.scheduledTimer(withTimeInterval: animationSpeed, repeats: true) {
-                (mainTimer) in
-                self.moveSpinner()
-            }
+        .onReceive(timer) { _ in
+            // do this everytime timer is published.
+            self.moveSpinner()
+        }
+        .onDisappear() {
+            // stop timer on screen close:
+            self.timer.upstream.connect().cancel()
         }
     }
 }
