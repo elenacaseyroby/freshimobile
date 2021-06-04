@@ -18,6 +18,10 @@ struct LoadingSpinner: View {
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     func moveSpinner() {
+        // TODO: make sure that:
+        // sin(0) = 0
+        // sin(90) = 1
+        // sin(180) = 0
         let numberBtwn0and180: Double = Double(self.spinnerAngle / 2)
         var numberBtwn0and1: Double = sin(numberBtwn0and180)
         if numberBtwn0and1 == 0.0 {
