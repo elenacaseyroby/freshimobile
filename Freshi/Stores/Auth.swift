@@ -15,7 +15,6 @@ class Auth: ObservableObject {
     
     // initialize and set is logged in
     func checkIfLoggedIn() {
-        print("check if logged in")
         // Check for auth token in cache and set auth.isLoggedIn accordingly.
         if getAuthCredsFromCache() != nil {
             self.isloggedIn = true
