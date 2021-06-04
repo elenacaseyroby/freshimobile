@@ -11,7 +11,7 @@ struct LoggedInView: View {
     // authentication state for app
     @EnvironmentObject var auth: Auth
     var body: some View {
-        Button("Log out") {
+        Button("log out") {
             auth.logOut()
         }
     }

@@ -66,10 +66,6 @@ struct LogIn: View {
         return false
     }
     
-    func printAuth(){
-        print(auth.creds ?? "no creds")
-    }
-    
     // log in through API
     func logIn(username: String, password: String) {
         // set loading state to true
@@ -78,15 +74,11 @@ struct LogIn: View {
         // on return:
         // set loading state to false and
         // set error message if need be
-        
-        print("hit api!!")
         fetchAuthCreds(username: username, password: password, completionHandler: { authCreds, requestError in
             if let authCreds = authCreds {
-                // If we have data, send it back to the main thread with DispatchQueue.
-                DispatchQueue.main.async {
-                    // Update the state and thereby our UI
-                    auth.creds = authCreds
-                }
+                // Update the state and thereby our UI
+                auth.logIn(authCreds: authCreds)
+
             }
             if let requestError = requestError {
                 self.apiErrorMessage = requestError.errorMessage

@@ -13,11 +13,12 @@ struct FreshiApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView()
+            StartView(auth: auth)
                 // pass our order state into our Main view.
                 .environmentObject(auth)
                 // test dark mode:
 //                .preferredColorScheme(.dark)
+                
         }
     }
 }
