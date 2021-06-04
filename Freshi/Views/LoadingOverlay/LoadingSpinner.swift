@@ -15,10 +15,16 @@ struct LoadingSpinner: View {
     @State var animationsOn = true
     
     // every: dictates animation speed. closer to 0 is faster, closer to 1 is slower.
-    let timer = Timer.publish(every: 0.03, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.02, on: .main, in: .common).autoconnect()
     
     func moveSpinner() {
-        self.spinnerAngle = (self.spinnerAngle + 10) % 360
+        let numberBtwn0and180: Double = Double(self.spinnerAngle / 2)
+        var numberBtwn0and1: Double = sin(numberBtwn0and180)
+        if numberBtwn0and1 == 0.0 {
+            numberBtwn0and1 = sin(numberBtwn0and180 + 3)
+        }
+        let increment: Int = Int(1 + (20 * abs(numberBtwn0and1)))
+        self.spinnerAngle = (self.spinnerAngle + increment) % 360
     }
 
     var body: some View {
