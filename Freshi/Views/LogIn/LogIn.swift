@@ -31,6 +31,9 @@ struct LogIn: View {
     // API error message
     @State var apiErrorMessage: String? = nil
     
+    // Loading state
+    @State var isLoading: Bool = false
+    
     // func to decide state of textbox, ie which color border surrounds it.
     func textboxState(
         thisTextbox: LoginActiveTextbox,
@@ -160,6 +163,9 @@ struct LogIn: View {
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
         .background(Color("background"))
+        .overlay(
+            LoadingOverlay()
+         )
     }
 }
 // strictly for dev previews in xcode.

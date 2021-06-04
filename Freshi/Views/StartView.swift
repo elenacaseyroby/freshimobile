@@ -35,5 +35,3 @@ struct StartView_Previews: PreviewProvider {
         StartView(auth: auth)
     }
 }
-
-
