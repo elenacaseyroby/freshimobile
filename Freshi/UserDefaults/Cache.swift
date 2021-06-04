@@ -13,11 +13,6 @@ func userDefaultKeyExists(key: String) -> Bool {
 
 // Actual functions
 func setAuthCredsInCache(authCreds: AuthCreds) {
-//    print("set creds")
-//    print("Start")
-//    UserDefaults.standard.set(authCreds.code, forKey: "authCredsCode")
-//    UserDefaults.standard.set(authCreds.userId, forKey: "authCredsUserId")
-//    print("End")
     // Encode creds and save in user defaults cache
     let encoder = JSONEncoder()
     if let encoded = try? encoder.encode(authCreds) {
@@ -26,16 +21,6 @@ func setAuthCredsInCache(authCreds: AuthCreds) {
 }
 
 func getAuthCredsFromCache() -> AuthCreds? {
-//    if (
-//        !userDefaultKeyExists(key: "authCredsCode") ||
-//        !userDefaultKeyExists(key: "authCredsUserId")){
-//        print("creds not set")
-//        return nil
-//    }
-//    let code = UserDefaults.standard.string(forKey: "authCredsCode")
-//    let userId = UserDefaults.standard.integer(forKey: "authCredsUserId")
-//    print("creds set")
-//    return AuthCreds(userId: userId, code: code!)
     // Get creds from user defaults cache and decode.
     if !userDefaultKeyExists(key: "AUTH_CREDS") {
         return nil
@@ -50,13 +35,6 @@ func getAuthCredsFromCache() -> AuthCreds? {
 }
 
 func clearAuthCredsFromCache() {
-//    if userDefaultKeyExists(key: "authCredsCode") {
-//        UserDefaults.standard.removeObject(forKey: "authCredsCode")
-//    }
-//    if userDefaultKeyExists(key: "authCredsUserId") {
-//        UserDefaults.standard.removeObject(forKey: "authCredsUserId")
-//    }
-    
     UserDefaults.standard.removeObject(forKey: "AUTH_CREDS")
 }
 
