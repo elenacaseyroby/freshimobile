@@ -7,19 +7,32 @@
 
 import SwiftUI
 
+enum LoaderAnimation {
+    case circle, bubbles, dots
+}
+
 struct LoadingOverlay: View {
+    var animation: LoaderAnimation = LoaderAnimation.circle
+    var isLoading: Bool = false
+    
         
     var body: some View {
         ZStack {
-            Rectangle()
-                .background(Color("midContrast"))
-                .opacity(0.3)
-            CircleLoader(
-                backgroundColor: Color("highContrast"),
-                foregroundColor: Color("interactiveFocus"))
-            
+            if self.isLoading {
+                Rectangle()
+                    .background(Color("midContrast"))
+                    .opacity(0.3)
+                if self.animation == LoaderAnimation.circle {
+                    CircleLoader(
+                        backgroundColor: Color("highContrast"),
+                        foregroundColor: Color("interactiveFocus"))
+                } else if self.animation == LoaderAnimation.bubbles {
+                    LoadingBubbles(color: Color("highContrast"))
+                } else {
+                    LoadingDots(color: Color("highContrast"))
+                }
+            }
         }
-        
     }
 }
 

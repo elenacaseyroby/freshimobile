@@ -71,26 +71,31 @@ struct LogIn: View {
     
     // log in through API
     func logIn(username: String, password: String) {
-        // set loading state to true
-        // hit api
-        // wait for return
-        // on return:
-        // set loading state to false and
-        // set error message if need be
+        // clear API error message if there was one from a prev login:
+        self.apiErrorMessage = nil
+        // try login
         fetchAuthCreds(username: username, password: password, completionHandler: { authCreds, requestError in
             if let authCreds = authCreds {
                 // Update the state and thereby our UI
                 auth.logIn(authCreds: authCreds)
-
             }
             if let requestError = requestError {
                 self.apiErrorMessage = requestError.errorMessage
-                return
             }
+            // Once response is processed, set isLoading to false.
+            // This will stop loading dots.
+            self.isLoading = false
         })
     }
     
     func submit() {
+        // Don't allow click on submit if is loading from last submit.
+        if self.isLoading {
+            return
+        }
+        // On submit, set isLoading to true until API auths or denies.
+        // This will trigger loading dots.
+        self.isLoading = true
         let errorsExist = self.checkForErrors()
         // if errors exist, don't try  to log in.
         if errorsExist {
@@ -145,6 +150,10 @@ struct LogIn: View {
                 Image("dot")
                 ResetPWNavLink(label: "Forgot username or password?")
             }
+            // Show loading dots on loading.
+            if self.isLoading {
+                LoadingBubbles(color: Color("midContrast"))
+            }
             // Buttons
             HStack(alignment: .center, spacing: 10){
                 Button("Log in") {
@@ -163,9 +172,9 @@ struct LogIn: View {
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
         .background(Color("background"))
-        .overlay(
-            LoadingOverlay()
-         )
+//        .overlay(
+//            LoadingOverlay(animation:LoaderAnimation.bubbles, isLoading: self.isLoading)
+//         )
     }
 }
 // strictly for dev previews in xcode.

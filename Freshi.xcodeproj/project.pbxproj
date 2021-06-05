@@ -43,6 +43,8 @@
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
 		78E5A0DB266AA18800CD99A1 /* LoadingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */; };
 		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
+		78E5A0E1266B1C7F00CD99A1 /* LoadingDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */; };
+		78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSpinner.swift; sourceTree = "<group>"; };
 		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
+		78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDots.swift; sourceTree = "<group>"; };
+		78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBubbles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +206,8 @@
 				784905EA266720E100344EAC /* LandingHeader.swift */,
 				786775F12655B84800716DCE /* Landing.swift */,
 			);
-			path = Landing;
+			name = Landing;
+			path = Landing/Landing;
 			sourceTree = "<group>";
 		};
 		7829A4C92669A8C800488394 /* UserDefaults */ = {
@@ -211,14 +216,6 @@
 				7829A4CC2669B1B000488394 /* Cache.swift */,
 			);
 			path = UserDefaults;
-			sourceTree = "<group>";
-		};
-		784905DF26670A7000344EAC /* Landing */ = {
-			isa = PBXGroup;
-			children = (
-				7829A4C22668288700488394 /* Landing */,
-			);
-			path = Landing;
 			sourceTree = "<group>";
 		};
 		786775BA2655B78000716DCE = {
@@ -312,17 +309,17 @@
 			children = (
 				7829A4C12668266C00488394 /* Styles */,
 				7829A4BD26681FB900488394 /* Modifiers */,
+				789CA52A2655C2D600A1CD5E /* Common */,
 				786775C62655B78100716DCE /* FreshiApp.swift */,
 				784905C826653FFE00344EAC /* StartView.swift */,
-				78E5A0D7266A9AE100CD99A1 /* LoadingOverlay */,
 				784905CA2665405B00344EAC /* LoggedInView.swift */,
-				789CA52A2655C2D600A1CD5E /* Common */,
+				78E5A0D7266A9AE100CD99A1 /* LoadingOverlay */,
 				7829A4B926681C6900488394 /* SignUp */,
 				7829A4BA26681C7A00488394 /* PasswordReset */,
 				7829A4BB26681C8900488394 /* LogIn */,
 				7829A4B726681C3400488394 /* T&C */,
 				7829A4B826681C5200488394 /* PrivacyPolicy */,
-				784905DF26670A7000344EAC /* Landing */,
+				7829A4C22668288700488394 /* Landing */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,6 +327,7 @@
 		789CA52A2655C2D600A1CD5E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				78E5A0EB266B308100CD99A1 /* LoaderAnimations */,
 				784905C32661A17E00344EAC /* Header.swift */,
 				784905C52661A62F00344EAC /* Line.swift */,
 				784905D02665717B00344EAC /* StretchyImage.swift */,
@@ -342,10 +340,19 @@
 			isa = PBXGroup;
 			children = (
 				78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */,
-				78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */,
 				78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */,
 			);
 			path = LoadingOverlay;
+			sourceTree = "<group>";
+		};
+		78E5A0EB266B308100CD99A1 /* LoaderAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */,
+				78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */,
+				78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */,
+			);
+			path = LoaderAnimations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +493,7 @@
 				784905D92666B36B00344EAC /* PasswordReset.swift in Sources */,
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
+				78E5A0E1266B1C7F00CD99A1 /* LoadingDots.swift in Sources */,
 				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
 				78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
@@ -505,6 +513,7 @@
 				78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */,
 				784905E92667169A00344EAC /* ResetPWNavLink.swift in Sources */,
 				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,
+				78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */,
 				784905C62661A62F00344EAC /* Line.swift in Sources */,
 				784905D72666B0EE00344EAC /* SignUp.swift in Sources */,
 				784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */,
