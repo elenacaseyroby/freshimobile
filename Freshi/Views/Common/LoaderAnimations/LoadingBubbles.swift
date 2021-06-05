@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LoadingBubbles: View {
     var color: Color
-    var width: CGFloat = 80
     
     // variabales
     var diameter: CGFloat = 25
@@ -19,7 +18,7 @@ struct LoadingBubbles: View {
     
     var body: some View {
         HStack {
-            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: self.width/5){
+            HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15){
                 Circle()
                     .fill(self.color)
                     .frame(width: self.diameter, height: self.diameter)
