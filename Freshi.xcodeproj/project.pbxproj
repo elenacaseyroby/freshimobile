@@ -42,6 +42,7 @@
 		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
 		78E5A0DB266AA18800CD99A1 /* LoadingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */; };
+		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSpinner.swift; sourceTree = "<group>"; };
+		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */,
+				78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */,
 				78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */,
 			);
 			path = LoadingOverlay;
@@ -484,6 +487,7 @@
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
 				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
+				78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,

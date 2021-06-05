@@ -12,10 +12,9 @@ struct LoadingOverlay: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(width: .infinity, height: .infinity)
                 .background(Color("midContrast"))
-                .opacity(0.35)
-            LoadingSpinner(
+                .opacity(0.3)
+            CircleLoader(
                 backgroundColor: Color("highContrast"),
                 foregroundColor: Color("interactiveFocus"))
             
