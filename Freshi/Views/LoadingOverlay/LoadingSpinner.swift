@@ -64,13 +64,13 @@ struct SpinnerCircle: View {
         VStack {
             Circle()
                 .trim(from: 0.0, to: 0.2)
-                .stroke(self.color, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .stroke(self.color, style: StrokeStyle(lineWidth: 15, lineCap: .round))
                 .rotationEffect(
                     .degrees(
                         adjustedDegrees(
                             degrees: self.angle)))
         }
-        .frame(width: 30, height: 30)
+        .frame(width: 50, height: 50)
     }
 }
 
@@ -78,7 +78,7 @@ struct BackgroundCircle: View {
     var color: Color
     var body: some View {
         Circle()
-            .fill(color)
+            .stroke(self.color, style: StrokeStyle(lineWidth: 15, lineCap: .round))
             .frame(width: 50, height: 50)
     }
 }
