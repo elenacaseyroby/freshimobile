@@ -13,6 +13,8 @@ struct ProgressBar: View {
     
     // variables
     var height: CGFloat = 5
+    var backgroundColor: Color = Color("lowContrast")
+    var color: Color = Color("interactiveFocus")
     
     
     
@@ -24,7 +26,7 @@ struct ProgressBar: View {
             ZStack {
                 // background line
                 Rectangle()
-                    .fill(Color("lowContrast"))
+                    .fill(self.backgroundColor)
                     .frame(
                         width: geo.size.width,
                         height: self.height
@@ -32,7 +34,7 @@ struct ProgressBar: View {
                 // progress line
                 HStack {
                     Rectangle()
-                        .fill(Color("interactiveFocus"))
+                        .fill(self.color)
                         // Animates the line from the previous percentage to the current percentage.
                         .frame(
                             width: self.animate ? (geo.size.width * self.toPercent) : (geo.size.width * self.fromPercent),
@@ -55,6 +57,8 @@ struct ProgressBar: View {
 
 struct ProgressBar_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressBar(fromPercent: 0.1, toPercent: 0.9)
+        ProgressBar(
+            fromPercent: 0.1,
+            toPercent: 0.9)
     }
 }
