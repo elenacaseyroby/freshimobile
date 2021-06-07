@@ -45,6 +45,8 @@
 		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
 		78E5A0E1266B1C7F00CD99A1 /* LoadingDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */; };
 		78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */; };
+		78E5A0ED266E9A5300CD99A1 /* FreshiUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */; };
+		78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
 		78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDots.swift; sourceTree = "<group>"; };
 		78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBubbles.swift; sourceTree = "<group>"; };
+		78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiUsername.swift; sourceTree = "<group>"; };
+		78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiPassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				784905D426658C2800344EAC /* StretchyButton.swift */,
+				78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */,
+				78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */,
 				7829A4C3266868E600488394 /* FreshiTextbox.swift */,
 				789CA5462660471700A1CD5E /* FontStyle.swift */,
 			);
@@ -517,7 +523,9 @@
 				784905C62661A62F00344EAC /* Line.swift in Sources */,
 				784905D72666B0EE00344EAC /* SignUp.swift in Sources */,
 				784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */,
+				78E5A0ED266E9A5300CD99A1 /* FreshiUsername.swift in Sources */,
 				784905E32667106A00344EAC /* SignUpNavButton.swift in Sources */,
+				78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,6 +71,9 @@ struct LogIn: View {
     
     // log in through API
     func logIn(username: String, password: String) {
+        // On submit, set isLoading to true until API auths or denies.
+        // This will trigger loading dots.
+        self.isLoading = true
         // clear API error message if there was one from a prev login:
         self.apiErrorMessage = nil
         // try login
@@ -93,9 +96,6 @@ struct LogIn: View {
         if self.isLoading {
             return
         }
-        // On submit, set isLoading to true until API auths or denies.
-        // This will trigger loading dots.
-        self.isLoading = true
         let errorsExist = self.checkForErrors()
         // if errors exist, don't try  to log in.
         if errorsExist {
@@ -114,31 +114,29 @@ struct LogIn: View {
                 Line()
             }
             // Textboxes
-            TextField("Username", text: $username, onEditingChanged: {
+            TextField("username", text: $username, onEditingChanged: {
                 (editingChanged) in
                 if editingChanged {
                     self.activeTextbox = LoginActiveTextbox.username
                 }
             })
                 .disableAutocorrection(true)
-                .freshiTextbox(
+                .freshiUsername(
                     state: self.textboxState(
                         thisTextbox: LoginActiveTextbox.username,
                         activeTextBox: self.activeTextbox,
                         error: self.usernameError),
                     errorMessage: self.usernameErrorMessage
                 )
-            SecureField("Enter a password", text: $password)
-                .freshiTextbox(
+            SecureField("password", text: $password)
+                .freshiPassword(
                     state: self.textboxState(
                         thisTextbox: LoginActiveTextbox.password,
                         activeTextBox: self.activeTextbox,
                         error: self.passwordError),
-                    errorMessage: self.passwordErrorMessage
-                )
-                .onTapGesture {
-                    self.activeTextbox = LoginActiveTextbox.password
-                }
+                    errorMessage: self.passwordErrorMessage,
+                    onTap: {
+                        self.activeTextbox = LoginActiveTextbox.password})
             // render API error message
             if let apiErrorMessage = self.apiErrorMessage {
                 FormErrorMessage(error: apiErrorMessage)
