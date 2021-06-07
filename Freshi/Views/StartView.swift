@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StartView: View {
     @EnvironmentObject var auth: Auth
+    @EnvironmentObject var loader: Loader
     
     // init runs everytime the auth state changes.
     init(auth: Auth) {
@@ -19,13 +20,18 @@ struct StartView: View {
     }
     
     var body: some View {
-        // If creds in state, show logged in view.
-        if auth.isloggedIn! {
-            LoggedInView()
-        // If no creds, show logged out view.
-        } else {
-            Landing()
+        VStack {
+            // If creds in state, show logged in view.
+            if auth.isloggedIn! {
+                LoggedInView()
+            // If no creds, show logged out view.
+            } else {
+                Landing()
+            }
         }
+        .overlay(
+            LoadingOverlay(animation:LoaderAnimation.bubbles, isLoading: self.loader.showLoadingOverlay)
+         )
     }
 }
 

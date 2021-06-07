@@ -41,12 +41,11 @@
 		789CA5472660471700A1CD5E /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* FontStyle.swift */; };
 		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
-		78E5A0DB266AA18800CD99A1 /* LoadingSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */; };
 		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
-		78E5A0E1266B1C7F00CD99A1 /* LoadingDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */; };
 		78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */; };
 		78E5A0ED266E9A5300CD99A1 /* FreshiUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */; };
 		78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */; };
+		78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F0266EA49300CD99A1 /* Loader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,12 +106,11 @@
 		789CA5462660471700A1CD5E /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
-		78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSpinner.swift; sourceTree = "<group>"; };
 		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
-		78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDots.swift; sourceTree = "<group>"; };
 		78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBubbles.swift; sourceTree = "<group>"; };
 		78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiUsername.swift; sourceTree = "<group>"; };
 		78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiPassword.swift; sourceTree = "<group>"; };
+		78E5A0F0266EA49300CD99A1 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				789CA52E2655C44600A1CD5E /* Auth.swift */,
+				78E5A0F0266EA49300CD99A1 /* Loader.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -346,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */,
-				78E5A0DA266AA18800CD99A1 /* LoadingSpinner.swift */,
 			);
 			path = LoadingOverlay;
 			sourceTree = "<group>";
@@ -355,7 +353,6 @@
 			isa = PBXGroup;
 			children = (
 				78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */,
-				78E5A0E0266B1C7F00CD99A1 /* LoadingDots.swift */,
 				78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */,
 			);
 			path = LoaderAnimations;
@@ -495,11 +492,9 @@
 				784905E126670AAD00344EAC /* LogInNavButton.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,
-				78E5A0DB266AA18800CD99A1 /* LoadingSpinner.swift in Sources */,
 				784905D92666B36B00344EAC /* PasswordReset.swift in Sources */,
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
-				78E5A0E1266B1C7F00CD99A1 /* LoadingDots.swift in Sources */,
 				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
 				78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
@@ -524,6 +519,7 @@
 				784905D72666B0EE00344EAC /* SignUp.swift in Sources */,
 				784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */,
 				78E5A0ED266E9A5300CD99A1 /* FreshiUsername.swift in Sources */,
+				78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */,
 				784905E32667106A00344EAC /* SignUpNavButton.swift in Sources */,
 				78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */,
 			);

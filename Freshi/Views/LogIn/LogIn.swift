@@ -14,6 +14,7 @@ enum LoginActiveTextbox {
 struct LogIn: View {
     // authentication state for app
     @EnvironmentObject var auth: Auth
+    @EnvironmentObject var loader: Loader
     
     // username textbox state
     @State var username: String = ""
@@ -30,9 +31,6 @@ struct LogIn: View {
     
     // API error message
     @State var apiErrorMessage: String? = nil
-    
-    // Loading state
-    @State var isLoading: Bool = false
     
     // func to decide state of textbox, ie which color border surrounds it.
     func textboxState(
@@ -71,9 +69,8 @@ struct LogIn: View {
     
     // log in through API
     func logIn(username: String, password: String) {
-        // On submit, set isLoading to true until API auths or denies.
-        // This will trigger loading dots.
-        self.isLoading = true
+        // On submit, show loading screen until API auths or denies.
+        loader.showLoadingOverlay = true
         // clear API error message if there was one from a prev login:
         self.apiErrorMessage = nil
         // try login
@@ -85,17 +82,15 @@ struct LogIn: View {
             if let requestError = requestError {
                 self.apiErrorMessage = requestError.errorMessage
             }
-            // Once response is processed, set isLoading to false.
-            // This will stop loading dots.
-            self.isLoading = false
+            // Once response is processed, loading screen disappears.
+            // Must send state update back to the main thread with DispatchQueue to update UI.
+            DispatchQueue.main.async {
+                loader.showLoadingOverlay = false
+            }
         })
     }
     
     func submit() {
-        // Don't allow click on submit if is loading from last submit.
-        if self.isLoading {
-            return
-        }
         let errorsExist = self.checkForErrors()
         // if errors exist, don't try  to log in.
         if errorsExist {
@@ -148,10 +143,6 @@ struct LogIn: View {
                 Image("dot")
                 ResetPWNavLink(label: "Forgot username or password?")
             }
-            // Show loading dots on loading.
-            if self.isLoading {
-                LoadingBubbles(color: Color("midContrast"))
-            }
             // Buttons
             HStack(alignment: .center, spacing: 10){
                 Button("Log in") {
@@ -170,9 +161,6 @@ struct LogIn: View {
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
         .background(Color("background"))
-//        .overlay(
-//            LoadingOverlay(animation:LoaderAnimation.bubbles, isLoading: self.isLoading)
-//         )
     }
 }
 // strictly for dev previews in xcode.

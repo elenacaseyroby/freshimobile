@@ -8,11 +8,11 @@
 import SwiftUI
 
 enum LoaderAnimation {
-    case circle, bubbles, dots
+    case circle, bubbles
 }
 
 struct LoadingOverlay: View {
-    var animation: LoaderAnimation = LoaderAnimation.circle
+    var animation: LoaderAnimation = LoaderAnimation.bubbles
     var isLoading: Bool = false
     
         
@@ -20,17 +20,23 @@ struct LoadingOverlay: View {
         ZStack {
             if self.isLoading {
                 Rectangle()
-                    .background(Color("midContrast"))
-                    .opacity(0.3)
-                if self.animation == LoaderAnimation.circle {
-                    CircleLoader(
-                        backgroundColor: Color("highContrast"),
-                        foregroundColor: Color("interactiveFocus"))
-                } else if self.animation == LoaderAnimation.bubbles {
-                    LoadingBubbles(color: Color("highContrast"))
-                } else {
-                    LoadingDots(color: Color("highContrast"))
+                    .background(Color("lowContrast"))
+                    .opacity(0.15)
+                ZStack {
+                    // circle loader or bubbles based on arguments.
+                    if self.animation == LoaderAnimation.circle {
+                        CircleLoader(
+                            backgroundColor: Color("midContrast"),
+                            foregroundColor: Color("background"))
+                    }  else {
+                        LoadingBubbles(color: Color("background"))
+                    }
                 }
+                .padding(20)
+//                .frame(width: 120, height: 120)
+                .background(Color("highContrast"))
+                .opacity(0.8)
+                .cornerRadius(16)
             }
         }
     }
@@ -38,6 +44,8 @@ struct LoadingOverlay: View {
 
 struct LoadingOverlay_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingOverlay()
+        LoadingOverlay(
+            animation: LoaderAnimation.bubbles,
+            isLoading: true)
     }
 }
