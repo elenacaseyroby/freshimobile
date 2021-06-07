@@ -47,6 +47,7 @@
 		78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */; };
 		78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F0266EA49300CD99A1 /* Loader.swift */; };
 		78E5A0F4266EB3EB00CD99A1 /* roundToDecPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */; };
+		78E5A0F6266EBE5200CD99A1 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiPassword.swift; sourceTree = "<group>"; };
 		78E5A0F0266EA49300CD99A1 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundToDecPlace.swift; sourceTree = "<group>"; };
+		78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 				78E5A0EB266B308100CD99A1 /* LoaderAnimations */,
 				784905C32661A17E00344EAC /* Header.swift */,
 				784905C52661A62F00344EAC /* Line.swift */,
+				78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */,
 				784905D02665717B00344EAC /* StretchyImage.swift */,
 				7829A4C52669287C00488394 /* FormErrorMessage.swift */,
 			);
@@ -516,6 +519,7 @@
 				784905E7266711B900344EAC /* TermsNavLink.swift in Sources */,
 				78E5A0F4266EB3EB00CD99A1 /* roundToDecPlace.swift in Sources */,
 				784905C926653FFE00344EAC /* StartView.swift in Sources */,
+				78E5A0F6266EBE5200CD99A1 /* ProgressBar.swift in Sources */,
 				784905EB266720E100344EAC /* LandingHeader.swift in Sources */,
 				789CA52F2655C44600A1CD5E /* Auth.swift in Sources */,
 				7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */,
