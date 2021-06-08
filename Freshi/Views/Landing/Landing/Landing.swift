@@ -16,10 +16,14 @@ struct Landing: View {
                 .navigationBarHidden(true)
                 StretchyImage(imageName: "landing-collage")
                     .padding(.bottom, 0)
-                LogInNavButton()
-                SignUpNavButton()
+                NavButton(label: "Log in", state: StretchyButtonState.focused) {
+                    LogIn()
+                }
+                NavButton(label: "Create an account", state: StretchyButtonState.neutral) {
+                    SignUp()
+                }
                 // Links
-                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5){
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
                     PrivacyNavLink()
                     Text("&")
                         .fontStyle(fontStyle: .callout)
