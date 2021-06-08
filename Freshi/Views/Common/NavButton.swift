@@ -31,7 +31,7 @@ struct NavButton<Content: View>: View {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
                 // Conditionally render Nav Link to fix "Unable to present. Please file a bug." error.
                 if selection == "destination" {
-                    // Set navigation destination as LogIn view
+                    // Set navigation destination as destination view
                     NavigationLink(
                         destination:
                             self.destination
@@ -43,7 +43,7 @@ struct NavButton<Content: View>: View {
                             EmptyView()
                         }
                 }
-                // Set up button to trigger navigation link to LogIn view destination.
+                // Set up button to trigger navigation link to destination view.
                 Button(self.label){
                     self.selection = "destination"
                 }

@@ -52,6 +52,9 @@ struct ProgressBar: View {
                 }
             })
         }
+        .frame(
+            height: self.height
+        )
     }
 }
 

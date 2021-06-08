@@ -53,6 +53,7 @@
 		78E5A109266FDF2E00CD99A1 /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A108266FDF2E00CD99A1 /* NavButton.swift */; };
 		78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10A266FE55F00CD99A1 /* SignUp.swift */; };
 		78E5A10D266FE8AD00CD99A1 /* NavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10C266FE8AD00CD99A1 /* NavLink.swift */; };
+		78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		78E5A108266FDF2E00CD99A1 /* NavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButton.swift; sourceTree = "<group>"; };
 		78E5A10A266FE55F00CD99A1 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		78E5A10C266FE8AD00CD99A1 /* NavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLink.swift; sourceTree = "<group>"; };
+		78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalNav.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +355,7 @@
 				784905C52661A62F00344EAC /* Line.swift */,
 				78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */,
 				78E5A108266FDF2E00CD99A1 /* NavButton.swift */,
+				78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */,
 				78E5A10C266FE8AD00CD99A1 /* NavLink.swift */,
 				784905D02665717B00344EAC /* StretchyImage.swift */,
 				7829A4C52669287C00488394 /* FormErrorMessage.swift */,
@@ -536,6 +539,7 @@
 				784905D526658C2800344EAC /* StretchyButton.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,
+				78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */,
 				784905D92666B36B00344EAC /* RequestPasswordReset.swift in Sources */,
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
