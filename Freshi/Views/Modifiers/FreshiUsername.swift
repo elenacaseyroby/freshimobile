@@ -8,6 +8,19 @@
 import SwiftUI
 
 
+func getUsernameError(username: String) -> String? {
+    if username.count == 0 {
+        return "Please enter username."
+    }
+    if username.count < 3 {
+        return "Username too short. Must be 3 - 16 characters in length."
+    }
+    if username.count > 16 {
+        return "Username too long. Must be 3 - 16 characters in length."
+    }
+    return nil
+}
+
 struct FreshiUsername: ViewModifier {
     var state: TextboxState = TextboxState.neutral
     var errorMessage: String? = nil
@@ -20,6 +33,7 @@ struct FreshiUsername: ViewModifier {
                     state: self.state,
                     errorMessage: self.errorMessage
                 )
+                .disableAutocorrection(true)
                 .autocapitalization(.none)
         }
     }

@@ -7,35 +7,6 @@
 
 import SwiftUI
 
-enum TextboxState {
-    case neutral, focused, error
-}
-
-func getUsernameError(username: String) -> String? {
-    if username.count == 0 {
-        return "Please enter username."
-    }
-    if username.count < 3 {
-        return "Username too short. Must be 3 - 16 characters in length."
-    }
-    if username.count > 16 {
-        return "Username too long. Must be 3 - 16 characters in length."
-    }
-    return nil
-}
-
-func getPasswordError(username: String) -> String? {
-    if username.count == 0 {
-        return "Please enter password."
-    }
-    if username.count < 6 {
-        return "Password too short. Must be 6 - 30 characters in length."
-    }
-    if username.count > 30 {
-        return "Password too long. Must be 6 - 30 characters in length."
-    }
-    return nil
-}
 
 struct FreshiTextbox: ViewModifier {
     var state: TextboxState = TextboxState.neutral

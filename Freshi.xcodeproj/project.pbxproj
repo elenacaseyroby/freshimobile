@@ -48,6 +48,8 @@
 		78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F0266EA49300CD99A1 /* Loader.swift */; };
 		78E5A0F4266EB3EB00CD99A1 /* roundToDecPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */; };
 		78E5A0F6266EBE5200CD99A1 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */; };
+		78E5A0F9266F00E800CD99A1 /* UsernameTextbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F8266F00E800CD99A1 /* UsernameTextbox.swift */; };
+		78E5A0FB266F029800CD99A1 /* TextboxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0FA266F029800CD99A1 /* TextboxState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		78E5A0F0266EA49300CD99A1 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundToDecPlace.swift; sourceTree = "<group>"; };
 		78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		78E5A0F8266F00E800CD99A1 /* UsernameTextbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextbox.swift; sourceTree = "<group>"; };
+		78E5A0FA266F029800CD99A1 /* TextboxState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextboxState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 		7829A4BD26681FB900488394 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				78E5A0FA266F029800CD99A1 /* TextboxState.swift */,
 				784905D426658C2800344EAC /* StretchyButton.swift */,
 				78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */,
 				78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */,
@@ -337,6 +342,7 @@
 		789CA52A2655C2D600A1CD5E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				78E5A0F7266F009E00CD99A1 /* Forms */,
 				78E5A0EB266B308100CD99A1 /* LoaderAnimations */,
 				784905C32661A17E00344EAC /* Header.swift */,
 				784905C52661A62F00344EAC /* Line.swift */,
@@ -370,6 +376,14 @@
 				78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		78E5A0F7266F009E00CD99A1 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				78E5A0F8266F00E800CD99A1 /* UsernameTextbox.swift */,
+			);
+			path = Forms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,9 +536,11 @@
 				78E5A0F6266EBE5200CD99A1 /* ProgressBar.swift in Sources */,
 				784905EB266720E100344EAC /* LandingHeader.swift in Sources */,
 				789CA52F2655C44600A1CD5E /* Auth.swift in Sources */,
+				78E5A0FB266F029800CD99A1 /* TextboxState.swift in Sources */,
 				7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */,
 				789CA5372655D41500A1CD5E /* User.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
+				78E5A0F9266F00E800CD99A1 /* UsernameTextbox.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				784905E52667117B00344EAC /* PrivacyNavLink.swift in Sources */,
 				78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */,
