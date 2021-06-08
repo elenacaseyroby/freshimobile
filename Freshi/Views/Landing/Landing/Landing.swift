@@ -24,13 +24,19 @@ struct Landing: View {
                 }
                 // Links
                 HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
-                    PrivacyNavLink()
+                    NavLink(label: "Privacy", color: Color("info")) {
+                        PrivacyPolicy()
+                    }
                     Text("&")
                         .fontStyle(fontStyle: .callout)
                         .foregroundColor(Color("highContrast"))
-                    TermsNavLink()
+                    NavLink(label: "Terms", color: Color("info")) {
+                        TermsAndConditions()
+                    }
                     Image("dot")
-                    ResetPWNavLink(label: "Reset Password")
+                    NavLink(label: "Reset Password", color: Color("interactiveFocus")) {
+                        RequestPasswordReset()
+                    }
                 }
                 Text("© freshi 2021")
                 .fontStyle(fontStyle: .caption)

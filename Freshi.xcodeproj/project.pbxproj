@@ -19,12 +19,9 @@
 		784905D12665717C00344EAC /* StretchyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D02665717B00344EAC /* StretchyImage.swift */; };
 		784905D526658C2800344EAC /* StretchyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D426658C2800344EAC /* StretchyButton.swift */; };
 		784905D72666B0EE00344EAC /* SignUpEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D62666B0EE00344EAC /* SignUpEmail.swift */; };
-		784905D92666B36B00344EAC /* PasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D82666B36B00344EAC /* PasswordReset.swift */; };
+		784905D92666B36B00344EAC /* RequestPasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D82666B36B00344EAC /* RequestPasswordReset.swift */; };
 		784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DA2666B3CC00344EAC /* TermsAndConditions.swift */; };
 		784905DD2666B44600344EAC /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DC2666B44600344EAC /* PrivacyPolicy.swift */; };
-		784905E52667117B00344EAC /* PrivacyNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E42667117B00344EAC /* PrivacyNavLink.swift */; };
-		784905E7266711B900344EAC /* TermsNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E6266711B900344EAC /* TermsNavLink.swift */; };
-		784905E92667169A00344EAC /* ResetPWNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905E82667169A00344EAC /* ResetPWNavLink.swift */; };
 		784905EB266720E100344EAC /* LandingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905EA266720E100344EAC /* LandingHeader.swift */; };
 		786775C72655B78100716DCE /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C62655B78100716DCE /* FreshiApp.swift */; };
 		786775CB2655B78600716DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CA2655B78600716DCE /* Assets.xcassets */; };
@@ -55,6 +52,7 @@
 		78E5A106266FD58A00CD99A1 /* raiseToPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A105266FD58A00CD99A1 /* raiseToPower.swift */; };
 		78E5A109266FDF2E00CD99A1 /* NavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A108266FDF2E00CD99A1 /* NavButton.swift */; };
 		78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10A266FE55F00CD99A1 /* SignUp.swift */; };
+		78E5A10D266FE8AD00CD99A1 /* NavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10C266FE8AD00CD99A1 /* NavLink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,12 +85,9 @@
 		784905D02665717B00344EAC /* StretchyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyImage.swift; sourceTree = "<group>"; };
 		784905D426658C2800344EAC /* StretchyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyButton.swift; sourceTree = "<group>"; };
 		784905D62666B0EE00344EAC /* SignUpEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmail.swift; sourceTree = "<group>"; };
-		784905D82666B36B00344EAC /* PasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordReset.swift; sourceTree = "<group>"; };
+		784905D82666B36B00344EAC /* RequestPasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordReset.swift; sourceTree = "<group>"; };
 		784905DA2666B3CC00344EAC /* TermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
 		784905DC2666B44600344EAC /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
-		784905E42667117B00344EAC /* PrivacyNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyNavLink.swift; sourceTree = "<group>"; };
-		784905E6266711B900344EAC /* TermsNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsNavLink.swift; sourceTree = "<group>"; };
-		784905E82667169A00344EAC /* ResetPWNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPWNavLink.swift; sourceTree = "<group>"; };
 		784905EA266720E100344EAC /* LandingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeader.swift; sourceTree = "<group>"; };
 		786775C32655B78100716DCE /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786775C62655B78100716DCE /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
@@ -129,6 +124,7 @@
 		78E5A105266FD58A00CD99A1 /* raiseToPower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raiseToPower.swift; sourceTree = "<group>"; };
 		78E5A108266FDF2E00CD99A1 /* NavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavButton.swift; sourceTree = "<group>"; };
 		78E5A10A266FE55F00CD99A1 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		78E5A10C266FE8AD00CD99A1 /* NavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +155,6 @@
 		7829A4B726681C3400488394 /* T&C */ = {
 			isa = PBXGroup;
 			children = (
-				784905E6266711B900344EAC /* TermsNavLink.swift */,
 				784905DA2666B3CC00344EAC /* TermsAndConditions.swift */,
 			);
 			path = "T&C";
@@ -168,7 +163,6 @@
 		7829A4B826681C5200488394 /* PrivacyPolicy */ = {
 			isa = PBXGroup;
 			children = (
-				784905E42667117B00344EAC /* PrivacyNavLink.swift */,
 				784905DC2666B44600344EAC /* PrivacyPolicy.swift */,
 			);
 			path = PrivacyPolicy;
@@ -190,8 +184,7 @@
 		7829A4BA26681C7A00488394 /* PasswordReset */ = {
 			isa = PBXGroup;
 			children = (
-				784905E82667169A00344EAC /* ResetPWNavLink.swift */,
-				784905D82666B36B00344EAC /* PasswordReset.swift */,
+				784905D82666B36B00344EAC /* RequestPasswordReset.swift */,
 			);
 			path = PasswordReset;
 			sourceTree = "<group>";
@@ -360,6 +353,7 @@
 				784905C52661A62F00344EAC /* Line.swift */,
 				78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */,
 				78E5A108266FDF2E00CD99A1 /* NavButton.swift */,
+				78E5A10C266FE8AD00CD99A1 /* NavLink.swift */,
 				784905D02665717B00344EAC /* StretchyImage.swift */,
 				7829A4C52669287C00488394 /* FormErrorMessage.swift */,
 			);
@@ -542,7 +536,7 @@
 				784905D526658C2800344EAC /* StretchyButton.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,
-				784905D92666B36B00344EAC /* PasswordReset.swift in Sources */,
+				784905D92666B36B00344EAC /* RequestPasswordReset.swift in Sources */,
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
 				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
@@ -555,7 +549,6 @@
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
 				7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */,
 				7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */,
-				784905E7266711B900344EAC /* TermsNavLink.swift in Sources */,
 				78E5A102266FD4BC00CD99A1 /* SignUpComplete.swift in Sources */,
 				78E5A100266FD4B000CD99A1 /* SignUpPassword.swift in Sources */,
 				78E5A0F4266EB3EB00CD99A1 /* roundToDecPlace.swift in Sources */,
@@ -563,16 +556,15 @@
 				78E5A0F6266EBE5200CD99A1 /* ProgressBar.swift in Sources */,
 				784905EB266720E100344EAC /* LandingHeader.swift in Sources */,
 				789CA52F2655C44600A1CD5E /* Auth.swift in Sources */,
+				78E5A10D266FE8AD00CD99A1 /* NavLink.swift in Sources */,
 				78E5A0FB266F029800CD99A1 /* TextboxState.swift in Sources */,
 				7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */,
 				789CA5372655D41500A1CD5E /* User.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
 				78E5A0F9266F00E800CD99A1 /* UsernameTextbox.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
-				784905E52667117B00344EAC /* PrivacyNavLink.swift in Sources */,
 				78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */,
 				78E5A0FD266FD45A00CD99A1 /* SignUpUsername.swift in Sources */,
-				784905E92667169A00344EAC /* ResetPWNavLink.swift in Sources */,
 				78E5A104266FD56E00CD99A1 /* percentAsDecimal.swift in Sources */,
 				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,
 				78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */,

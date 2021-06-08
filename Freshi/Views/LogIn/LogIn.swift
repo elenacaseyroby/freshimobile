@@ -118,7 +118,6 @@ struct LogIn: View {
                     self.activeTextbox = ActiveTextbox.username
                 }
             })
-                .disableAutocorrection(true)
                 .freshiUsername(
                     state: self.textboxState(
                         thisTextbox: ActiveTextbox.username,
@@ -142,9 +141,13 @@ struct LogIn: View {
     
             // Links
             HStack(alignment: .center, spacing: 5){
-                SignUpNavLink()
+                NavLink(label: "Sign up", color: Color("interactiveFocus")) {
+                    SignUp()
+                }
                 Image("dot")
-                ResetPWNavLink(label: "Forgot username or password?")
+                NavLink(label: "Forgot username or password?", color: Color("interactiveFocus")) {
+                    RequestPasswordReset()
+                }
             }
             // Buttons
             HStack(alignment: .center, spacing: 10){
