@@ -21,7 +21,24 @@ func getUsernameError(username: String) -> String? {
     return nil
 }
 
-struct FreshiUsername: ViewModifier {
+func getEmailError(email: String) -> String? {
+    if email.count == 0 {
+        return "Please enter username."
+    }
+    if email.count < 5 {
+        return "Please enter valid email"
+    }
+    if !email.contains("@") {
+        return "Please enter valid email"
+    }
+    if email.count > 60 {
+        return "Email too long. Must less than 60 characters in length."
+    }
+    return nil
+}
+
+// Use for username and email textboxes
+struct FreshiLogin: ViewModifier {
     var state: TextboxState = TextboxState.neutral
     var errorMessage: String? = nil
 
@@ -40,7 +57,7 @@ struct FreshiUsername: ViewModifier {
 }
 
 extension View {
-    func freshiUsername(state: TextboxState = TextboxState.neutral, errorMessage: String? = nil) -> some View {
-        self.modifier(FreshiUsername(state: state, errorMessage: errorMessage))
+    func freshiLogin(state: TextboxState = TextboxState.neutral, errorMessage: String? = nil) -> some View {
+        self.modifier(FreshiLogin(state: state, errorMessage: errorMessage))
     }
 }

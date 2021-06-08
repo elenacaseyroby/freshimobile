@@ -1,28 +1,38 @@
 //
-//  SignUpEmail.swift
+//  SignUpPassword.swift
 //  Freshi
 //
-//  Created by Casey Roby on 6/1/21.
+//  Created by Casey Roby on 6/8/21.
 //
 
 import Foundation
 import SwiftUI
 
 
-struct SignUpEmail: View {
-    var username: Binding<String>
+struct SignUpPassword: View {
+    @State var username: Binding<String>
+    @State var email: Binding<String>
+    
+
     // This will only be set if you get to the last page of the form, submit and it fails and gets naved back here.
     var apiErrorMessage: String? = nil
     
-    @State var email: String = ""
+    @State var password: String = ""
     
     // controls progress bar
-    var currentPage: Float = 2
+    var currentPage: Float = 3
     var totalPages: Float = 4
     
     @State var isActive: Bool = false
-    @State var errorMessage: String? = nil
+    @State var errorMessage1: String? = nil
+    @State var errorMessage2: String? = nil
     @State var navigateToNextPage: Bool = false
+    // focused textbox state
+    @State var activeTextbox: ActiveTextbox = ActiveTextbox.none
+    
+    enum ActiveTextbox {
+        case first, second, none
+    }
     
     func textboxState(
         isActive: Bool,
@@ -30,6 +40,20 @@ struct SignUpEmail: View {
         if errorMessage != nil {
             return TextboxState.error
         } else if isActive {
+            return TextboxState.focused
+        }
+        return TextboxState.neutral
+    }
+    // func to decide state of textbox, ie which color border surrounds it.
+    func textboxState(
+        thisTextbox: ActiveTextbox,
+        activeTextBox: ActiveTextbox,
+        error: Bool
+    ) -> TextboxState {
+        if error {
+            return TextboxState.error
+        }
+        if activeTextbox == thisTextbox {
             return TextboxState.focused
         }
         return TextboxState.neutral
@@ -50,26 +74,35 @@ struct SignUpEmail: View {
             }
             // Form
             
-            // Email label
+            // Password label
             HStack(alignment: .center, spacing: 5) {
-                Text("Enter your email address")
+                Text("Choose a strong password")
                     .foregroundColor(Color("highContrast"))
                     .fontStyle(fontStyle: .headline)
                 Spacer()
             }
-            // Email textbox
-            TextField("email", text: $email, onEditingChanged: {
-                (editingChanged) in
-                if editingChanged {
-                    self.isActive = true
-                }
-            })
-                .freshiLogin(
-                    state: self.textboxState(
-                        isActive: self.isActive,
-                        errorMessage: self.errorMessage),
-                    errorMessage: self.errorMessage
-                )
+            // Password textbox 1
+            SecureField("password", text: $password)
+                .freshiPassword(
+                    state: TextboxState.neutral,
+//                    state: self.textboxState(
+//                        thisTextbox: ActiveTextbox.first,
+//                        activeTextBox: self.activeTextbox,
+//                        error: false),
+                    errorMessage: self.errorMessage1,
+                    onTap: {
+                        self.activeTextbox = ActiveTextbox.first})
+            // Password textbox 2
+//            SecureField("password", text: $password)
+//                .freshiPassword(
+//                    state: TextboxState.neutral,
+////                    state: self.textboxState(
+////                        thisTextbox: ActiveTextbox.first,
+////                        activeTextBox: self.activeTextbox,
+////                        error: false),
+//                    errorMessage: self.errorMessage1,
+//                    onTap: {
+//                        self.activeTextbox = ActiveTextbox.first})
             // render API error message
             if let apiErrorMessage = self.apiErrorMessage {
                 FormErrorMessage(error: apiErrorMessage)
@@ -86,29 +119,29 @@ struct SignUpEmail: View {
                     Spacer()
                 }
                 // Next Button & Nav
-                Button("Next"){
-                    let error = getEmailError(email: self.email)
-                    // If error exists, show error and stay on page
-                    if error != nil {
-                        self.errorMessage = error
-                        return
-                    }
-                    // If no error, nav to next page
+                Button("Next") {
+//                    let error1 = getPasswordError(password: self.password1)
+//                    // If error exists, show error and stay on page
+//                    if error != nil {
+//                        self.errorMessage1 = error
+//                        return
+//                    }
+//                    // If no error, nav to next page
                     self.navigateToNextPage = true
                 }
                 // can't click button until email 5 char in length
-                .disabled(self.email.count < 5)
+                .disabled(self.password.count < 8)
                 .stretchyButton(
                     state: (
                         // next button has disabled style until email 5 char in length
-                        self.email.count < 5 ?
+                        self.password.count < 8 ?
                         StretchyButtonState.disabled :
                         StretchyButtonState.focused))
             }
             
             // Navigates to next page with nav link if navigateToNextPage is true.
             ConditionalNav(navigateToDestination: self.navigateToNextPage) {
-                SignUpPassword(username: username, email: $email)
+                SignUpComplete()
             }
             Spacer()
         }
@@ -118,13 +151,14 @@ struct SignUpEmail: View {
         .onAppear() {
             // keyboard appears immediately
         }
-        
+        .onTapGesture {
+            self.activeTextbox = ActiveTextbox.none
+        }
     }
 }
 //// strictly for dev previews in xcode.
-//struct SignUpEmail_Previews: PreviewProvider {
+//struct SignUpPassword_Previews: PreviewProvider {
 //    static var previews: some View {
-//        SignUpEmail(username: <#T##Binding<String>#>)
+//        SignUpPassword(username: <#T##Binding<String>#>, password: <#T##Binding<String>#>)
 //    }
 //}
-

@@ -14,6 +14,7 @@ struct SignUpUsername: View {
     
     @State var username: String = ""
     
+    // controls progress bar
     var currentPage: Float = 1
     var totalPages: Float = 4
     
@@ -61,7 +62,7 @@ struct SignUpUsername: View {
                     self.isActive = true
                 }
             })
-                .freshiUsername(
+                .freshiLogin(
                     state: self.textboxState(
                         isActive: self.isActive,
                         errorMessage: self.errorMessage),
@@ -71,46 +72,51 @@ struct SignUpUsername: View {
             if let apiErrorMessage = self.apiErrorMessage {
                 FormErrorMessage(error: apiErrorMessage)
             }
-            // log in link
-            HStack(alignment: .center, spacing: 5) {
-                Text("Already have an account?")
-                    .foregroundColor(Color("highContrast"))
-                    .fontStyle(fontStyle: .callout)
-                NavLink(label: "Log in", color: Color("interactiveFocus")) {
-                    LogIn()
+            VStack(alignment: .center, spacing: 10) {
+                // log in link
+                HStack(alignment: .center, spacing: 5) {
+                    Text("Already have an account?")
+                        .foregroundColor(Color("highContrast"))
+                        .fontStyle(fontStyle: .callout)
+                    NavLink(label: "Log in", color: Color("interactiveFocus")) {
+                        LogIn()
+                    }
+                    Spacer()
                 }
-                Spacer()
-            }
-            // Next Button & Nav
-            Button("Next"){
-                let error = getUsernameError(username: self.username)
-                // If error exists, show error and stay on page
-                if error != nil {
-                    self.errorMessage = error
-                    return
+                // Next Button & Nav
+                Button("Next"){
+                    let error = getUsernameError(username: self.username)
+                    // If error exists, show error and stay on page
+                    if error != nil {
+                        self.errorMessage = error
+                        return
+                    }
+                    // If no error, nav to next page
+                    self.navigateToNextPage = true
                 }
-                // If no error, nav to next page
-                self.navigateToNextPage = true
+                // can't click button until username 3 char in length
+                .disabled(self.username.count < 3)
+                .stretchyButton(
+                    state: (
+                        // next button has disabled style until username 3 char in length
+                        self.username.count < 3 ?
+                        StretchyButtonState.disabled :
+                        StretchyButtonState.focused))
             }
-            // can't click button until username 3 char in length
-            .disabled(self.username.count < 3)
-            .stretchyButton(
-                state: (
-                    // next button has disabled style until username 3 char in length
-                    self.username.count < 3 ?
-                    StretchyButtonState.disabled :
-                    StretchyButtonState.focused))
             
             // Navigates to next page with nav link if navigateToNextPage is true.
             ConditionalNav(navigateToDestination: self.navigateToNextPage) {
                 SignUpEmail(username: $username)
             }
-            
+            Spacer()
         }
         .background(Color("background"))
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
-        Spacer()
+        .onAppear() {
+            // keyboard appears immediately
+        }
+        
     }
 }
 // strictly for dev previews in xcode.

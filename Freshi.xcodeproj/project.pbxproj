@@ -38,7 +38,7 @@
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
 		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
 		78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */; };
-		78E5A0ED266E9A5300CD99A1 /* FreshiUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */; };
+		78E5A0ED266E9A5300CD99A1 /* FreshiLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EC266E9A5300CD99A1 /* FreshiLogin.swift */; };
 		78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */; };
 		78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F0266EA49300CD99A1 /* Loader.swift */; };
 		78E5A0F4266EB3EB00CD99A1 /* roundToDecPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */; };
@@ -111,7 +111,7 @@
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
 		78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBubbles.swift; sourceTree = "<group>"; };
-		78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiUsername.swift; sourceTree = "<group>"; };
+		78E5A0EC266E9A5300CD99A1 /* FreshiLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiLogin.swift; sourceTree = "<group>"; };
 		78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiPassword.swift; sourceTree = "<group>"; };
 		78E5A0F0266EA49300CD99A1 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundToDecPlace.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 			children = (
 				78E5A0FA266F029800CD99A1 /* TextboxState.swift */,
 				784905D426658C2800344EAC /* StretchyButton.swift */,
-				78E5A0EC266E9A5300CD99A1 /* FreshiUsername.swift */,
+				78E5A0EC266E9A5300CD99A1 /* FreshiLogin.swift */,
 				78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */,
 				7829A4C3266868E600488394 /* FreshiTextbox.swift */,
 				789CA5462660471700A1CD5E /* FontStyle.swift */,
@@ -575,7 +575,7 @@
 				784905C62661A62F00344EAC /* Line.swift in Sources */,
 				784905D72666B0EE00344EAC /* SignUpEmail.swift in Sources */,
 				784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */,
-				78E5A0ED266E9A5300CD99A1 /* FreshiUsername.swift in Sources */,
+				78E5A0ED266E9A5300CD99A1 /* FreshiLogin.swift in Sources */,
 				78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */,
 				78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */,
 			);

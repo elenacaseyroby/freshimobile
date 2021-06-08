@@ -118,7 +118,7 @@ struct LogIn: View {
                     self.activeTextbox = ActiveTextbox.username
                 }
             })
-                .freshiUsername(
+                .freshiLogin(
                     state: self.textboxState(
                         thisTextbox: ActiveTextbox.username,
                         activeTextBox: self.activeTextbox,
