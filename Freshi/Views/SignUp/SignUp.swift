@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SignUp: View {
     var body: some View {
-            // Start with the username page and nav from there.
-            SignUpUsername()
+        // Start with the username page and nav from there.
+        SignUpUsername()
     }
 }

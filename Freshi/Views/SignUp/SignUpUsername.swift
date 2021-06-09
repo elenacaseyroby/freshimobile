@@ -22,6 +22,9 @@ struct SignUpUsername: View {
     @State var errorMessage: String? = nil
     @State var navigateToNextPage: Bool = false
     
+    // State to control exit icon
+    @State var navToRoot: Bool = false
+    
     func textboxState(
         isActive: Bool,
         errorMessage: String? ) -> TextboxState {
@@ -37,7 +40,11 @@ struct SignUpUsername: View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
             // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
-                Header(title: "Create an account")
+                Header(
+                    title: "Create an account",
+                    onExit: {
+                        self.navToRoot = true
+                    })
                 // Show progress from last page to current page.
                 ProgressBar(
                     fromPercent: percentAsDecimal(
@@ -106,7 +113,9 @@ struct SignUpUsername: View {
             
             // Navigates to next page with nav link if navigateToNextPage is true.
             ConditionalNav(navigateToDestination: self.navigateToNextPage) {
-                SignUpEmail(username: $username)
+                SignUpEmail(
+                    username: $username,
+                    navToRoot: $navToRoot)
             }
             Spacer()
         }
@@ -116,6 +125,7 @@ struct SignUpUsername: View {
         .onAppear() {
             // keyboard appears immediately
         }
+        .popToRootNavView(navToRoot: $navToRoot)
         
     }
 }

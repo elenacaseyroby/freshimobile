@@ -31,6 +31,7 @@ struct LogIn: View {
     // API error message
     @State var apiErrorMessage: String? = nil
     
+    // State to control exit icon
     @State var navToRoot: Bool = false
     
     enum ActiveTextbox {

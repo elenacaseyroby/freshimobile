@@ -10,7 +10,9 @@ import SwiftUI
 
 
 struct SignUpEmail: View {
-    var username: Binding<String>
+    @Binding var username: String
+    // State to control exit icon
+    @Binding var navToRoot: Bool
     // This will only be set if you get to the last page of the form, submit and it fails and gets naved back here.
     var apiErrorMessage: String? = nil
     
@@ -23,6 +25,9 @@ struct SignUpEmail: View {
     @State var isActive: Bool = false
     @State var errorMessage: String? = nil
     @State var navigateToNextPage: Bool = false
+    
+    // State to control back arrow
+    @Environment(\.presentationMode) var presentationMode
     
     func textboxState(
         isActive: Bool,
@@ -39,7 +44,11 @@ struct SignUpEmail: View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
             // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
-                Header(title: "Create an account")
+                Header(
+                    title: "Create an account",
+                    onExit: {
+                        self.navToRoot = true
+                    })
                 // Show progress from last page to current page.
                 ProgressBar(
                     fromPercent: percentAsDecimal(
@@ -85,30 +94,43 @@ struct SignUpEmail: View {
                     }
                     Spacer()
                 }
-                // Next Button & Nav
-                Button("Next"){
-                    let error = getEmailError(email: self.email)
-                    // If error exists, show error and stay on page
-                    if error != nil {
-                        self.errorMessage = error
-                        return
+                // Back Button
+                HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image("back-arrow")
                     }
-                    // If no error, nav to next page
-                    self.navigateToNextPage = true
+                    .stretchyButton(
+                        state: StretchyButtonState.neutral,
+                        isSquare: true)
+                    // Next Button & Nav
+                    Button("Next"){
+                        let error = getEmailError(email: self.email)
+                        // If error exists, show error and stay on page
+                        if error != nil {
+                            self.errorMessage = error
+                            return
+                        }
+                        // If no error, nav to next page
+                        self.navigateToNextPage = true
+                    }
+                    // can't click button until email 5 char in length
+                    .disabled(self.email.count < 5)
+                    .stretchyButton(
+                        state: (
+                            // next button has disabled style until email 5 char in length
+                            self.email.count < 5 ?
+                            StretchyButtonState.disabled :
+                            StretchyButtonState.focused))
+                    // Navigates to next page with nav link if navigateToNextPage is true.
+                    ConditionalNav(navigateToDestination: self.navigateToNextPage) {
+                        SignUpPassword(
+                            username: $username,
+                            email: $email,
+                            navToRoot: $navToRoot)
+                    }
                 }
-                // can't click button until email 5 char in length
-                .disabled(self.email.count < 5)
-                .stretchyButton(
-                    state: (
-                        // next button has disabled style until email 5 char in length
-                        self.email.count < 5 ?
-                        StretchyButtonState.disabled :
-                        StretchyButtonState.focused))
-            }
-            
-            // Navigates to next page with nav link if navigateToNextPage is true.
-            ConditionalNav(navigateToDestination: self.navigateToNextPage) {
-                SignUpPassword(username: username, email: $email)
             }
             Spacer()
         }
@@ -118,6 +140,7 @@ struct SignUpEmail: View {
         .onAppear() {
             // keyboard appears immediately
         }
+        .popToRootNavView(navToRoot: $navToRoot)
         
     }
 }

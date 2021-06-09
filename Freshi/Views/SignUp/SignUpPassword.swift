@@ -10,8 +10,10 @@ import SwiftUI
 
 
 struct SignUpPassword: View {
-    @State var username: Binding<String>
-    @State var email: Binding<String>
+    @Binding var username: String
+    @Binding var email: String
+    // State to control exit icon
+    @Binding var navToRoot: Bool
     
 
     // This will only be set if you get to the last page of the form, submit and it fails and gets naved back here.
@@ -63,7 +65,11 @@ struct SignUpPassword: View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
             // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
-                Header(title: "Create an account")
+                Header(
+                    title: "Create an account",
+                    onExit: {
+                        self.navToRoot = true
+                    })
                 // Show progress from last page to current page.
                 ProgressBar(
                     fromPercent: percentAsDecimal(
@@ -154,6 +160,7 @@ struct SignUpPassword: View {
         .onTapGesture {
             self.activeTextbox = ActiveTextbox.none
         }
+        .popToRootNavView(navToRoot: $navToRoot)
     }
 }
 //// strictly for dev previews in xcode.
