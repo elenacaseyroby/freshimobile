@@ -34,6 +34,9 @@ struct LogIn: View {
     // State to control exit icon
     @State var navToRoot: Bool = false
     
+    // State used to pop back one view
+    @Environment(\.presentationMode) var presentationMode
+    
     enum ActiveTextbox {
         case username, password, none
     }
@@ -114,7 +117,7 @@ struct LogIn: View {
                 Header(
                     title: "Log in",
                     onExit: {
-                        self.navToRoot = true
+                        self.presentationMode.wrappedValue.dismiss()
                     })
                 Line()
             }
@@ -174,7 +177,6 @@ struct LogIn: View {
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
         .background(Color("background"))
-        .popToRootNavView(navToRoot: $navToRoot)
     }
 }
 // strictly for dev previews in xcode.
