@@ -11,7 +11,6 @@ import SwiftUI
 struct SignUpUsername: View {
     
     @Binding var username: String
-    @Binding var nextButtonDisabled: Bool
     @Binding var nextPressed: Bool
     @Binding var currentPage: Float
     
@@ -43,21 +42,11 @@ struct SignUpUsername: View {
                     errorMessage: self.errorMessage),
                 errorMessage: self.errorMessage
             )
-        .onAppear() {
-            // disable next button until user has entered min num chars.
-            if self.username.count < 3 {
-                self.nextButtonDisabled = true
-            }
-        }
-        .onChange(of: username) { newValue in
-            // enable next button when user has entered min num chars.
-            if newValue.count >= 3 {
-                self.nextButtonDisabled = false
-            }
-        }
         // If next is pressed, check for errors and move to next textbox.
         .onChange(of: nextPressed) { pressed in
             if pressed {
+                // reset nextPressed
+                self.nextPressed.toggle()
                 // Check for errors
                 let error = getUsernameError(username: self.username)
                 // If error exists, show error and stay on page
@@ -67,8 +56,6 @@ struct SignUpUsername: View {
                 }
                 // If no error, show next set of textboxes
                 self.currentPage += 1
-                // reset nextPressed
-                self.nextPressed.toggle()
             }
         }
     }
@@ -78,7 +65,6 @@ struct SignUpUsername_Previews: PreviewProvider {
     static var previews: some View {
         SignUpUsername(
             username: .constant("ecroby"),
-            nextButtonDisabled: .constant(true),
             nextPressed: .constant(false),
             currentPage: .constant(1))
     }

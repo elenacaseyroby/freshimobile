@@ -35,23 +35,35 @@ struct SignUp: View {
     // State used to pop back one view
     @Environment(\.presentationMode) var presentationMode
     
+    func usernameNextButtonDisabled(username: String) -> Bool {
+        // enable next button when user has entered min num chars.
+        if username.count < 3 {
+            return true
+        }
+        return false
+    }
+    func emailNextButtonDisabled(email: String) -> Bool {
+        // enable next button when email has entered min num chars.
+        if email.count < 5 {
+            return true
+        }
+        return false
+    }
+    
+    func passwordNextButtonDisabled(password: String) -> Bool {
+        // enable next button when pw has entered min num chars.
+        if email.count < 8 {
+            return true
+        }
+        return false
+    }
+    
     var pages: [Float: String] = [
         1: "username",
         2: "email",
         3: "password",
         4: "complete",
     ]
-    
-//    func textboxState(
-//        isActive: Bool,
-//        errorMessage: String? ) -> TextboxState {
-//        if errorMessage != nil {
-//            return TextboxState.error
-//        } else if isActive {
-//            return TextboxState.focused
-//        }
-//        return TextboxState.neutral
-//    }
     
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
@@ -74,31 +86,15 @@ struct SignUp: View {
             if pages[self.currentPage] == "username" {
                 SignUpUsername(
                     username: $username,
-                    nextButtonDisabled: $nextButtonDisabled,
                     nextPressed: $nextPressed,
                     currentPage: $currentPage)
             }
-//
-//            // Username label
-//            HStack(alignment: .center, spacing: 5) {
-//                Text("Choose a unique username")
-//                    .foregroundColor(Color("highContrast"))
-//                    .fontStyle(fontStyle: .headline)
-//                Spacer()
-//            }
-//            // Username textbox
-//            TextField("username", text: $username, onEditingChanged: {
-//                (editingChanged) in
-//                if editingChanged {
-//                    self.isActive = true
-//                }
-//            })
-//                .freshiLogin(
-//                    state: self.textboxState(
-//                        isActive: self.isActive,
-//                        errorMessage: self.errorMessage),
-//                    errorMessage: self.errorMessage
-//                )
+            if pages[self.currentPage] == "email" {
+                SignUpEmail(
+                    email: $email,
+                    nextPressed: $nextPressed,
+                    currentPage: $currentPage)
+            }
             // render API error message
             if let apiErrorMessage = self.apiErrorMessage {
                 FormErrorMessage(error: apiErrorMessage)
@@ -148,6 +144,37 @@ struct SignUp: View {
         .padding(.trailing, GlobalStyles.padding)
         .onAppear() {
             // keyboard appears immediately
+        }
+        // Manage whether next button is disabled.
+        .onChange(of: currentPage) { newValue in
+            if pages[newValue] == "username" {
+                self.nextButtonDisabled = usernameNextButtonDisabled(
+                    username: username)
+            } else if pages[newValue] == "email" {
+                self.nextButtonDisabled = emailNextButtonDisabled(
+                    email: email)
+            } else if pages[newValue] == "password" {
+                self.nextButtonDisabled = passwordNextButtonDisabled(
+                    password: password)
+            }
+        }
+        .onChange(of: username) { newValue in
+            if pages[self.currentPage] == "username" {
+                self.nextButtonDisabled = usernameNextButtonDisabled(
+                    username: username)
+            }
+        }
+        .onChange(of: email) { newValue in
+            if pages[self.currentPage] == "email" {
+                self.nextButtonDisabled = emailNextButtonDisabled(
+                    email: email)
+            }
+        }
+        .onChange(of: password) { newValue in
+            if pages[self.currentPage] == "password" {
+                self.nextButtonDisabled = passwordNextButtonDisabled(
+                    password: password)
+            }
         }
     }
 }
