@@ -22,7 +22,7 @@ struct SignUp: View {
     @State var nextButtonDisabled: Bool = true
     
     // Controls when to check for error messages and submit.
-    @State var submitPressed: Bool = false
+    @State var nextPressed: Bool = false
     
     // Controls progress bar.
     @State var currentPage: Float = 1
@@ -35,7 +35,7 @@ struct SignUp: View {
     // State used to pop back one view
     @Environment(\.presentationMode) var presentationMode
     
-    var pages: [Int: String] = [
+    var pages: [Float: String] = [
         1: "username",
         2: "email",
         3: "password",
@@ -71,7 +71,14 @@ struct SignUp: View {
                 )
             }
             // Form
-//            
+            if pages[self.currentPage] == "username" {
+                SignUpUsername(
+                    username: $username,
+                    nextButtonDisabled: $nextButtonDisabled,
+                    nextPressed: $nextPressed,
+                    currentPage: $currentPage)
+            }
+//
 //            // Username label
 //            HStack(alignment: .center, spacing: 5) {
 //                Text("Choose a unique username")
@@ -112,7 +119,7 @@ struct SignUp: View {
                     if self.currentPage > 1 {
                         // Back Button
                         Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
+                            self.currentPage -= 1
                         }) {
                             Image("back-arrow")
                         }
@@ -122,17 +129,9 @@ struct SignUp: View {
                     }
                     // Next Button & Nav
                     Button("Next"){
-                        let error = getUsernameError(username: self.username)
-                        // If error exists, show error and stay on page
-                        if error != nil {
-                            self.errorMessage = error
-                            return
-                        }
-                        // If no error, show next set of textboxes.
-                        self.currentPage += 1
-                        self.nextButtonDisabled.toggle()
+                        self.nextPressed = true
                     }
-                    // can't click button until username 3 char in length
+                    // can't click button until enabled
                     .disabled(self.nextButtonDisabled)
                     .stretchyButton(
                         state: (
