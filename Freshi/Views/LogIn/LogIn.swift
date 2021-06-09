@@ -31,6 +31,8 @@ struct LogIn: View {
     // API error message
     @State var apiErrorMessage: String? = nil
     
+    @State var navToRoot: Bool = false
+    
     enum ActiveTextbox {
         case username, password, none
     }
@@ -108,7 +110,11 @@ struct LogIn: View {
         VStack(alignment: .center, spacing: 20){
             // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
-                Header(title: "Log in")
+                Header(
+                    title: "Log in",
+                    onExit: {
+                        self.navToRoot = true
+                    })
                 Line()
             }
             // Textboxes
@@ -167,6 +173,7 @@ struct LogIn: View {
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
         .background(Color("background"))
+        .popToRootNavView(navToRoot: $navToRoot)
     }
 }
 // strictly for dev previews in xcode.

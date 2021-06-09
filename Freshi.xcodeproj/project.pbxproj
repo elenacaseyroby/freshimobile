@@ -54,6 +54,7 @@
 		78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10A266FE55F00CD99A1 /* SignUp.swift */; };
 		78E5A10D266FE8AD00CD99A1 /* NavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10C266FE8AD00CD99A1 /* NavLink.swift */; };
 		78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */; };
+		78E5A111267126E400CD99A1 /* PopToRootNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A110267126E400CD99A1 /* PopToRootNavView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		78E5A10A266FE55F00CD99A1 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		78E5A10C266FE8AD00CD99A1 /* NavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLink.swift; sourceTree = "<group>"; };
 		78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalNav.swift; sourceTree = "<group>"; };
+		78E5A110267126E400CD99A1 /* PopToRootNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootNavView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				78E5A0EE266E9B9D00CD99A1 /* FreshiPassword.swift */,
 				7829A4C3266868E600488394 /* FreshiTextbox.swift */,
 				789CA5462660471700A1CD5E /* FontStyle.swift */,
+				78E5A110267126E400CD99A1 /* PopToRootNavView.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */,
 				78E5A0ED266E9A5300CD99A1 /* FreshiLogin.swift in Sources */,
 				78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */,
+				78E5A111267126E400CD99A1 /* PopToRootNavView.swift in Sources */,
 				78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
