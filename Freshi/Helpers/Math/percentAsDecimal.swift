@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-func percentAsDecimal(value: Float, total: Float) -> CGFloat {
+func percentAsDecimal(value: Float, total: Float) -> Float {
     let percent: Float = value / total
     let roundedPercent = roundToDecPlace(value: percent, place: 2)
-    return CGFloat(roundedPercent)
+    return roundedPercent
 }

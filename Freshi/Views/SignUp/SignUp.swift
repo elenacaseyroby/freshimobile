@@ -52,9 +52,12 @@ struct SignUp: View {
     
     func passwordNextButtonDisabled(password: String) -> Bool {
         // enable next button when pw has entered min num chars.
-        if email.count < 8 {
+        print("checking pw count")
+        print(password.count)
+        if password.count < 8 {
             return true
         }
+        print("next button enabled!")
         return false
     }
     
@@ -76,10 +79,10 @@ struct SignUp: View {
                     })
                 // Show progress from last page to current page.
                 ProgressBar(
-                    fromPercent: percentAsDecimal(
-                        value: self.currentPage - 1, total: self.totalPages),
-                    toPercent: percentAsDecimal(
-                        value: self.currentPage, total: self.totalPages)
+                    fromPercent: CGFloat(percentAsDecimal(
+                        value: self.currentPage - 1, total: self.totalPages)),
+                    toPercent: CGFloat(percentAsDecimal(
+                        value: self.currentPage, total: self.totalPages))
                 )
             }
             // Form
@@ -92,6 +95,12 @@ struct SignUp: View {
             if pages[self.currentPage] == "email" {
                 SignUpEmail(
                     email: $email,
+                    nextPressed: $nextPressed,
+                    currentPage: $currentPage)
+            }
+            if pages[self.currentPage] == "password" {
+                SignUpPassword(
+                    password: $password,
                     nextPressed: $nextPressed,
                     currentPage: $currentPage)
             }

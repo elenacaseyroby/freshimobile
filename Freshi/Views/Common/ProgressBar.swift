@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    var fromPercent: CGFloat = 0.0
+    var fromPercent: CGFloat
     var toPercent: CGFloat
     
     // variables

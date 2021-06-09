@@ -9,11 +9,12 @@ import SwiftUI
 
 
 struct SignUpEmail: View {
-    
+    // args
     @Binding var email: String
     @Binding var nextPressed: Bool
     @Binding var currentPage: Float
     
+    // vars
     @State var isActive: Bool = false
     @State var errorMessage: String? = nil
     

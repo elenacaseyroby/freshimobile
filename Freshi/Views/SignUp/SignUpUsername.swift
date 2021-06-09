@@ -9,11 +9,12 @@ import SwiftUI
 
 
 struct SignUpUsername: View {
-    
+    // args
     @Binding var username: String
     @Binding var nextPressed: Bool
     @Binding var currentPage: Float
     
+    // vars
     @State var isActive: Bool = false
     @State var errorMessage: String? = nil
     
