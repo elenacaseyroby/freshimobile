@@ -73,7 +73,7 @@ struct SignUp: View {
             // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
                 Header(
-                    title: "Create an account",
+                    title: self.currentPage < 4 ? "Create an account" : "Success!",
                     onExit: {
                         self.presentationMode.wrappedValue.dismiss()
                     })
