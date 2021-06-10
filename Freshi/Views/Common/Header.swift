@@ -12,11 +12,14 @@ struct Header: View {
     var onExit: () -> Void
     var body: some View {
         HStack{
+            // logo
             Image("bar-logo")
+            // title
             Text(title)
                 .foregroundColor(Color("highContrast"))
                 .fontWeight(.semibold)
                 .fontStyle(fontStyle: .title3)
+            // .right aligned exit icon
             Spacer()
             Button(action: {
                 self.onExit()
