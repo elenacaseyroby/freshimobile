@@ -30,7 +30,7 @@ struct SignUpUsername: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
             HStack {
                 VStack(alignment: .leading, spacing: 5) {
                     Text("Choose a unique username")

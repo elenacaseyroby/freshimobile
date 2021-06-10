@@ -43,7 +43,6 @@ struct SignUpPassword: View {
     
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
-            // Form
             // Password label
             HStack {
                 VStack(alignment: .leading, spacing: 5) {
