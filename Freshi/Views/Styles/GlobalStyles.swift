@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 struct GlobalStyles {
-    static var padding: CGFloat = 25
+    static var padding: CGFloat = 20
 }

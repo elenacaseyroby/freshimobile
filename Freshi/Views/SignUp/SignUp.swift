@@ -113,7 +113,7 @@ struct SignUp: View {
                 HStack(alignment: .center, spacing: 5) {
                     Text("Already have an account?")
                         .foregroundColor(Color("highContrast"))
-                        .fontStyle(fontStyle: .callout)
+                        .fontStyle(fontStyle: .subheadline)
                     NavLink(label: "Log in", color: Color("interactiveFocus")) {
                         LogIn()
                     }

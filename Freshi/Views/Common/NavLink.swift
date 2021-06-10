@@ -47,7 +47,7 @@ struct NavLink<Content: View>: View {
                 Button(self.label){
                     self.selection = "destination"
                 }
-                .fontStyle(fontStyle: .callout)
+                .fontStyle(fontStyle: .subheadline)
                 .foregroundColor(color)
             }
     }

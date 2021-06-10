@@ -52,7 +52,7 @@ struct SignUpPassword: View {
                         .fontStyle(fontStyle: .headline)
                     Text("must be at least 8 characters")
                         .foregroundColor(Color("highContrast"))
-                        .fontStyle(fontStyle: .body)
+                        .fontStyle(fontStyle: .subheadline)
                 }
                 Spacer()
             }

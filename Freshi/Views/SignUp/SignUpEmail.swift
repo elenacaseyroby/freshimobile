@@ -30,20 +30,29 @@ struct SignUpEmail: View {
     }
     
     var body: some View {
-        // Username textbox
-        TextField("email", text: $email, onEditingChanged: {
-            (editingChanged) in
-            if editingChanged {
-                self.isActive = true
+        VStack {
+            HStack {
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("Enter your email address")
+                        .foregroundColor(Color("highContrast"))
+                        .fontStyle(fontStyle: .headline)
+                }
+                Spacer()
             }
-        })
-            .freshiLogin(
-                state: self.textboxState(
-                    isActive: self.isActive,
-                    errorMessage: self.errorMessage),
-                errorMessage: self.errorMessage
-            )
-        
+            // Username textbox
+            TextField("email", text: $email, onEditingChanged: {
+                (editingChanged) in
+                if editingChanged {
+                    self.isActive = true
+                }
+            })
+                .freshiLogin(
+                    state: self.textboxState(
+                        isActive: self.isActive,
+                        errorMessage: self.errorMessage),
+                    errorMessage: self.errorMessage
+                )
+        }
         // If next is pressed, check for errors and move to next textbox.
         .onChange(of: nextPressed) { pressed in
             if pressed {
