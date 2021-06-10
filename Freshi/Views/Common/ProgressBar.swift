@@ -16,8 +16,6 @@ struct ProgressBar: View {
     var backgroundColor: Color = Color("lowContrast")
     var color: Color = Color("interactiveFocus")
     
-    
-    
     @State var animate: Bool = false
     
     var body: some View {
@@ -35,13 +33,15 @@ struct ProgressBar: View {
                 HStack {
                     Rectangle()
                         .fill(self.color)
-                        // Animates the line from the previous percentage to the current percentage.
                         .frame(
+                            // Animates the line from the previous percentage to the current percentage.
                             width: self.animate ? (geo.size.width * self.toPercent) : (geo.size.width * self.fromPercent),
                             height: self.height
                         )
-                    // left align
-                    Spacer()
+                    // if it gets near 100%, remove spacer so it reaches the full width
+                    if self.toPercent < 0.95 {
+                        Spacer()
+                    }
                 }
             }
             .cornerRadius(15)
@@ -52,6 +52,7 @@ struct ProgressBar: View {
                 }
             })
         }
+        // Need this, to keep the progress bar from distorting the view layout whereever it's used.
         .frame(
             height: self.height
         )
