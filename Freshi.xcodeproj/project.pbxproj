@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7829A4AC2668093500488394 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AB2668093500488394 /* LogIn.swift */; };
-		7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4AE2668186C00488394 /* SignUpNavLink.swift */; };
 		7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4C3266868E600488394 /* FreshiTextbox.swift */; };
 		7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4C52669287C00488394 /* FormErrorMessage.swift */; };
 		7829A4CD2669B1B000488394 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7829A4CC2669B1B000488394 /* Cache.swift */; };
@@ -76,7 +75,6 @@
 
 /* Begin PBXFileReference section */
 		7829A4AB2668093500488394 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
-		7829A4AE2668186C00488394 /* SignUpNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavLink.swift; sourceTree = "<group>"; };
 		7829A4C3266868E600488394 /* FreshiTextbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiTextbox.swift; sourceTree = "<group>"; };
 		7829A4C52669287C00488394 /* FormErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormErrorMessage.swift; sourceTree = "<group>"; };
 		7829A4CC2669B1B000488394 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		7829A4B926681C6900488394 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				7829A4AE2668186C00488394 /* SignUpNavLink.swift */,
 				784905D62666B0EE00344EAC /* SignUpEmail.swift */,
 				78E5A0FC266FD45A00CD99A1 /* SignUpUsername.swift */,
 				78E5A0FF266FD4B000CD99A1 /* SignUpPassword.swift */,
@@ -554,7 +551,6 @@
 				78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
-				7829A4AF2668186C00488394 /* SignUpNavLink.swift in Sources */,
 				7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */,
 				78E5A102266FD4BC00CD99A1 /* SignUpComplete.swift in Sources */,
 				78E5A100266FD4B000CD99A1 /* SignUpPassword.swift in Sources */,
