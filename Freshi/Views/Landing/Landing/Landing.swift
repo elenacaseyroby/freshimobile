@@ -16,7 +16,6 @@ struct Landing: View {
                 LandingHeader()
                 .navigationBarHidden(true)
                 StretchyImage(imageName: "landing-collage")
-                    .padding(.bottom, 0)
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
                     NavButton(label: "Log in", state: StretchyButtonState.neutral) {
                         LogIn()

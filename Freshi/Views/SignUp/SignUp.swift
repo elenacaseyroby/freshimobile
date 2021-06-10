@@ -65,7 +65,7 @@ struct SignUp: View {
         1: "username",
         2: "email",
         3: "password",
-        4: "complete",
+//        4: "complete", this is its own page now
     ]
     
     var body: some View {
@@ -107,44 +107,6 @@ struct SignUp: View {
             // render API error message
             if let apiErrorMessage = self.apiErrorMessage {
                 FormErrorMessage(error: apiErrorMessage)
-            }
-            VStack(alignment: .center, spacing: 10) {
-                // log in link
-                HStack(alignment: .center, spacing: 5) {
-                    Text("Already have an account?")
-                        .foregroundColor(Color("highContrast"))
-                        .fontStyle(fontStyle: .subheadline)
-                    NavLink(label: "Log in", color: Color("interactiveFocus")) {
-                        LogIn()
-                    }
-                    Spacer()
-                }
-                // Buttons
-                HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
-                    if self.currentPage > 1 {
-                        // Back Button
-                        Button(action: {
-                            self.currentPage -= 1
-                        }) {
-                            Image("back-arrow")
-                        }
-                        .stretchyButton(
-                            state: StretchyButtonState.neutral,
-                            isSquare: true)
-                    }
-                    // Next Button & Nav
-                    Button("Next"){
-                        self.nextPressed = true
-                    }
-                    // can't click button until enabled
-                    .disabled(self.nextButtonDisabled)
-                    .stretchyButton(
-                        state: (
-                            // next button has disabled style until username 3 char in length
-                            self.nextButtonDisabled ?
-                            StretchyButtonState.disabled :
-                            StretchyButtonState.focused))
-                }
             }
             Spacer()
         }

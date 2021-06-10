@@ -34,6 +34,7 @@
 		789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCreds.swift */; };
 		789CA5472660471700A1CD5E /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* FontStyle.swift */; };
 		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
+		78E26D8A2672C74100EA1C2C /* SignUpButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D892672C74100EA1C2C /* SignUpButtons.swift */; };
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
 		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
 		78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */; };
@@ -107,6 +108,7 @@
 		789CA538265DAFFE00A1CD5E /* AuthCreds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCreds.swift; sourceTree = "<group>"; };
 		789CA5462660471700A1CD5E /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
+		78E26D892672C74100EA1C2C /* SignUpButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtons.swift; sourceTree = "<group>"; };
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
 		78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBubbles.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				78E5A0FC266FD45A00CD99A1 /* SignUpUsername.swift */,
 				78E5A0FF266FD4B000CD99A1 /* SignUpPassword.swift */,
 				78E5A10A266FE55F00CD99A1 /* SignUp.swift */,
+				78E26D892672C74100EA1C2C /* SignUpButtons.swift */,
 				78E5A101266FD4BC00CD99A1 /* SignUpComplete.swift */,
 			);
 			path = SignUp;
@@ -578,6 +581,7 @@
 				78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */,
 				78E5A111267126E400CD99A1 /* PopToRootNavView.swift in Sources */,
 				78E5A0EF266E9B9D00CD99A1 /* FreshiPassword.swift in Sources */,
+				78E26D8A2672C74100EA1C2C /* SignUpButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

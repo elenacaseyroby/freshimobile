@@ -29,45 +29,51 @@ struct SignUpUsername: View {
         return TextboxState.neutral
     }
     
-    var body: some View {
-        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Choose a unique username")
-                        .foregroundColor(Color("highContrast"))
-                        .fontStyle(fontStyle: .headline)
-                }
-                Spacer()
-            }
-            // Username textbox
-            TextField("username", text: $username, onEditingChanged: {
-                (editingChanged) in
-                if editingChanged {
-                    self.isActive = true
-                }
-            })
-                .freshiLogin(
-                    state: self.textboxState(
-                        isActive: self.isActive,
-                        errorMessage: self.errorMessage),
-                    errorMessage: self.errorMessage
-                )
+    func submit () {
+        // Check for errors
+        let error = getUsernameError(username: self.username)
+        // If error exists, show error and stay on page
+        if error != nil {
+            self.errorMessage = error
+            return
         }
-        // If next is pressed, check for errors and move to next textbox.
-        .onChange(of: nextPressed) { pressed in
-            if pressed {
-                // reset nextPressed
-                self.nextPressed.toggle()
-                // Check for errors
-                let error = getUsernameError(username: self.username)
-                // If error exists, show error and stay on page
-                if error != nil {
-                    self.errorMessage = error
-                    return
+        // If no error, show next set of textboxes
+        self.currentPage += 1
+    }
+    
+    var body: some View {
+        VStack {
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("Choose a unique username")
+                            .foregroundColor(Color("highContrast"))
+                            .fontStyle(fontStyle: .headline)
+                    }
+                    Spacer()
                 }
-                // If no error, show next set of textboxes
-                self.currentPage += 1
+                // Username textbox
+                TextField("username", text: $username, onEditingChanged: {
+                    (editingChanged) in
+                    if editingChanged {
+                        self.isActive = true
+                    }
+                })
+                    .freshiLogin(
+                        state: self.textboxState(
+                            isActive: self.isActive,
+                            errorMessage: self.errorMessage),
+                        errorMessage: self.errorMessage
+                    )
             }
+            SignUpButtons(
+                submitLabel: "Next",
+                submitButtonDisabled: self.username.count < 3,
+                onSubmit: self.submit,
+                hideBackButton: self.currentPage == 1 ? true : false,
+                onBack: {
+                    self.currentPage -= 1
+                })
         }
     }
 }
