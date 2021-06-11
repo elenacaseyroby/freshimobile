@@ -83,7 +83,7 @@ struct LogIn: View {
         // clear API error message if there was one from a prev login:
         self.apiErrorMessage = nil
         // try login
-        fetchAuthCreds(username: username, password: password, completionHandler: { authCreds, requestError in
+        fetchAuthCredsRequest(username: username, password: password, completionHandler: { authCreds, requestError in
             if let authCreds = authCreds {
                 // Update the state and thereby our UI
                 auth.logIn(authCreds: authCreds)

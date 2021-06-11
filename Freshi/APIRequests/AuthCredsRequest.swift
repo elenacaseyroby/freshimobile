@@ -1,5 +1,5 @@
 //
-//  AuthAPI.swift
+//  AuthCreditsRequest.swift
 //  Freshi
 //
 //  Created by Casey Roby on 5/19/21.
@@ -9,13 +9,8 @@ import Foundation
 import SwiftUI
 
 
-struct RequestError: Codable {
-    var statusCode: Int
-    var errorMessage: String?
-}
-
 // fetch, update, add, delete
-func fetchAuthCreds(
+func fetchAuthCredsRequest(
     username: String,
     password: String,
     completionHandler: @escaping (AuthCreds?, RequestError?) -> Void)

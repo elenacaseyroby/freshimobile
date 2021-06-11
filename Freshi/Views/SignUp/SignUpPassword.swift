@@ -16,6 +16,9 @@ struct SignUpPassword: View {
     @Binding var username: String
     @Binding var currentPage: Float
     
+    // loader state controls when loading overlay shows in app
+    @EnvironmentObject var loader: Loader
+    
     // variables
     @State var secondPassword: String = ""
     
@@ -57,10 +60,41 @@ struct SignUpPassword: View {
         }
         // If no error, create account & update state
         // with Auth.loggedIn and Onboarding.complete = false (true by default)
-        print(self.email)
-        print(self.username)
-        print(self.password)
+        self.createUser(
+            username: username,
+            email: email,
+            password: password)
         
+    }
+    
+    func createUser(username: String, email: String, password: String) {
+        // Loader screen appears
+        DispatchQueue.main.async {
+            loader.showLoadingOverlay = true
+        }
+        // Request is made
+        createUserRequest(
+            username: username,
+            email: email,
+            password: password,
+            completionHandler: { user, requestError in
+            if let user = user {
+                // Update the state and thereby our UI
+                print("~~~~~~~~~~")
+                print(user)
+                print("~~~~~~~~~~")
+            }
+            if let requestError = requestError {
+                print("///////////////////////")
+                print(requestError)
+                print("///////////////////////")
+            }
+            // Once response is processed, loading screen disappears.
+            // Must send state update back to the main thread with DispatchQueue to update UI.
+            DispatchQueue.main.async {
+                loader.showLoadingOverlay = false
+            }
+        })
     }
     
     var body: some View {
