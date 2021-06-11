@@ -16,7 +16,6 @@ struct SignUp: View {
     
     // This will only be set if you get to the last page of the form, submit and it fails and gets naved back here.
     @State var apiErrorMessage: String? = nil
-    
     @State var isActive: Bool = false
     @State var errorMessage: String? = nil
     @State var navigateToNextPage: Bool = false
@@ -32,6 +31,7 @@ struct SignUp: View {
     var pages: [Float: String] = [
         1: "username",
         2: "email",
+        // this page has the API request that creates the account:
         3: "password",
 //        4: "complete", this is its own page now
     ]
@@ -67,6 +67,8 @@ struct SignUp: View {
             if pages[self.currentPage] == "password" {
                 SignUpPassword(
                     password: $password,
+                    email: $email,
+                    username: $username,
                     currentPage: $currentPage)
             }
             // render API error message

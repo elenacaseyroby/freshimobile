@@ -12,6 +12,8 @@ import SwiftUI
 struct SignUpPassword: View {
     // args
     @Binding var password: String
+    @Binding var email: String
+    @Binding var username: String
     @Binding var currentPage: Float
     
     // variables
@@ -55,6 +57,9 @@ struct SignUpPassword: View {
         }
         // If no error, create account & update state
         // with Auth.loggedIn and Onboarding.complete = false (true by default)
+        print(self.email)
+        print(self.username)
+        print(self.password)
         
     }
     
@@ -117,6 +122,8 @@ struct SignUpPassword_Previews: PreviewProvider {
     static var previews: some View {
         SignUpPassword(
             password: .constant("password"),
+            email: .constant("email@email.com"),
+            username: .constant("username"),
             currentPage: .constant(1))
     }
 }
