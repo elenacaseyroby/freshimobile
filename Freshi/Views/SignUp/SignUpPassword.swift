@@ -12,7 +12,6 @@ import SwiftUI
 struct SignUpPassword: View {
     // args
     @Binding var password: String
-    @Binding var nextPressed: Bool
     @Binding var currentPage: Float
     
     // variables
@@ -118,7 +117,6 @@ struct SignUpPassword_Previews: PreviewProvider {
     static var previews: some View {
         SignUpPassword(
             password: .constant("password"),
-            nextPressed: .constant(false),
             currentPage: .constant(1))
     }
 }

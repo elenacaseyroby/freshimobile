@@ -11,7 +11,6 @@ import SwiftUI
 struct SignUpEmail: View {
     // args
     @Binding var email: String
-    @Binding var nextPressed: Bool
     @Binding var currentPage: Float
     
     // vars
@@ -82,7 +81,6 @@ struct SignUpEmail_Previews: PreviewProvider {
     static var previews: some View {
         SignUpEmail(
             email: .constant("ecroby@gmail.com"),
-            nextPressed: .constant(false),
             currentPage: .constant(1))
     }
 }

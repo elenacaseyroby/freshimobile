@@ -11,7 +11,6 @@ import SwiftUI
 struct SignUpUsername: View {
     // args
     @Binding var username: String
-    @Binding var nextPressed: Bool
     @Binding var currentPage: Float
     
     // vars
@@ -82,7 +81,6 @@ struct SignUpUsername_Previews: PreviewProvider {
     static var previews: some View {
         SignUpUsername(
             username: .constant("ecroby"),
-            nextPressed: .constant(false),
             currentPage: .constant(1))
     }
 }
