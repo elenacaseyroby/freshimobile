@@ -36,8 +36,13 @@ struct SignUpPassword: View {
     func textboxState(
         thisTextbox: ActiveTextbox,
         activeTextbox: ActiveTextbox,
-        error: Bool
-    ) -> TextboxState {
+        error: Bool,
+        apiErrorField: String?) -> TextboxState {
+        if let apiErrorField = apiErrorField {
+            if apiErrorField == "username" {
+                return TextboxState.error
+            }
+        }
         if error {
             return TextboxState.error
         }
@@ -128,26 +133,30 @@ struct SignUpPassword: View {
                         state: self.textboxState(
                             thisTextbox: ActiveTextbox.first,
                             activeTextbox: self.activeTextbox,
-                            error: self.errorMessage != nil ? true : false
+                            error: self.errorMessage != nil ? true : false,
+                            apiErrorField: self.apiErrorField
                         ),
                         onTap: {
                             self.activeTextbox = ActiveTextbox.first})
-                // Second password textbox
-                SecureField("password", text: $secondPassword)
-                    .freshiPassword(
-                        state: self.textboxState(
-                            thisTextbox: ActiveTextbox.second,
-                            activeTextbox: self.activeTextbox,
-                            error: self.errorMessage != nil ? true : false
-                        ),
-                        // Only show error message under second password
-                        errorMessage: self.errorMessage,
-                        onTap: {
-                            self.activeTextbox = ActiveTextbox.second})
-                // render API error message
-                if self.apiErrorField == "password" {
-                    if let apiErrorMessage = self.apiErrorMessage {
-                        FormErrorMessage(error: apiErrorMessage)
+                VStack(alignment: .leading, spacing: 5){
+                    // Second password textbox
+                    SecureField("password", text: $secondPassword)
+                        .freshiPassword(
+                            state: self.textboxState(
+                                thisTextbox: ActiveTextbox.second,
+                                activeTextbox: self.activeTextbox,
+                                error: self.errorMessage != nil ? true : false,
+                                apiErrorField: self.apiErrorField
+                            ),
+                            // Only show error message under second password
+                            errorMessage: self.errorMessage,
+                            onTap: {
+                                self.activeTextbox = ActiveTextbox.second})
+                    // render API error message
+                    if self.apiErrorField == "password" {
+                        if let apiErrorMessage = self.apiErrorMessage {
+                            FormErrorMessage(error: apiErrorMessage)
+                        }
                     }
                 }
             }

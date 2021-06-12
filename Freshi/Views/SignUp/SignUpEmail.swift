@@ -21,7 +21,13 @@ struct SignUpEmail: View {
     
     func textboxState(
         isActive: Bool,
-        errorMessage: String? ) -> TextboxState {
+        errorMessage: String?,
+        apiErrorField: String?) -> TextboxState {
+        if let apiErrorField = apiErrorField {
+            if apiErrorField == "email" {
+                return TextboxState.error
+            }
+        }
         if errorMessage != nil {
             return TextboxState.error
         } else if isActive {
@@ -53,23 +59,26 @@ struct SignUpEmail: View {
                     }
                     Spacer()
                 }
-                // Username textbox
-                TextField("email", text: $email, onEditingChanged: {
-                    (editingChanged) in
-                    if editingChanged {
-                        self.isActive = true
-                    }
-                })
-                    .freshiLogin(
-                        state: self.textboxState(
-                            isActive: self.isActive,
-                            errorMessage: self.errorMessage),
-                        errorMessage: self.errorMessage
-                    )
-                // render API error message
-                if self.apiErrorField == "email" {
-                    if let apiErrorMessage = self.apiErrorMessage {
-                        FormErrorMessage(error: apiErrorMessage)
+                VStack(alignment: .leading, spacing: 5){
+                    // Username textbox
+                    TextField("email", text: $email, onEditingChanged: {
+                        (editingChanged) in
+                        if editingChanged {
+                            self.isActive = true
+                        }
+                    })
+                        .freshiLogin(
+                            state: self.textboxState(
+                                isActive: self.isActive,
+                                errorMessage: self.errorMessage,
+                                apiErrorField: self.apiErrorField),
+                            errorMessage: self.errorMessage
+                        )
+                    // render API error message
+                    if self.apiErrorField == "email" {
+                        if let apiErrorMessage = self.apiErrorMessage {
+                            FormErrorMessage(error: apiErrorMessage)
+                        }
                     }
                 }
             }

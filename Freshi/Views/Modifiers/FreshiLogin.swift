@@ -12,6 +12,9 @@ func getUsernameError(username: String) -> String? {
     if username.count == 0 {
         return "Please enter username."
     }
+    if username.contains(" ") {
+        return "Username cannot contain spaces."
+    }
     if username.count < 3 {
         return "Username too short. Must be 3 - 16 characters in length."
     }

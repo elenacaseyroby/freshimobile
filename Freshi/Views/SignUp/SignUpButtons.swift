@@ -52,8 +52,8 @@ struct SignUpButtons: View {
                         StretchyButtonState.disabled :
                         StretchyButtonState.focused))
             }
-
         }
+        .padding(.top, 15)
     }
 }
 
