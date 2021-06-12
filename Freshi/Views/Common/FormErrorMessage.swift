@@ -11,11 +11,12 @@ struct FormErrorMessage: View {
     let error: String
     var body: some View {
         VStack(alignment: .leading) {
-            HStack(alignment: .center, spacing: 5){
+            HStack(alignment: .center, spacing: 10){
                 Image(systemName: "exclamationmark.triangle")
                     .foregroundColor(Color("error"))
                 Text(self.error)
                     .foregroundColor(Color("error"))
+                    .fontStyle(fontStyle: .subheadline)
                 // left align
                 Spacer()
             }

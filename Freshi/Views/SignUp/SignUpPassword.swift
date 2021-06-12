@@ -70,8 +70,11 @@ struct SignUpPassword: View {
     }
     
     func createUser(username: String, email: String, password: String) {
-        // Loader screen appears
         DispatchQueue.main.async {
+            // Clear api errors
+            self.apiErrorField = nil
+            self.apiErrorMessage = nil
+            // make loader display while making API request
             loader.showLoadingOverlay = true
         }
         // Request is made
@@ -141,6 +144,12 @@ struct SignUpPassword: View {
                         errorMessage: self.errorMessage,
                         onTap: {
                             self.activeTextbox = ActiveTextbox.second})
+                // render API error message
+                if self.apiErrorField == "password" {
+                    if let apiErrorMessage = self.apiErrorMessage {
+                        FormErrorMessage(error: apiErrorMessage)
+                    }
+                }
             }
             SignUpButtons(
                 submitLabel: "Create account",

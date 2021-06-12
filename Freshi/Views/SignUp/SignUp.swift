@@ -55,12 +55,16 @@ struct SignUp: View {
             if pages[self.currentPage] == "username" {
                 SignUpUsername(
                     username: $username,
-                    currentPage: $currentPage)
+                    currentPage: $currentPage,
+                    apiErrorMessage: $apiErrorMessage,
+                    apiErrorField: $apiErrorField)
             }
             if pages[self.currentPage] == "email" {
                 SignUpEmail(
                     email: $email,
-                    currentPage: $currentPage)
+                    currentPage: $currentPage,
+                    apiErrorMessage: $apiErrorMessage,
+                    apiErrorField: $apiErrorField)
             }
             if pages[self.currentPage] == "password" {
                 SignUpPassword(
@@ -71,10 +75,6 @@ struct SignUp: View {
                     apiErrorMessage: $apiErrorMessage,
                     apiErrorField: $apiErrorField)
             }
-            // render API error message
-            if let apiErrorMessage = self.apiErrorMessage {
-                FormErrorMessage(error: apiErrorMessage)
-            }
             Spacer()
         }
         .background(Color("background"))
@@ -83,15 +83,20 @@ struct SignUp: View {
         .onAppear() {
             // keyboard appears immediately
         }
-        .onChange(of: apiErrorField, perform: { value in
+        .onChange(of: apiErrorField, perform: { field in
+            // if nil do nothing
+            if field == nil {
+                return
+            }
+            // If api returns error, show page relevant to error.
             for key in self.pages.keys {
-                if self.pages[key] == "email" {
+                if self.pages[key] == field {
                     self.currentPage = key
                 }
-                if self.pages[key] == "username" {
+                if self.pages[key] == field {
                     self.currentPage = key
                 }
-                if self.pages[key] == "password" {
+                if self.pages[key] == field {
                     self.currentPage = key
                 }
             }

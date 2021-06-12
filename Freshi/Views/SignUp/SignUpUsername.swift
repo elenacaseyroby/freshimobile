@@ -12,6 +12,8 @@ struct SignUpUsername: View {
     // args
     @Binding var username: String
     @Binding var currentPage: Float
+    @Binding var apiErrorMessage: String?
+    @Binding var apiErrorField: String?
     
     // vars
     @State var isActive: Bool = false
@@ -64,6 +66,12 @@ struct SignUpUsername: View {
                             errorMessage: self.errorMessage),
                         errorMessage: self.errorMessage
                     )
+                // render API error message
+                if self.apiErrorField == "username" {
+                    if let apiErrorMessage = self.apiErrorMessage {
+                        FormErrorMessage(error: apiErrorMessage)
+                    }
+                }
             }
             SignUpButtons(
                 submitLabel: "Next",
@@ -81,7 +89,9 @@ struct SignUpUsername_Previews: PreviewProvider {
     static var previews: some View {
         SignUpUsername(
             username: .constant("ecroby"),
-            currentPage: .constant(1))
+            currentPage: .constant(1),
+            apiErrorMessage: .constant("Email is too long"),
+            apiErrorField: .constant("email"))
     }
 }
 
