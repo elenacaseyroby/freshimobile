@@ -31,29 +31,30 @@ func createUserRequest(
         method: "POST",
         body: body,
         onComplete: {(data, response, error) in
+            // get status code.
             var statusCode = 500
-            // Set response statusCode even if data isn't returned.
             if let response = response {
                 // Force response to be type HTTPURLResponse to access statusCode.
                 let httpResponse = response as! HTTPURLResponse
                 statusCode = httpResponse.statusCode
             }
-            if statusCode != 200 {
-                if let data = data {
-                    if let error = try? JSONDecoder().decode(UserRequestError.self, from: data) {
+            if let data = data {
+                // if data and success status, return user.
+                if statusCode != 200 {
+                    if var error = try? JSONDecoder().decode(UserRequestError.self, from: data) {
+                        error.status_code = statusCode
                         completionHandler(nil, error)
                         return
                     }
                 }
-            }
-            if let data = data {
-                print(data)
+                // if data and error status, return error.
                 if let user = try? JSONDecoder().decode(User.self, from: data) {
                     completionHandler(user, nil)
                     return
                 }
             }
-            var errorMessage: String?
+            // else, return error.
+            var errorMessage: String = "Create user request failed."
             if let error = error {
                 errorMessage = error.localizedDescription
             }

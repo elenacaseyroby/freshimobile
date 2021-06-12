@@ -15,6 +15,8 @@ struct SignUpPassword: View {
     @Binding var email: String
     @Binding var username: String
     @Binding var currentPage: Float
+    @Binding var apiErrorMessage: String?
+    @Binding var apiErrorField: String?
     
     // loader state controls when loading overlay shows in app
     @EnvironmentObject var loader: Loader
@@ -77,17 +79,22 @@ struct SignUpPassword: View {
             username: username,
             email: email,
             password: password,
-            completionHandler: { user, requestError in
+            completionHandler: { user, userRequestError in
             if let user = user {
                 // Update the state and thereby our UI
-                print("~~~~~~~~~~")
                 print(user)
-                print("~~~~~~~~~~")
             }
-            if let requestError = requestError {
-                print("///////////////////////")
-                print(requestError)
-                print("///////////////////////")
+            if let userRequestError = userRequestError {
+                // Push changes in state to the main thread to update UI.
+                DispatchQueue.main.async {
+                    if let field = userRequestError.error_field {
+                        self.apiErrorField = field
+                    }
+                    if let message = userRequestError.error_message {
+                        self.apiErrorMessage = message
+                    }
+                }
+                
             }
             // Once response is processed, loading screen disappears.
             // Must send state update back to the main thread with DispatchQueue to update UI.
@@ -158,6 +165,8 @@ struct SignUpPassword_Previews: PreviewProvider {
             password: .constant("password"),
             email: .constant("email@email.com"),
             username: .constant("username"),
-            currentPage: .constant(1))
+            currentPage: .constant(1),
+            apiErrorMessage: .constant("Email is too long"),
+            apiErrorField: .constant("email"))
     }
 }

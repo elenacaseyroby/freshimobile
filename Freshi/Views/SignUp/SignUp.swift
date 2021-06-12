@@ -16,9 +16,7 @@ struct SignUp: View {
     
     // This will only be set if you get to the last page of the form, submit and it fails and gets naved back here.
     @State var apiErrorMessage: String? = nil
-    @State var isActive: Bool = false
-    @State var errorMessage: String? = nil
-    @State var navigateToNextPage: Bool = false
+    @State var apiErrorField: String? = nil
     
     // State used to pop back one view
     @Environment(\.presentationMode) var presentationMode
@@ -69,7 +67,9 @@ struct SignUp: View {
                     password: $password,
                     email: $email,
                     username: $username,
-                    currentPage: $currentPage)
+                    currentPage: $currentPage,
+                    apiErrorMessage: $apiErrorMessage,
+                    apiErrorField: $apiErrorField)
             }
             // render API error message
             if let apiErrorMessage = self.apiErrorMessage {
@@ -83,6 +83,20 @@ struct SignUp: View {
         .onAppear() {
             // keyboard appears immediately
         }
+        .onChange(of: apiErrorField, perform: { value in
+            for key in self.pages.keys {
+                if self.pages[key] == "email" {
+                    self.currentPage = key
+                }
+                if self.pages[key] == "username" {
+                    self.currentPage = key
+                }
+                if self.pages[key] == "password" {
+                    self.currentPage = key
+                }
+            }
+                
+        })
     }
 }
 // strictly for dev previews in xcode.
