@@ -8,43 +8,59 @@
 import SwiftUI
 
 struct SignUpComplete: View {
-    // State used to pop back one view
-    @Environment(\.presentationMode) var presentationMode
+    // use to send to completion page
+    @EnvironmentObject var onboarding: Onboarding
     
     var body: some View {
-        VStack {
-            HStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("You’ve created a new account")
-                        .foregroundColor(Color("highContrast"))
-                        .fontStyle(fontStyle: .headline)
-                    Text("Take a moment to finish setting up your profile")
-                        .foregroundColor(Color("highContrast"))
-                        .fontStyle(fontStyle: .subheadline)
-                }
-                Spacer()
+        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
+            // Header
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
+                Header(
+                    title: "Success!",
+                    onExit: {
+                        self.onboarding.showCompletedScreen = false
+                    })
+                // Show progress from last page to current page.
+                ProgressBar(
+                    fromPercent: CGFloat(
+                        percentAsDecimal(value: 3, total: 4)),
+                    toPercent: CGFloat(1.0)
+                )
             }
-            StretchyImage(imageName: "landing-collage")
-            // Buttons
-            HStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
+            VStack {
+                // Labels
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("You’ve created a new account")
+                            .foregroundColor(Color("highContrast"))
+                            .fontStyle(fontStyle: .headline)
+                        Text("Take a moment to finish setting up your profile")
+                            .foregroundColor(Color("highContrast"))
+                            .fontStyle(fontStyle: .subheadline)
+                    }
+                    Spacer()
+                }
+                // Image
+                StretchyImage(imageName: "landing-collage")
+                // Buttons
+                VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
                     // Back Button
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image("back-arrow")
+                    Button("Skip") {
+                        self.onboarding.showCompletedScreen = false
                     }
-                    .stretchyButton(
-                        state: StretchyButtonState.neutral,
-                        isSquare: true)
+                        .stretchyButton(
+                            state: StretchyButtonState.neutral)
                     // Next Button & Nav
-                    Button("Next"){
-                        print("next")
+                    Button("Continue") {
+                        print("direct to onboarding pages")
                     }
-                    // can't click button until enabled
-                    .stretchyButton(
-                        state: StretchyButtonState.neutral)
+                        .stretchyButton(
+                            state: StretchyButtonState.focused)
+                }
             }
         }
+        .padding(.horizontal, GlobalStyles.padding)
+        .padding(.bottom, GlobalStyles.padding)
     }
 }
 

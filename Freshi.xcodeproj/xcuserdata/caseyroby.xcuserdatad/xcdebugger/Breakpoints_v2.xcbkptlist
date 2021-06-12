@@ -14,13 +14,13 @@
             filePath = "Freshi/Views/StartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "previews"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "53C4E618-C9D9-4A06-8663-FC2AB6AE723C - 451af0ef1d2c0393"
+                  uuid = "53C4E618-C9D9-4A06-8663-FC2AB6AE723C - 451af0ef1d2c0217"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/caseyroby/Freshi/freshimobile/Freshi/Views/StartView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
-                  offsetFromSymbolStart = "51">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "68">
                </Location>
                <Location
-                  uuid = "53C4E618-C9D9-4A06-8663-FC2AB6AE723C - 451af0ef1d2c03b2"
+                  uuid = "53C4E618-C9D9-4A06-8663-FC2AB6AE723C - 451af0ef1d2c0236"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,9 +45,9 @@
                   urlString = "file:///Users/caseyroby/Freshi/freshimobile/Freshi/Views/StartView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "243">
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "291">
                </Location>
             </Locations>
          </BreakpointContent>

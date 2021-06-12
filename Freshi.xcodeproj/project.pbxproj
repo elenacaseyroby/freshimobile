@@ -38,6 +38,7 @@
 		78E26D8C2673C4F800EA1C2C /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8B2673C4F800EA1C2C /* UserRequest.swift */; };
 		78E26D8E2673C58900EA1C2C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8D2673C58900EA1C2C /* RequestError.swift */; };
 		78E26D90267414AE00EA1C2C /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8F267414AE00EA1C2C /* APIRequest.swift */; };
+		78E26D922674685B00EA1C2C /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D912674685B00EA1C2C /* Onboarding.swift */; };
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
 		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
 		78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */; };
@@ -115,6 +116,7 @@
 		78E26D8B2673C4F800EA1C2C /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		78E26D8D2673C58900EA1C2C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		78E26D8F267414AE00EA1C2C /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		78E26D912674685B00EA1C2C /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
 		78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBubbles.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				789CA52E2655C44600A1CD5E /* Auth.swift */,
+				78E26D912674685B00EA1C2C /* Onboarding.swift */,
 				78E5A0F0266EA49300CD99A1 /* Loader.swift */,
 			);
 			path = Stores;
@@ -577,6 +580,7 @@
 				7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */,
 				789CA5372655D41500A1CD5E /* User.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
+				78E26D922674685B00EA1C2C /* Onboarding.swift in Sources */,
 				78E5A0F9266F00E800CD99A1 /* UsernameTextbox.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */,

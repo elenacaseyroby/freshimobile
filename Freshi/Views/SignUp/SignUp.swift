@@ -39,7 +39,7 @@ struct SignUp: View {
             // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
                 Header(
-                    title: self.currentPage < 4 ? "Create an account" : "Success!",
+                    title: "Create an account",
                     onExit: {
                         self.presentationMode.wrappedValue.dismiss()
                     })
@@ -78,8 +78,7 @@ struct SignUp: View {
             Spacer()
         }
         .background(Color("background"))
-        .padding(.leading, GlobalStyles.padding)
-        .padding(.trailing, GlobalStyles.padding)
+        .padding(.horizontal, GlobalStyles.padding)
         .onAppear() {
             // keyboard appears immediately
         }

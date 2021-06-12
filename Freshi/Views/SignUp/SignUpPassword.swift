@@ -18,8 +18,12 @@ struct SignUpPassword: View {
     @Binding var apiErrorMessage: String?
     @Binding var apiErrorField: String?
     
+    // authentication state for app
+    @EnvironmentObject var auth: Auth
     // loader state controls when loading overlay shows in app
     @EnvironmentObject var loader: Loader
+    // use to send to completion page
+    @EnvironmentObject var onboarding: Onboarding
     
     // variables
     @State var secondPassword: String = ""
@@ -89,8 +93,23 @@ struct SignUpPassword: View {
             password: password,
             completionHandler: { user, userRequestError in
             if let user = user {
-                // Update the state and thereby our UI
-                print(user)
+                // if user is created, login
+                fetchAuthCredsRequest(username: user.username, password: password, completionHandler: { authCreds, requestError in
+                    if let authCreds = authCreds {
+                        // Update the state and thereby our UI
+                        auth.logIn(authCreds: authCreds)
+                    }
+                    if let requestError = requestError {
+                        self.apiErrorMessage = requestError.errorMessage
+                    }
+                    // Must send state update back to the main thread with DispatchQueue to update UI.
+                    DispatchQueue.main.async {
+                        // Once response is processed, loading screen disappears.
+                        loader.showLoadingOverlay = false
+                        // Set onboarding so it shows completion page next.
+                        onboarding.showCompletedScreen = true
+                    }
+                })
             }
             if let userRequestError = userRequestError {
                 // Push changes in state to the main thread to update UI.
@@ -101,13 +120,10 @@ struct SignUpPassword: View {
                     if let message = userRequestError.error_message {
                         self.apiErrorMessage = message
                     }
+                    // Once response is processed, loading screen disappears.
+                    // Must send state update back to the main thread with DispatchQueue to update UI.
+                    loader.showLoadingOverlay = false
                 }
-                
-            }
-            // Once response is processed, loading screen disappears.
-            // Must send state update back to the main thread with DispatchQueue to update UI.
-            DispatchQueue.main.async {
-                loader.showLoadingOverlay = false
             }
         })
     }
