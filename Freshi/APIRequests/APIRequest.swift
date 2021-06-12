@@ -16,7 +16,7 @@ func APIRequest(
     endpoint: String,
     method: String,
     queryString: String? = nil,
-    header: [String: String]? = nil,
+    headers: [String: String]? = nil,
     body: [String: String]? = nil,
     onComplete: @escaping (Data?, Any?, Error?) -> Void) {
     // TODO: Change this url before deploy
@@ -25,9 +25,9 @@ func APIRequest(
     var request = URLRequest(url: url)
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     request.httpMethod = method
-    if let header = header {
-        for key in header.keys {
-            request.setValue(header[key], forHTTPHeaderField: key)
+    if let headers = headers {
+        for key in headers.keys {
+            request.setValue(headers[key], forHTTPHeaderField: key)
         }
     }
     guard let encoded = try? JSONEncoder().encode(body) else {
