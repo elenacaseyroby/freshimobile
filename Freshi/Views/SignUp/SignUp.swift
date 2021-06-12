@@ -45,10 +45,8 @@ struct SignUp: View {
                     })
                 // Show progress from last page to current page.
                 ProgressBar(
-                    fromPercent: CGFloat(percentAsDecimal(
-                        value: self.currentPage - 1, total: self.totalPages)),
-                    toPercent: CGFloat(percentAsDecimal(
-                        value: self.currentPage, total: self.totalPages))
+                    currentPage: $currentPage,
+                    totalPages: self.totalPages
                 )
             }
             // Form

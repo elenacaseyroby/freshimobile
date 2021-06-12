@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    var fromPercent: CGFloat
-    var toPercent: CGFloat
+    // only animates on first load. gotta figure out how to fix..
+    var prevPage: Float? = nil
+    @Binding var currentPage: Float
+    let totalPages: Float
+    
+
+    @State var fromPercent: CGFloat = 0.0
+    @State var toPercent: CGFloat = 0.0
     
     // variables
     var height: CGFloat = 5
@@ -17,6 +23,22 @@ struct ProgressBar: View {
     var color: Color = Color("interactiveFocus")
     
     @State var animate: Bool = false
+    
+    func setAnimationInstructions(prevPage: Float, currentPage: Float) {
+        self.animate = false
+        // Specify how to animate to transition between states.
+        withAnimation(.spring(response: 0.7 )) {
+            self.fromPercent = CGFloat(
+                percentAsDecimal(
+                    value: prevPage,
+                    total: self.totalPages))
+            self.toPercent = CGFloat(
+                percentAsDecimal(
+                    value: currentPage,
+                    total: self.totalPages))
+            self.animate = true
+        }
+    }
     
     var body: some View {
         // We use geometry reader to adjust to the width of the screen.
@@ -46,10 +68,14 @@ struct ProgressBar: View {
             }
             .cornerRadius(15)
             .onAppear(perform: {
-                // Specify how to animate to transition between states.
-                withAnimation(.spring(response: 0.7 )) {
-                    self.animate = true
+                var animateFromPage: Float = 0.0
+                if let prevPage = prevPage {
+                    animateFromPage = prevPage
                 }
+                self.setAnimationInstructions(prevPage: animateFromPage, currentPage: self.currentPage)
+            })
+            .onChange(of: currentPage, perform: { [currentPage] nextPage in
+                self.setAnimationInstructions(prevPage: currentPage, currentPage: nextPage)
             })
         }
         // Need this, to keep the progress bar from distorting the view layout whereever it's used.
@@ -62,7 +88,7 @@ struct ProgressBar: View {
 struct ProgressBar_Previews: PreviewProvider {
     static var previews: some View {
         ProgressBar(
-            fromPercent: 0.1,
-            toPercent: 0.9)
+            currentPage: .constant(1.0),
+            totalPages: 4.0)
     }
 }

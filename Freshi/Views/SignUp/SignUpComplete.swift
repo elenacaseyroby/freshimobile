@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpComplete: View {
     // use to send to completion page
     @EnvironmentObject var onboarding: Onboarding
+    @State var currentPage: Float = 4.0
     
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
@@ -22,10 +23,9 @@ struct SignUpComplete: View {
                     })
                 // Show progress from last page to current page.
                 ProgressBar(
-                    fromPercent: CGFloat(
-                        percentAsDecimal(value: 3, total: 4)),
-                    toPercent: CGFloat(1.0)
-                )
+                    prevPage: 3.0,
+                    currentPage: $currentPage,
+                    totalPages: 4.0)
             }
             VStack {
                 // Labels
