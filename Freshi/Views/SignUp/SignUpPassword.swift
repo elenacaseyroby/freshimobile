@@ -169,7 +169,11 @@ struct SignUpPassword: View {
                             onTap: {
                                 self.activeTextbox = ActiveTextbox.second})
                     // render API error message
-                    if self.apiErrorField == "password" {
+                    if (
+                        self.apiErrorField == "password" ||
+                        self.apiErrorField == nil ) {
+                        // Show message if password related or server related
+                        // (server related if no field specified).
                         if let apiErrorMessage = self.apiErrorMessage {
                             FormErrorMessage(error: apiErrorMessage)
                         }

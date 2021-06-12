@@ -77,8 +77,8 @@ struct SignUp: View {
             }
             Spacer()
         }
-        .background(Color("background"))
         .padding(.horizontal, GlobalStyles.padding)
+        .background(Color("background"))
         .onAppear() {
             // keyboard appears immediately
         }
