@@ -1,21 +1,20 @@
 //
-//  PasswordReset.swift
+//  ResetPassword.swift
 //  Freshi
 //
-//  Created by Casey Roby on 6/1/21.
+//  Created by Casey Roby on 6/14/21.
 //
 
 import SwiftUI
 
-
-struct RequestPasswordReset: View {
+struct ResetPassword: View {
     var body: some View {
         Text("Password Reset!")
     }
 }
 // strictly for dev previews in xcode.
-struct RequestPasswordReset_Previews: PreviewProvider {
+struct ResetPassword_Previews: PreviewProvider {
     static var previews: some View {
-        RequestPasswordReset()
+        ResetPassword()
     }
 }
