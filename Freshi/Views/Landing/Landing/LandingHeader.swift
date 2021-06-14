@@ -13,16 +13,18 @@ struct LandingHeader: View {
         HStack(alignment: .center){
             // logo
             Image("bar-logo")
-            // title
-            Text("Freshi")
-                .foregroundColor(Color("highContrast"))
-                .fontWeight(.semibold)
-                .fontStyle(fontStyle: .title2)
-            // subtitle
-            Text("meals are for sharing")
-                .foregroundColor(Color("highContrast"))
-                .fontStyle(fontStyle: .title3)
-            // .right aligned exit icon
+            HStack(alignment: .bottom, spacing: 5) {
+                // title
+                Text("Freshi")
+                    .foregroundColor(Color("highContrast"))
+                    .fontWeight(.semibold)
+                    .fontStyle(fontStyle: .title2)
+                // subtitle
+                Text("meals are for sharing")
+                    .foregroundColor(Color("highContrast"))
+                    .fontStyle(fontStyle: .title3)
+                // .right aligned exit icon
+                }
             Spacer()
         }
         .padding(.top, 20)

@@ -107,7 +107,7 @@ struct SignUpPassword: View {
                         // Once response is processed, loading screen disappears.
                         loader.showLoadingOverlay = false
                         // Set onboarding so it shows completion page next.
-                        onboarding.showCompletedScreen = true
+                        onboarding.showSignUpCompletedScreen = true
                     }
                 })
             }

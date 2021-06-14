@@ -20,7 +20,6 @@
 		784905D72666B0EE00344EAC /* SignUpEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D62666B0EE00344EAC /* SignUpEmail.swift */; };
 		784905D92666B36B00344EAC /* RequestPasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D82666B36B00344EAC /* RequestPasswordReset.swift */; };
 		784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DA2666B3CC00344EAC /* TermsAndConditions.swift */; };
-		784905DD2666B44600344EAC /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DC2666B44600344EAC /* PrivacyPolicy.swift */; };
 		784905EB266720E100344EAC /* LandingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905EA266720E100344EAC /* LandingHeader.swift */; };
 		786775C72655B78100716DCE /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C62655B78100716DCE /* FreshiApp.swift */; };
 		786775CB2655B78600716DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CA2655B78600716DCE /* Assets.xcassets */; };
@@ -47,7 +46,6 @@
 		78E5A0F1266EA49300CD99A1 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F0266EA49300CD99A1 /* Loader.swift */; };
 		78E5A0F4266EB3EB00CD99A1 /* roundToDecPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */; };
 		78E5A0F6266EBE5200CD99A1 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */; };
-		78E5A0F9266F00E800CD99A1 /* UsernameTextbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0F8266F00E800CD99A1 /* UsernameTextbox.swift */; };
 		78E5A0FB266F029800CD99A1 /* TextboxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0FA266F029800CD99A1 /* TextboxState.swift */; };
 		78E5A0FD266FD45A00CD99A1 /* SignUpUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0FC266FD45A00CD99A1 /* SignUpUsername.swift */; };
 		78E5A100266FD4B000CD99A1 /* SignUpPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0FF266FD4B000CD99A1 /* SignUpPassword.swift */; };
@@ -92,7 +90,6 @@
 		784905D62666B0EE00344EAC /* SignUpEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmail.swift; sourceTree = "<group>"; };
 		784905D82666B36B00344EAC /* RequestPasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordReset.swift; sourceTree = "<group>"; };
 		784905DA2666B3CC00344EAC /* TermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
-		784905DC2666B44600344EAC /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
 		784905EA266720E100344EAC /* LandingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeader.swift; sourceTree = "<group>"; };
 		786775C32655B78100716DCE /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786775C62655B78100716DCE /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
@@ -125,7 +122,6 @@
 		78E5A0F0266EA49300CD99A1 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		78E5A0F3266EB3EB00CD99A1 /* roundToDecPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = roundToDecPlace.swift; sourceTree = "<group>"; };
 		78E5A0F5266EBE5200CD99A1 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
-		78E5A0F8266F00E800CD99A1 /* UsernameTextbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameTextbox.swift; sourceTree = "<group>"; };
 		78E5A0FA266F029800CD99A1 /* TextboxState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextboxState.swift; sourceTree = "<group>"; };
 		78E5A0FC266FD45A00CD99A1 /* SignUpUsername.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUsername.swift; sourceTree = "<group>"; };
 		78E5A0FF266FD4B000CD99A1 /* SignUpPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPassword.swift; sourceTree = "<group>"; };
@@ -170,14 +166,6 @@
 				784905DA2666B3CC00344EAC /* TermsAndConditions.swift */,
 			);
 			path = "T&C";
-			sourceTree = "<group>";
-		};
-		7829A4B826681C5200488394 /* PrivacyPolicy */ = {
-			isa = PBXGroup;
-			children = (
-				784905DC2666B44600344EAC /* PrivacyPolicy.swift */,
-			);
-			path = PrivacyPolicy;
 			sourceTree = "<group>";
 		};
 		7829A4B926681C6900488394 /* SignUp */ = {
@@ -355,7 +343,6 @@
 				7829A4BA26681C7A00488394 /* PasswordReset */,
 				7829A4BB26681C8900488394 /* LogIn */,
 				7829A4B726681C3400488394 /* T&C */,
-				7829A4B826681C5200488394 /* PrivacyPolicy */,
 				7829A4C22668288700488394 /* Landing */,
 			);
 			path = Views;
@@ -364,7 +351,6 @@
 		789CA52A2655C2D600A1CD5E /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				78E5A0F7266F009E00CD99A1 /* Forms */,
 				78E5A0EB266B308100CD99A1 /* LoaderAnimations */,
 				784905C32661A17E00344EAC /* Header.swift */,
 				784905C52661A62F00344EAC /* Line.swift */,
@@ -401,14 +387,6 @@
 				78E5A107266FD5A500CD99A1 /* Math */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		78E5A0F7266F009E00CD99A1 /* Forms */ = {
-			isa = PBXGroup;
-			children = (
-				78E5A0F8266F00E800CD99A1 /* UsernameTextbox.swift */,
-			);
-			path = Forms;
 			sourceTree = "<group>";
 		};
 		78E5A107266FD5A500CD99A1 /* Math */ = {
@@ -550,7 +528,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				784905DD2666B44600344EAC /* PrivacyPolicy.swift in Sources */,
 				784905D526658C2800344EAC /* StretchyButton.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,
@@ -581,7 +558,6 @@
 				789CA5372655D41500A1CD5E /* User.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
 				78E26D922674685B00EA1C2C /* Onboarding.swift in Sources */,
-				78E5A0F9266F00E800CD99A1 /* UsernameTextbox.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */,
 				78E5A0FD266FD45A00CD99A1 /* SignUpUsername.swift in Sources */,

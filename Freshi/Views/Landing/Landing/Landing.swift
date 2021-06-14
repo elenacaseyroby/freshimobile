@@ -25,13 +25,7 @@ struct Landing: View {
                     }
                     // Links
                     HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
-                        NavLink(label: "Privacy", color: Color("info")) {
-                            PrivacyPolicy()
-                        }
-                        Text("&")
-                            .fontStyle(fontStyle: .callout)
-                            .foregroundColor(Color("highContrast"))
-                        NavLink(label: "Terms", color: Color("info")) {
+                        NavLink(label: "Terms & Conditions", color: Color("interactiveFocus")) {
                             TermsAndConditions()
                         }
                         Image("dot")
