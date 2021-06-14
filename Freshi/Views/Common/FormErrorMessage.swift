@@ -21,7 +21,6 @@ struct FormErrorMessage: View {
                 Spacer()
             }
         }
-        .padding(.bottom, 5)
     }
 }
 
