@@ -38,7 +38,7 @@ struct RequestPasswordReset: View {
             self.errorMessage = error
             return
         }
-        print("send email!")
+        print("send email or throw api error!")
     }
     
     var body: some View {
@@ -100,6 +100,7 @@ struct RequestPasswordReset: View {
             Spacer()
         }
         .padding(.horizontal, GlobalStyles.padding)
+        .background(Color("background"))
         
     }
 }

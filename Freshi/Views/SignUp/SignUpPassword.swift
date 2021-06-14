@@ -28,7 +28,6 @@ struct SignUpPassword: View {
     // variables
     @State var secondPassword: String = ""
     
-    @State var isActive: Bool = false
     @State var errorMessage: String? = nil
     @State var activeTextbox: ActiveTextbox = ActiveTextbox.none
     
@@ -43,7 +42,7 @@ struct SignUpPassword: View {
         error: Bool,
         apiErrorField: String?) -> TextboxState {
         if let apiErrorField = apiErrorField {
-            if apiErrorField == "username" {
+            if apiErrorField == "password" {
                 return TextboxState.error
             }
         }
