@@ -54,7 +54,7 @@ func createUserRequest(
                 }
             }
             // else, return error.
-            var errorMessage: String = "Create user request failed."
+            var errorMessage: String = "Failed to create user. Check network connection."
             if let error = error {
                 errorMessage = error.localizedDescription
             }
