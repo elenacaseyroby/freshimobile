@@ -56,24 +56,11 @@ struct LogIn: View {
         return TextboxState.neutral
     }
     
-    // check that username and password are entered correctly before submitting to API.
-    func checkForErrors() -> Bool {
+    func clearErrorMessages() {
         self.usernameError = false
         self.usernameErrorMessage = nil
         self.passwordError = false
         self.passwordErrorMessage = nil
-        if self.username.count == 0 {
-            self.usernameError = true
-            self.usernameErrorMessage = "Please enter a username."
-        }
-        if self.password.count == 0 {
-            self.passwordError = true
-            self.passwordErrorMessage = "Please enter a password."
-        }
-        if self.passwordError || self.usernameError {
-            return true
-        }
-        return false
     }
     
     // log in through API
@@ -100,9 +87,20 @@ struct LogIn: View {
     }
     
     func submit() {
-        let errorsExist = self.checkForErrors()
+        // check that username and password are entered correctly before submitting to API.
+        self.clearErrorMessages()
+        self.usernameErrorMessage = getUsernameError(username: self.username)
+        if self.usernameErrorMessage != nil {
+            self.usernameError = true
+        }
+        self.passwordErrorMessage = getPasswordError(password: self.password)
+        if self.passwordErrorMessage != nil {
+            self.passwordError = true
+        }
         // if errors exist, don't try  to log in.
-        if errorsExist {
+        if (
+            self.usernameErrorMessage != nil ||
+            self.passwordErrorMessage != nil ) {
             return
         }
         // else, log in.
@@ -148,26 +146,29 @@ struct LogIn: View {
             if let apiErrorMessage = self.apiErrorMessage {
                 FormErrorMessage(error: apiErrorMessage)
             }
-    
-            // Links
-            HStack(alignment: .center, spacing: 5){
-                NavLink(label: "Sign up", color: Color("interactiveFocus")) {
-                    SignUp()
+            // Make links and buttons closer together.
+            VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
+                // Links
+                HStack(alignment: .center, spacing: 5){
+                    NavLink(label: "Sign up", color: Color("interactiveFocus")) {
+                        SignUp()
+                    }
+                    Image("dot")
+                    NavLink(label: "Forgot username or password?", color: Color("interactiveFocus")) {
+                        RequestPasswordReset()
+                    }
                 }
-                Image("dot")
-                NavLink(label: "Forgot username or password?", color: Color("interactiveFocus")) {
-                    RequestPasswordReset()
-                }
-            }
-            // Buttons
-            HStack(alignment: .center, spacing: 10){
+                // Buttons
                 Button("Log in") {
                     self.activeTextbox = ActiveTextbox.none
                     self.submit()
                 }
-                .stretchyButton(state: StretchyButtonState.focused)
+                .disabled(self.username.count < 3 || self.password.count < 6)
+                .stretchyButton(state: (
+                    (self.username.count < 3 || self.password.count < 6) ?
+                    StretchyButtonState.disabled :
+                    StretchyButtonState.focused))
             }
-            
             // Top align.
             Spacer()
         }
