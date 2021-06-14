@@ -22,7 +22,7 @@ struct StartView: View {
     
     var body: some View {
         VStack {
-            if onboarding.showCompletedScreen {
+            if onboarding.showSignUpCompletedScreen {
                 // If no creds, show logged out view.
                 SignUpComplete()
             } else if auth.isloggedIn! {

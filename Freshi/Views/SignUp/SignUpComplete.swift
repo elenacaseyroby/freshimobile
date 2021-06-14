@@ -19,7 +19,7 @@ struct SignUpComplete: View {
                 Header(
                     title: "Success!",
                     onExit: {
-                        self.onboarding.showCompletedScreen = false
+                        self.onboarding.showSignUpCompletedScreen = false
                     })
                 // Show progress from last page to current page.
                 ProgressBar(
@@ -46,7 +46,7 @@ struct SignUpComplete: View {
                 VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
                     // Back Button
                     Button("Skip") {
-                        self.onboarding.showCompletedScreen = false
+                        self.onboarding.showSignUpCompletedScreen = false
                     }
                         .stretchyButton(
                             state: StretchyButtonState.neutral)
