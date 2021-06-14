@@ -20,6 +20,9 @@ func APIRequest(
     body: [String: String]? = nil,
     onComplete: @escaping (Data?, Any?, Error?) -> Void) {
     // TODO: Change this url before deploy
+    // Staging
+//    let baseURL = URL(string: "http://www.freshi-staging.us-east-1.elasticbeanstalk.com/api/v1/")!
+    // Local
     let baseURL = URL(string: "http://localhost:8000/api/v1/")!
     let url = baseURL.appendingPathComponent(endpoint)
     var request = URLRequest(url: url)
