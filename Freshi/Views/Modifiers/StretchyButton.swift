@@ -69,3 +69,35 @@ extension View {
     
 }
 
+// strictly for dev previews in xcode.
+struct StretchyButton_Previews: PreviewProvider {
+    static var previews: some View {
+            VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
+            Button("Disabled Button") {
+                // action
+                print("can't trigger this action!")
+            }
+            // NOTE: you must include this for the button to stop being click-able
+            .disabled(true)
+            .stretchyButton(state: StretchyButtonState.disabled)
+            Button("Focused Button") {
+                // action
+                print("focused button clicked!")
+            }
+            .stretchyButton(state: StretchyButtonState.focused)
+            Button("Neutral Button") {
+                // action
+                print("neutral button clicked!")
+            }
+            .stretchyButton(state: StretchyButtonState.neutral)
+            Button("+") {
+                // action
+                print("square buttpn clicked!")
+            }
+            .stretchyButton(
+                state: StretchyButtonState.focused,
+                isSquare: true)
+        }
+    }
+}
+

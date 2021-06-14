@@ -8,14 +8,14 @@
 import SwiftUI
 
 
-struct PasswordReset: View {
+struct RequestPasswordReset: View {
     var body: some View {
         Text("Password Reset!")
     }
 }
 // strictly for dev previews in xcode.
-struct PasswordReset_Previews: PreviewProvider {
+struct RequestPasswordReset_Previews: PreviewProvider {
     static var previews: some View {
-        PasswordReset()
+        RequestPasswordReset()
     }
 }

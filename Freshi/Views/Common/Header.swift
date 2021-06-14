@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct Header: View {
-    @Environment(\.presentationMode) var presentationMode
     let title: String
+    var onExit: () -> Void
     var body: some View {
         HStack{
+            // logo
             Image("bar-logo")
+            // title
             Text(title)
                 .foregroundColor(Color("highContrast"))
                 .fontWeight(.semibold)
                 .fontStyle(fontStyle: .title3)
+            // .right aligned exit icon
             Spacer()
             Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
+                self.onExit()
             }) {
                 Image("exit-icon")
             }
@@ -31,6 +34,9 @@ struct Header: View {
 
 struct Header_Previews: PreviewProvider {
     static var previews: some View {
-        Header(title: "Log in")
+        Header(
+            title: "Log in",
+            onExit: {
+                print("exited")})
     }
 }

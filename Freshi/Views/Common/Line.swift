@@ -9,11 +9,11 @@ import SwiftUI
 
 struct Line: View {
     let color: Color = Color("lowContrast")
-    let width: CGFloat = 2.0
+    let height: CGFloat = 2.0
     var body: some View {
         Rectangle()
             .fill(color)
-            .frame(height: width)
+            .frame(height: self.height)
             .edgesIgnoringSafeArea(.horizontal)
     }
 }

@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+func getPasswordError(password: String) -> String? {
+    if password.count == 0 {
+        return "Please enter password."
+    }
+    if password.count < 8 {
+        return "Password too short. Must be 8 - 30 characters in length."
+    }
+    if password.count > 30 {
+        return "Password too long. Must be 8 - 30 characters in length."
+    }
+    return nil
+}
 
 struct FreshiPassword: ViewModifier {
     var state: TextboxState = TextboxState.neutral

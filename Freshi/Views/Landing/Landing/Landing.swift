@@ -4,34 +4,40 @@
 //
 //  Created by Casey Roby on 4/21/21.
 //
+
 import SwiftUI
 
 
 struct Landing: View {
     var body: some View {
         NavigationView{
-            VStack(alignment: .center, spacing: 20){
-                Spacer(minLength: 10)
+            VStack(alignment: .center, spacing: 0){
+                // Header and Image
                 LandingHeader()
                 .navigationBarHidden(true)
                 StretchyImage(imageName: "landing-collage")
-                    .padding(.bottom, 0)
-                LogInNavButton()
-                SignUpNavButton()
-                // Links
-                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5){
-                    PrivacyNavLink()
-                    Text("&")
-                        .fontStyle(fontStyle: .callout)
-                        .foregroundColor(Color("highContrast"))
-                    TermsNavLink()
-                    Image("dot")
-                    ResetPWNavLink(label: "Reset Password")
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
+                    NavButton(label: "Log in", state: StretchyButtonState.neutral) {
+                        LogIn()
+                    }
+                    NavButton(label: "Create an account", state: StretchyButtonState.focused) {
+                        SignUp()
+                    }
+                    // Links
+                    HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
+                        NavLink(label: "Terms & Conditions", color: Color("interactiveFocus")) {
+                            TermsAndConditions()
+                        }
+                        Image("dot")
+                        NavLink(label: "Reset Password", color: Color("interactiveFocus")) {
+                            RequestPasswordReset()
+                        }
+                    }
+                    Text("© freshi 2021")
+                    .fontStyle(fontStyle: .caption)
+                    .foregroundColor(Color("highContrast"))
+                    .padding(.bottom, 5)
                 }
-                Text("© freshi 2021")
-                .fontStyle(fontStyle: .caption)
-                .foregroundColor(Color("highContrast"))
-                .padding(.vertical, 5)
             }
             .padding(.horizontal, GlobalStyles.padding)
             .background(Color("background"))

@@ -10,18 +10,25 @@ import SwiftUI
 
 struct LandingHeader: View {
     var body: some View {
-        HStack{
+        HStack(alignment: .center){
+            // logo
             Image("bar-logo")
-            Text("Freshi")
-            .foregroundColor(Color("highContrast"))
-            .fontWeight(.heavy)
-            .fontStyle(fontStyle: .title2)
-            Text("meals are for sharing")
-            .foregroundColor(Color("highContrast"))
-            .fontStyle(fontStyle: .title3)
-            // Spacer pushes everything to the other end of the view
+            HStack(alignment: .bottom, spacing: 5) {
+                // title
+                Text("Freshi")
+                    .foregroundColor(Color("highContrast"))
+                    .fontWeight(.semibold)
+                    .fontStyle(fontStyle: .title2)
+                // subtitle
+                Text("meals are for sharing")
+                    .foregroundColor(Color("highContrast"))
+                    .fontStyle(fontStyle: .title3)
+                // .right aligned exit icon
+                }
             Spacer()
         }
+        .padding(.top, 20)
+        .padding(.bottom, 0)
     }
 }
 // strictly for dev previews in xcode.

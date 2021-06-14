@@ -7,13 +7,12 @@
 
 import SwiftUI
 
-enum LoginActiveTextbox {
-    case username, password, none
-}
 
 struct LogIn: View {
     // authentication state for app
     @EnvironmentObject var auth: Auth
+    
+    // loader state controls when loading overlay shows in app
     @EnvironmentObject var loader: Loader
     
     // username textbox state
@@ -27,15 +26,25 @@ struct LogIn: View {
     @State var passwordErrorMessage: String? = nil
     
     // focused textbox state
-    @State var activeTextbox: LoginActiveTextbox = LoginActiveTextbox.none
+    @State var activeTextbox: ActiveTextbox = ActiveTextbox.none
     
     // API error message
     @State var apiErrorMessage: String? = nil
     
+    // State to control exit icon
+    @State var navToRoot: Bool = false
+    
+    // State used to pop back one view
+    @Environment(\.presentationMode) var presentationMode
+    
+    enum ActiveTextbox {
+        case username, password, none
+    }
+    
     // func to decide state of textbox, ie which color border surrounds it.
     func textboxState(
-        thisTextbox: LoginActiveTextbox,
-        activeTextBox: LoginActiveTextbox,
+        thisTextbox: ActiveTextbox,
+        activeTextBox: ActiveTextbox,
         error: Bool
     ) -> TextboxState {
         if error {
@@ -74,7 +83,7 @@ struct LogIn: View {
         // clear API error message if there was one from a prev login:
         self.apiErrorMessage = nil
         // try login
-        fetchAuthCreds(username: username, password: password, completionHandler: { authCreds, requestError in
+        fetchAuthCredsRequest(username: username, password: password, completionHandler: { authCreds, requestError in
             if let authCreds = authCreds {
                 // Update the state and thereby our UI
                 auth.logIn(authCreds: authCreds)
@@ -105,20 +114,23 @@ struct LogIn: View {
         VStack(alignment: .center, spacing: 20){
             // Header
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
-                Header(title: "Log in")
+                Header(
+                    title: "Log in",
+                    onExit: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    })
                 Line()
             }
             // Textboxes
             TextField("username", text: $username, onEditingChanged: {
                 (editingChanged) in
                 if editingChanged {
-                    self.activeTextbox = LoginActiveTextbox.username
+                    self.activeTextbox = ActiveTextbox.username
                 }
             })
-                .disableAutocorrection(true)
-                .freshiUsername(
+                .freshiLogin(
                     state: self.textboxState(
-                        thisTextbox: LoginActiveTextbox.username,
+                        thisTextbox: ActiveTextbox.username,
                         activeTextBox: self.activeTextbox,
                         error: self.usernameError),
                     errorMessage: self.usernameErrorMessage
@@ -126,12 +138,12 @@ struct LogIn: View {
             SecureField("password", text: $password)
                 .freshiPassword(
                     state: self.textboxState(
-                        thisTextbox: LoginActiveTextbox.password,
+                        thisTextbox: ActiveTextbox.password,
                         activeTextBox: self.activeTextbox,
                         error: self.passwordError),
                     errorMessage: self.passwordErrorMessage,
                     onTap: {
-                        self.activeTextbox = LoginActiveTextbox.password})
+                        self.activeTextbox = ActiveTextbox.password})
             // render API error message
             if let apiErrorMessage = self.apiErrorMessage {
                 FormErrorMessage(error: apiErrorMessage)
@@ -139,14 +151,18 @@ struct LogIn: View {
     
             // Links
             HStack(alignment: .center, spacing: 5){
-                SignUpNavLink()
+                NavLink(label: "Sign up", color: Color("interactiveFocus")) {
+                    SignUp()
+                }
                 Image("dot")
-                ResetPWNavLink(label: "Forgot username or password?")
+                NavLink(label: "Forgot username or password?", color: Color("interactiveFocus")) {
+                    RequestPasswordReset()
+                }
             }
             // Buttons
             HStack(alignment: .center, spacing: 10){
                 Button("Log in") {
-                    self.activeTextbox = LoginActiveTextbox.none
+                    self.activeTextbox = ActiveTextbox.none
                     self.submit()
                 }
                 .stretchyButton(state: StretchyButtonState.focused)
@@ -156,7 +172,7 @@ struct LogIn: View {
             Spacer()
         }
         .onTapGesture {
-            self.activeTextbox = LoginActiveTextbox.none
+            self.activeTextbox = ActiveTextbox.none
         }
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
