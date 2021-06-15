@@ -93,17 +93,14 @@ struct SignUpPassword: View {
             completionHandler: { user, userRequestError in
             if let user = user {
                 // if user is created, login
-                fetchAuthCredsRequest(username: user.username, password: password, completionHandler: { authCreds, requestError in
-                    if let authCreds = authCreds {
-                        // Update the state and thereby our UI
-                        auth.logIn(authCreds: authCreds)
-                    }
+                handleLogIn(username: user.username, password: password, onError: { requestError in
                     if let requestError = requestError {
                         self.apiErrorMessage = requestError.errorMessage
                     }
+                }, onComplete: {
+                    // Once response is processed, loading screen disappears.
                     // Must send state update back to the main thread with DispatchQueue to update UI.
                     DispatchQueue.main.async {
-                        // Once response is processed, loading screen disappears.
                         loader.showLoadingOverlay = false
                         // Set onboarding so it shows completion page next.
                         onboarding.showSignUpCompletedScreen = true

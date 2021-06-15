@@ -30,15 +30,4 @@ class Auth: ObservableObject {
         // Clear user defaults data
         clearAllDataFromUserDefaults()
     }
-    
-    // Clear Auth to log out.
-    func logIn(authCreds: AuthCreds) {
-        // Send logged in state update back to the main thread with DispatchQueue to update UI.
-        DispatchQueue.main.async {
-            // Set state to logged in.
-            self.isloggedIn = true
-        }
-        // Set user auth creds in cache, so they persist.
-        setAuthCredsInCache(authCreds: authCreds)
-    }
 }
