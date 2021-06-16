@@ -271,7 +271,6 @@
 				789CA5292655C29800A1CD5E /* Views */,
 				789CA5262655C23800A1CD5E /* Models */,
 				786775CA2655B78600716DCE /* Assets.xcassets */,
-				789CA5242655C22300A1CD5E /* APIRequests */,
 				786775CF2655B78600716DCE /* Info.plist */,
 				786775CC2655B78600716DCE /* Preview Content */,
 			);
@@ -379,6 +378,7 @@
 		78E26D9A26792F5D00EA1C2C /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				789CA5242655C22300A1CD5E /* APIRequests */,
 				78E26D9C267931B000EA1C2C /* HandleLogIn.swift */,
 				78D47F3B267AA3F00041E3B1 /* HandleCreateUser.swift */,
 			);
