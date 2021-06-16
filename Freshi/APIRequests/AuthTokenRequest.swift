@@ -10,7 +10,7 @@ import SwiftUI
 
 
 // fetch, update, add, delete
-func fetchAuthCredsRequest(
+func fetchAuthTokenRequest(
     username: String,
     password: String,
     completionHandler: @escaping (AuthCreds?, RequestError?) -> Void) {

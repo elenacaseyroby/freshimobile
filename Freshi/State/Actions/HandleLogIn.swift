@@ -13,7 +13,7 @@ func handleLogIn(
     password: String,
     onError: @escaping (RequestError?) -> Void,
     onComplete: @escaping () -> Void){
-    fetchAuthCredsRequest(username: username, password: password, completionHandler: { authCreds, requestError in
+    fetchAuthTokenRequest(username: username, password: password, completionHandler: { authCreds, requestError in
         // on success pass data back to rootReducer
         if let authCreds = authCreds {
             // pass payload and action to root reducer

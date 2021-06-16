@@ -28,7 +28,7 @@
 		786775E42655B78700716DCE /* FreshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775E32655B78700716DCE /* FreshiUITests.swift */; };
 		786775F22655B84800716DCE /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775F12655B84800716DCE /* Landing.swift */; };
 		789CA52F2655C44600A1CD5E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA52E2655C44600A1CD5E /* Auth.swift */; };
-		789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */; };
+		789CA5332655CC7900A1CD5E /* AuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5322655CC7900A1CD5E /* AuthTokenRequest.swift */; };
 		789CA5372655D41500A1CD5E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5362655D41500A1CD5E /* User.swift */; };
 		789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCreds.swift */; };
 		789CA5472660471700A1CD5E /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5462660471700A1CD5E /* FontStyle.swift */; };
@@ -110,7 +110,7 @@
 		786775E52655B78700716DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786775F12655B84800716DCE /* Landing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
 		789CA52E2655C44600A1CD5E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsRequest.swift; sourceTree = "<group>"; };
+		789CA5322655CC7900A1CD5E /* AuthTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenRequest.swift; sourceTree = "<group>"; };
 		789CA5362655D41500A1CD5E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		789CA538265DAFFE00A1CD5E /* AuthCreds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCreds.swift; sourceTree = "<group>"; };
 		789CA5462660471700A1CD5E /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 		789CA5242655C22300A1CD5E /* APIRequests */ = {
 			isa = PBXGroup;
 			children = (
-				789CA5322655CC7900A1CD5E /* AuthCredsRequest.swift */,
+				789CA5322655CC7900A1CD5E /* AuthTokenRequest.swift */,
 				78E26D8B2673C4F800EA1C2C /* UserRequest.swift */,
 				78E26D8D2673C58900EA1C2C /* RequestError.swift */,
 				78E26D8F267414AE00EA1C2C /* APIRequest.swift */,
@@ -585,7 +585,7 @@
 				78E5A106266FD58A00CD99A1 /* raiseToPower.swift in Sources */,
 				78E26D9F2679381600EA1C2C /* rootReducer.swift in Sources */,
 				78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */,
-				789CA5332655CC7900A1CD5E /* AuthCredsRequest.swift in Sources */,
+				789CA5332655CC7900A1CD5E /* AuthTokenRequest.swift in Sources */,
 				78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
