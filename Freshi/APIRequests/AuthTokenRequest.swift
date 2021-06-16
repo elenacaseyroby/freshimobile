@@ -13,7 +13,7 @@ import SwiftUI
 func fetchAuthTokenRequest(
     username: String,
     password: String,
-    completionHandler: @escaping (AuthCreds?, RequestError?) -> Void) {
+    completionHandler: @escaping (Data?, RequestError?) -> Void) {
     let headers: [String: String] = [
         "username": username,
         "password": password,
@@ -38,11 +38,11 @@ func fetchAuthTokenRequest(
                     // Check for auth credentials.
                     let statusCode: Int = decodedResponse.status_code
                     if statusCode == 200 {
-                        // If status code is 200, our api will always return user_id and token, so we know we can safely unwrap.
-                        let userId = decodedResponse.user_id!
-                        let code = decodedResponse.token!
-                        let authCredentials = AuthCreds(userId: userId, code: code)
-                        completionHandler(authCredentials, nil)
+//                        // If status code is 200, our api will always return user_id and token, so we know we can safely unwrap.
+//                        let userId = decodedResponse.user_id!
+//                        let code = decodedResponse.token!
+//                        let authCredentials = AuthCreds(userId: userId, code: code)
+                        completionHandler(data, nil)
                         return
                     }
                     // Return error detail.

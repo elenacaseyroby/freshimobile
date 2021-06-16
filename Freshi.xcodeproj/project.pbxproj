@@ -41,7 +41,7 @@
 		78E26D962677B5AC00EA1C2C /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D952677B5AC00EA1C2C /* ResetPassword.swift */; };
 		78E26D9926792F3500EA1C2C /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D9826792F3500EA1C2C /* ActionType.swift */; };
 		78E26D9D267931B000EA1C2C /* HandleLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D9C267931B000EA1C2C /* HandleLogIn.swift */; };
-		78E26D9F2679381600EA1C2C /* rootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D9E2679381600EA1C2C /* rootReducer.swift */; };
+		78E26D9F2679381600EA1C2C /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D9E2679381600EA1C2C /* RootReducer.swift */; };
 		78E26DA12679418200EA1C2C /* AuthReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26DA02679418200EA1C2C /* AuthReducer.swift */; };
 		78E26DA32679582300EA1C2C /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26DA22679582300EA1C2C /* Bundle.swift */; };
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
@@ -123,7 +123,7 @@
 		78E26D952677B5AC00EA1C2C /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		78E26D9826792F3500EA1C2C /* ActionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
 		78E26D9C267931B000EA1C2C /* HandleLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleLogIn.swift; sourceTree = "<group>"; };
-		78E26D9E2679381600EA1C2C /* rootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rootReducer.swift; sourceTree = "<group>"; };
+		78E26D9E2679381600EA1C2C /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		78E26DA02679418200EA1C2C /* AuthReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReducer.swift; sourceTree = "<group>"; };
 		78E26DA22679582300EA1C2C /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
@@ -399,7 +399,7 @@
 		78E26D9B26792F6C00EA1C2C /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
-				78E26D9E2679381600EA1C2C /* rootReducer.swift */,
+				78E26D9E2679381600EA1C2C /* RootReducer.swift */,
 				78E26DA02679418200EA1C2C /* AuthReducer.swift */,
 			);
 			path = Reducers;
@@ -583,7 +583,7 @@
 				78E5A109266FDF2E00CD99A1 /* NavButton.swift in Sources */,
 				78E26D9926792F3500EA1C2C /* ActionType.swift in Sources */,
 				78E5A106266FD58A00CD99A1 /* raiseToPower.swift in Sources */,
-				78E26D9F2679381600EA1C2C /* rootReducer.swift in Sources */,
+				78E26D9F2679381600EA1C2C /* RootReducer.swift in Sources */,
 				78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */,
 				789CA5332655CC7900A1CD5E /* AuthTokenRequest.swift in Sources */,
 				78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */,

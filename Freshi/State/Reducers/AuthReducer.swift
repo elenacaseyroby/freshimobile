@@ -10,27 +10,43 @@ import SwiftUI
 
 
 struct AuthReducer {
-    @EnvironmentObject var auth: Auth
-    
-    // Clear Auth to log out.
-    func logIn(authCreds: AuthCreds) {
-        // Send logged in state update back to the main thread with DispatchQueue to update UI.
-        DispatchQueue.main.async {
-            // Set state to logged in.
-            self.auth.isloggedIn = true
-        }
-        // Set user auth creds in cache, so they persist.
-        setAuthCredsInCache(authCreds: authCreds)
+//    var state = AppState()
+//    
+//    init(state: AppState) {
+//        self.state = state
+//    }
+    func logIn() {
+        print("log in!")
     }
-    func reduce(action: ActionType, payload: Any) {
+//    // Clear Auth to log out.
+//    func logIn(authCreds: AuthCreds) {
+//        // Send logged in state update back to the main thread with DispatchQueue to update UI.
+//        DispatchQueue.main.async {
+//            // Set state to logged in.
+//            self.state.auth.isloggedIn = true
+//        }
+//        // Set user auth creds in cache, so they persist.
+//        setAuthCredsInCache(authCreds: authCreds)
+//    }
+    func reduce(action: ActionType, payload: Data) {
         // do nothing if the action type isn't applicable
         if action != ActionType.handleLogIn {
             return
         }
+        struct TokenResponse: Codable {
+            var status_code: Int
+            var detail: String?
+            var user_id: Int?
+            var token: String?
+            
+        }
         // decode payload to AuthCred and pass to login
-        let authCreds = Bundle.main.decode(AuthCreds.self, from: payload)
-        // set state.
-        self.logIn(authCreds: authCreds)
-        
+        if let tokenReponse = try? JSONDecoder().decode(TokenResponse.self, from: payload) {
+            let userId = tokenReponse.user_id!
+            let code = tokenReponse.token!
+            let authCreds = AuthCreds(userId: userId, code: code)
+            // set state.
+            self.logIn(authCreds: authCreds)
+        }
     }
 }

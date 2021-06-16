@@ -13,6 +13,9 @@ struct FreshiApp: App {
     @StateObject var loader = Loader()
     @StateObject var onboarding = Onboarding()
     
+    // we need some way to pass state into the root reducer so that it can manage state
+    // without updating every view every time any single piece of state is updated.
+    
     var body: some Scene {
         WindowGroup {
             StartView(auth: auth)
