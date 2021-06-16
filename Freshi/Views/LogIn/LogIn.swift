@@ -70,17 +70,22 @@ struct LogIn: View {
         // clear API error message if there was one from a prev login:
         self.apiErrorMessage = nil
         // try login
-        handleLogIn(username: username, password: password, onError: { requestError in
-            if let requestError = requestError {
-                self.apiErrorMessage = requestError.errorMessage
-            }
-        }, onComplete: {
-            // Once response is processed, loading screen disappears.
-            // Must send state update back to the main thread with DispatchQueue to update UI.
-            DispatchQueue.main.async {
-                loader.showLoadingOverlay = false
-            }
-        })
+        handleLogIn(
+            username: username,
+            password: password,
+            auth: auth,
+            onSuccess: {},
+            onError: { requestError in
+                if let requestError = requestError {
+                    self.apiErrorMessage = requestError.errorMessage
+                }
+            }, onComplete: {
+                // Once response is processed, loading screen disappears.
+                // Must send state update back to the main thread with DispatchQueue to update UI.
+                DispatchQueue.main.async {
+                    loader.showLoadingOverlay = false
+                }
+            })
     }
     
     func submit() {

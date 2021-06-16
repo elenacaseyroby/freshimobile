@@ -30,4 +30,12 @@ class Auth: ObservableObject {
         // Clear user defaults data
         clearAllDataFromUserDefaults()
     }
+    func logIn(authCreds: AuthCreds) {
+        // Set user auth creds in cache, so they persist.
+        setAuthCredsInCache(authCreds: authCreds)
+        // pass payload and action to root reducer
+        DispatchQueue.main.async {
+            self.isloggedIn = true
+        }
+    }
 }

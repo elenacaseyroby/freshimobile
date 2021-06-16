@@ -12,13 +12,13 @@ import Foundation
 import SwiftUI
 
 
-func APIRequest(
+func FreshiRequest(
     endpoint: String,
     method: String,
     queryString: String? = nil,
     headers: [String: String]? = nil,
     body: [String: String]? = nil,
-    onComplete: @escaping (Data?, Any?, Error?) -> Void) {
+    onComplete: @escaping (Data?, RequestError?) -> Void) {
     // TODO: Change this url before deploy
     // Staging
 //    let baseURL = URL(string: "http://www.freshi-staging.us-east-1.elasticbeanstalk.com/api/v1/")!
@@ -41,7 +41,27 @@ func APIRequest(
     
     // URLSession automatically runs in the background thread – an independent piece of code that’s running at the same time as the rest of our program. This means the network request can be running without stopping our UI from being interactive.
     URLSession.shared.dataTask(with: request) {(data, response, error) in
-        onComplete(data, response, error)
+        // Return error if request failed altogether.
+        var errorMessage: String?
+        var statusCode = 500
+        if let error = error {
+            errorMessage = error.localizedDescription
+        }
+        // Set response statusCode.
+        if let response = response {
+            // Force response to be type HTTPURLResponse to access statusCode.
+            let httpResponse = response as! HTTPURLResponse
+            statusCode = httpResponse.statusCode
+        }
+        
+        let requestError = RequestError(statusCode: statusCode, errorMessage: errorMessage)
+        // Just return data if no error
+        if statusCode == 200 {
+            onComplete(data, nil)
+            return
+        }
+        // Else return data and error (might be more descriptive error message in the data in this case).
+        onComplete(data, requestError)
     // Without resume() the request does nothing and you’ll be staring at a blank screen. But with it the request starts immediately, it will automatically run in the background, and won’t be destroyed even after our method ends.
     }.resume()
     

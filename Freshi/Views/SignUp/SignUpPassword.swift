@@ -86,42 +86,45 @@ struct SignUpPassword: View {
             loader.showLoadingOverlay = true
         }
         // Request is made
-        createUserRequest(
+        handleCreateUser(
             username: username,
             email: email,
             password: password,
-            completionHandler: { user, userRequestError in
-            if let user = user {
-                // if user is created, login
-                handleLogIn(username: user.username, password: password, onError: { requestError in
-                    if let requestError = requestError {
-                        self.apiErrorMessage = requestError.errorMessage
-                    }
-                }, onComplete: {
-                    // Once response is processed, loading screen disappears.
-                    // Must send state update back to the main thread with DispatchQueue to update UI.
-                    DispatchQueue.main.async {
-                        loader.showLoadingOverlay = false
-                        // Set onboarding so it shows completion page next.
-                        onboarding.showSignUpCompletedScreen = true
-                    }
-                })
-            }
-            if let userRequestError = userRequestError {
+            onSuccess: { user in
+                handleLogIn(
+                    username: user.username,
+                    password: password,
+                    auth: auth,
+                    onSuccess: {},
+                    onError: { requestError in
+                        if let requestError = requestError {
+                            self.apiErrorMessage = requestError.errorMessage
+                        }
+                    }, onComplete: {
+                        // Once response is processed, loading screen disappears.
+                        // Must send state update back to the main thread with DispatchQueue to update UI.
+                        DispatchQueue.main.async {
+                            loader.showLoadingOverlay = false
+                            // Set onboarding so it shows completion page next.
+                            onboarding.showSignUpCompletedScreen = true
+                        }
+                    })
+            },
+            onError: { createUserError in
                 // Push changes in state to the main thread to update UI.
                 DispatchQueue.main.async {
-                    if let field = userRequestError.error_field {
+                    if let field = createUserError.error_field {
                         self.apiErrorField = field
                     }
-                    if let message = userRequestError.error_message {
+                    if let message = createUserError.error_message {
                         self.apiErrorMessage = message
                     }
                     // Once response is processed, loading screen disappears.
                     // Must send state update back to the main thread with DispatchQueue to update UI.
                     loader.showLoadingOverlay = false
                 }
-            }
-        })
+            },
+            onComplete: {})
     }
     
     var body: some View {
