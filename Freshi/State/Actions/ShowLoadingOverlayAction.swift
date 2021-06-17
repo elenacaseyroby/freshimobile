@@ -7,6 +7,6 @@
 
 import Foundation
 
-func showLoadingOverLayAction(loader: Loader) {
-    loader.showLoadingOverlay = true
+func showLoadingOverLayAction(screenManagerStore: ScreenManagerStore) {
+    screenManagerStore.showLoadingOverlay = true
 }

@@ -10,9 +10,8 @@ import SwiftUI
 @main
 struct FreshiApp: App {
     @StateObject var authStore = AuthStore()
-    @StateObject var loader = Loader()
-    @StateObject var onboarding = Onboarding()
-    
+    // Manages overlays and screen redirects.
+    @StateObject var screenManagerStore = ScreenManagerStore()
     // we need some way to pass state into the root reducer so that it can manage state
     // without updating every view every time any single piece of state is updated.
     
@@ -21,8 +20,7 @@ struct FreshiApp: App {
             ContentView(authStore: authStore)
                 // pass our order state into our Main view.
                 .environmentObject(authStore)
-                .environmentObject(loader)
-                .environmentObject(onboarding)
+                .environmentObject(screenManagerStore)
                 // test dark mode:
 //                .preferredColorScheme(.dark)
                 

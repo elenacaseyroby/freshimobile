@@ -9,11 +9,11 @@ import SwiftUI
 
 
 struct LogIn: View {
-    // authentication state for app
+    // Authentication state for app
     @EnvironmentObject var authStore: AuthStore
     
-    // loader state controls when loading overlay shows in app
-    @EnvironmentObject var loader: Loader
+    // Manages overlays and screen redirects.
+    @EnvironmentObject var screenManagerStore: ScreenManagerStore
     
     // username textbox state
     @State var username: String = ""
@@ -66,7 +66,7 @@ struct LogIn: View {
     // log in through API
     func logIn(username: String, password: String) {
         // On submit, show loading screen until API auths or denies.
-        showLoadingOverLayAction(loader: self.loader)
+        showLoadingOverLayAction(screenManagerStore: self.screenManagerStore)
         // clear API error message if there was one from a prev login:
         self.apiErrorMessage = nil
         // try login
@@ -83,7 +83,7 @@ struct LogIn: View {
                 // Once response is processed, loading screen disappears.
                 // Must send state update back to the main thread with DispatchQueue to update UI.
                 DispatchQueue.main.async {
-                    hideLoadingOverLayAction(loader: self.loader)
+                    hideLoadingOverLayAction(screenManagerStore: self.screenManagerStore)
                 }
             })
     }

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var authStore: AuthStore
-    @EnvironmentObject var loader: Loader
-    @EnvironmentObject var onboarding: Onboarding
+    // Manages overlays and screen redirects.
+    @EnvironmentObject var screenManagerStore: ScreenManagerStore
     
     // init runs everytime the auth state changes.
     init(authStore: AuthStore) {
@@ -30,10 +30,10 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            if onboarding.showSignUpCompletedScreen {
+            if self.screenManagerStore.showSignUpCompletedScreen {
                 // If no creds, show logged out view.
                 SignUpComplete()
-            } else if authStore.isloggedIn! {
+            } else if self.authStore.isloggedIn! {
                 // If creds in state, show logged in view.
                 LoggedInView()
             } else {
@@ -42,7 +42,7 @@ struct ContentView: View {
             }
         }
         .overlay(
-            LoadingOverlay(animation:LoaderAnimation.bubbles, isLoading: self.loader.showLoadingOverlay)
+            LoadingOverlay(animation:LoaderAnimation.bubbles, isLoading: self.screenManagerStore.showLoadingOverlay)
          )
     }
 }

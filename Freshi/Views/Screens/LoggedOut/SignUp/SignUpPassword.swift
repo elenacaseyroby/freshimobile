@@ -20,10 +20,8 @@ struct SignUpPassword: View {
     
     // authentication state for app
     @EnvironmentObject var authStore: AuthStore
-    // loader state controls when loading overlay shows in app
-    @EnvironmentObject var loader: Loader
-    // use to send to completion page
-    @EnvironmentObject var onboarding: Onboarding
+    // manages overlays and screen redirects
+    @EnvironmentObject var screenManagerStore: ScreenManagerStore
     
     // variables
     @State var secondPassword: String = ""
@@ -69,7 +67,6 @@ struct SignUpPassword: View {
             return
         }
         // If no error, create account & update state
-        // with Auth.loggedIn and Onboarding.complete = false (true by default)
         self.createUser(
             username: username,
             email: email,
@@ -83,7 +80,7 @@ struct SignUpPassword: View {
             self.apiErrorField = nil
             self.apiErrorMessage = nil
             // make loader display while making API request
-            showLoadingOverLayAction(loader: self.loader)
+            showLoadingOverLayAction(screenManagerStore: self.screenManagerStore)
         }
         // Request is made
         createUserAction(
@@ -104,8 +101,10 @@ struct SignUpPassword: View {
                         // Once response is processed, loading screen disappears.
                         // Must send state update back to the main thread with DispatchQueue to update UI.
                         DispatchQueue.main.async {
-                            showUserCreatedConfirmationAction(onboarding: self.onboarding)
-                            hideLoadingOverLayAction(loader: self.loader)
+                            showSignUpConfirmationAction(
+                                screenManagerStore: self.screenManagerStore)
+                            hideLoadingOverLayAction(
+                                screenManagerStore: self.screenManagerStore)
                         }
                     })
             },
@@ -120,7 +119,8 @@ struct SignUpPassword: View {
                     }
                     // Once response is processed, loading screen disappears.
                     // Must send state update back to the main thread with DispatchQueue to update UI.
-                    hideLoadingOverLayAction(loader: self.loader)
+                    hideLoadingOverLayAction(
+                        screenManagerStore: self.screenManagerStore)
                 }
             },
             onComplete: {})

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SignUpComplete: View {
-    // use to send to completion page
-    @EnvironmentObject var onboarding: Onboarding
+    // Manages overlays and screen redirects.
+    @EnvironmentObject var screenManagerStore: ScreenManagerStore
     @State var currentPage: Float = 4.0
     
     var body: some View {
@@ -19,7 +19,7 @@ struct SignUpComplete: View {
                 Header(
                     title: "Success!",
                     onExit: {
-                        hideUserCreatedConfirmationAction(onboarding: self.onboarding)
+                        hideSignUpConfirmationAction(screenManagerStore: screenManagerStore)
                     })
                 // Show progress from last page to current page.
                 ProgressBar(
@@ -46,7 +46,8 @@ struct SignUpComplete: View {
                 VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
                     // Back Button
                     Button("Skip") {
-                        hideUserCreatedConfirmationAction(onboarding: self.onboarding)
+                        hideSignUpConfirmationAction(
+                            screenManagerStore: self.screenManagerStore)
                     }
                         .stretchyButton(
                             state: StretchyButtonState.neutral)
