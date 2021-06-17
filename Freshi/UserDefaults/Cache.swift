@@ -11,7 +11,15 @@ func userDefaultKeyExists(key: String) -> Bool {
     return UserDefaults.standard.object(forKey: key) != nil
 }
 
-// Actual functions
+// General functions
+func clearAllDataFromUserDefaults() {
+    let domain = Bundle.main.bundleIdentifier!
+    UserDefaults.standard.removePersistentDomain(forName: domain)
+    // To push the changes immediately, force update via the synchronize call.
+    UserDefaults.standard.synchronize()
+}
+
+// AuthCreds functions
 func setAuthCredsInCache(authCreds: AuthCredsModel) {
     // Encode creds and save in user defaults cache
     let encoder = JSONEncoder()
@@ -36,11 +44,4 @@ func getAuthCredsFromCache() -> AuthCredsModel? {
 
 func clearAuthCredsFromCache() {
     UserDefaults.standard.removeObject(forKey: "AUTH_CREDS")
-}
-
-func clearAllDataFromUserDefaults() {
-    let domain = Bundle.main.bundleIdentifier!
-    UserDefaults.standard.removePersistentDomain(forName: domain)
-    // To push the changes immediately, force update via the synchronize call.
-    UserDefaults.standard.synchronize()
 }
