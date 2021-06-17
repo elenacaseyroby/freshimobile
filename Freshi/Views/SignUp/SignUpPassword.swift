@@ -83,7 +83,7 @@ struct SignUpPassword: View {
             self.apiErrorField = nil
             self.apiErrorMessage = nil
             // make loader display while making API request
-            loader.showLoadingOverlay = true
+            showLoadingOverLay(loader: self.loader)
         }
         // Request is made
         createUserAction(
@@ -104,9 +104,8 @@ struct SignUpPassword: View {
                         // Once response is processed, loading screen disappears.
                         // Must send state update back to the main thread with DispatchQueue to update UI.
                         DispatchQueue.main.async {
-                            loader.showLoadingOverlay = false
-                            // Set onboarding so it shows completion page next.
-                            onboarding.showSignUpCompletedScreen = true
+                            showUserCreatedConfirmationScreen(onboarding: self.onboarding)
+                            hideLoadingOverLay(loader: self.loader)
                         }
                     })
             },
@@ -121,7 +120,7 @@ struct SignUpPassword: View {
                     }
                     // Once response is processed, loading screen disappears.
                     // Must send state update back to the main thread with DispatchQueue to update UI.
-                    loader.showLoadingOverlay = false
+                    hideLoadingOverLay(loader: self.loader)
                 }
             },
             onComplete: {})

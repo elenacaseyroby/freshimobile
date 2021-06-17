@@ -34,6 +34,10 @@
 		789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5482660694800A1CD5E /* GlobalStyles.swift */; };
 		78D47F3C267AA3F00041E3B1 /* CreateUserAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F3B267AA3F00041E3B1 /* CreateUserAction.swift */; };
 		78D47F3E267ACC990041E3B1 /* LogOutAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F3D267ACC990041E3B1 /* LogOutAction.swift */; };
+		78D47F40267BE50E0041E3B1 /* ShowUserCreatedConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F3F267BE50E0041E3B1 /* ShowUserCreatedConfirmationScreen.swift */; };
+		78D47F42267BE5550041E3B1 /* ShowLoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F41267BE5550041E3B1 /* ShowLoadingOverlay.swift */; };
+		78D47F44267BE5940041E3B1 /* HideUserCreatedConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F43267BE5940041E3B1 /* HideUserCreatedConfirmationScreen.swift */; };
+		78D47F46267BE5B50041E3B1 /* HideLoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F45267BE5B50041E3B1 /* HideLoadingOverlay.swift */; };
 		78E26D8A2672C74100EA1C2C /* SignUpButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D892672C74100EA1C2C /* SignUpButtons.swift */; };
 		78E26D8E2673C58900EA1C2C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8D2673C58900EA1C2C /* RequestError.swift */; };
 		78E26D90267414AE00EA1C2C /* FreshiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8F267414AE00EA1C2C /* FreshiRequest.swift */; };
@@ -112,6 +116,10 @@
 		789CA5482660694800A1CD5E /* GlobalStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStyles.swift; sourceTree = "<group>"; };
 		78D47F3B267AA3F00041E3B1 /* CreateUserAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserAction.swift; sourceTree = "<group>"; };
 		78D47F3D267ACC990041E3B1 /* LogOutAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutAction.swift; sourceTree = "<group>"; };
+		78D47F3F267BE50E0041E3B1 /* ShowUserCreatedConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserCreatedConfirmationScreen.swift; sourceTree = "<group>"; };
+		78D47F41267BE5550041E3B1 /* ShowLoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLoadingOverlay.swift; sourceTree = "<group>"; };
+		78D47F43267BE5940041E3B1 /* HideUserCreatedConfirmationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideUserCreatedConfirmationScreen.swift; sourceTree = "<group>"; };
+		78D47F45267BE5B50041E3B1 /* HideLoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideLoadingOverlay.swift; sourceTree = "<group>"; };
 		78E26D892672C74100EA1C2C /* SignUpButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtons.swift; sourceTree = "<group>"; };
 		78E26D8D2673C58900EA1C2C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		78E26D8F267414AE00EA1C2C /* FreshiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiRequest.swift; sourceTree = "<group>"; };
@@ -382,6 +390,10 @@
 				78D47F3B267AA3F00041E3B1 /* CreateUserAction.swift */,
 				78E26D9C267931B000EA1C2C /* LogInAction.swift */,
 				78D47F3D267ACC990041E3B1 /* LogOutAction.swift */,
+				78D47F3F267BE50E0041E3B1 /* ShowUserCreatedConfirmationScreen.swift */,
+				78D47F43267BE5940041E3B1 /* HideUserCreatedConfirmationScreen.swift */,
+				78D47F41267BE5550041E3B1 /* ShowLoadingOverlay.swift */,
+				78D47F45267BE5B50041E3B1 /* HideLoadingOverlay.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -554,6 +566,7 @@
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,
 				78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */,
+				78D47F44267BE5940041E3B1 /* HideUserCreatedConfirmationScreen.swift in Sources */,
 				784905D92666B36B00344EAC /* RequestEmail.swift in Sources */,
 				78E26D9D267931B000EA1C2C /* LogInAction.swift in Sources */,
 				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
@@ -561,6 +574,7 @@
 				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
 				78E5A109266FDF2E00CD99A1 /* NavButton.swift in Sources */,
 				78E5A106266FD58A00CD99A1 /* raiseToPower.swift in Sources */,
+				78D47F40267BE50E0041E3B1 /* ShowUserCreatedConfirmationScreen.swift in Sources */,
 				78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */,
 				78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCreds.swift in Sources */,
@@ -581,6 +595,8 @@
 				789CA5372655D41500A1CD5E /* User.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
 				78E26D922674685B00EA1C2C /* Onboarding.swift in Sources */,
+				78D47F46267BE5B50041E3B1 /* HideLoadingOverlay.swift in Sources */,
+				78D47F42267BE5550041E3B1 /* ShowLoadingOverlay.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */,
 				78E5A0FD266FD45A00CD99A1 /* SignUpUsername.swift in Sources */,
