@@ -11,5 +11,5 @@ import SwiftUI
 // Codable protocol has something to do with JSON
 struct AuthCreds: Codable, Equatable {
     var userId: Int
-    var code: String
+    var token: String
 }

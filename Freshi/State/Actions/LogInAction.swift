@@ -51,8 +51,8 @@ func logInAction(
                     // if request succeeded and no error, log in.
                     } else {
                             let userId = tokenReponse.user_id!
-                            let code = tokenReponse.token!
-                            let authCreds = AuthCreds(userId: userId, code: code)
+                            let token = tokenReponse.token!
+                        let authCreds = AuthCreds(userId: userId, token: token)
                             // Update state
                             logIn(auth: auth, authCreds: authCreds)
                             onSuccess()
