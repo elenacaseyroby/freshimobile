@@ -9,7 +9,7 @@ import SwiftUI
 
 // Equitable protocol lets you use "=="
 // Codable protocol has something to do with JSON
-struct AuthCreds: Codable, Equatable {
+struct AuthCredsModel: Codable, Equatable {
     var userId: Int
     var token: String
 }

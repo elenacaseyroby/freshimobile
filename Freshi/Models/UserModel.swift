@@ -10,7 +10,7 @@ import SwiftUI
 // Identifiable protocol lets you iterate through and simply requires a unique id.
 // Equitable protocol lets you use "=="
 // Codable protocol has something to do with JSON
-struct User: Identifiable, Codable, Equatable {
+struct UserModel: Identifiable, Codable, Equatable {
     var id: Int
     var username: String
     var email: String

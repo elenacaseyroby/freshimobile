@@ -19,7 +19,7 @@ func createUserAction(
     username: String,
     email: String,
     password: String,
-    onSuccess: @escaping (User) -> Void,
+    onSuccess: @escaping (UserModel) -> Void,
     onError: @escaping (CreateUserError) -> Void,
     onComplete: @escaping () -> Void) {
     let body: [String: String] = [
@@ -42,7 +42,7 @@ func createUserAction(
                     }
                     // if request succeeded and no error, return user.
                     else {
-                        if let user = try? JSONDecoder().decode(User.self, from: data) {
+                        if let user = try? JSONDecoder().decode(UserModel.self, from: data) {
                             onSuccess(user)
                         }
                     }
