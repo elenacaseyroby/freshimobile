@@ -40,7 +40,6 @@
 		78E26D922674685B00EA1C2C /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D912674685B00EA1C2C /* Onboarding.swift */; };
 		78E26D962677B5AC00EA1C2C /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D952677B5AC00EA1C2C /* ResetPassword.swift */; };
 		78E26D9D267931B000EA1C2C /* LogInAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D9C267931B000EA1C2C /* LogInAction.swift */; };
-		78E26DA32679582300EA1C2C /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26DA22679582300EA1C2C /* Bundle.swift */; };
 		78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */; };
 		78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */; };
 		78E5A0EA266B2A6200CD99A1 /* LoadingBubbles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */; };
@@ -119,7 +118,6 @@
 		78E26D912674685B00EA1C2C /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		78E26D952677B5AC00EA1C2C /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		78E26D9C267931B000EA1C2C /* LogInAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInAction.swift; sourceTree = "<group>"; };
-		78E26DA22679582300EA1C2C /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		78E5A0D8266A9AFC00CD99A1 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		78E5A0DE266B148A00CD99A1 /* CircleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
 		78E5A0E9266B2A6200CD99A1 /* LoadingBubbles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBubbles.swift; sourceTree = "<group>"; };
@@ -409,7 +407,6 @@
 			isa = PBXGroup;
 			children = (
 				78E5A107266FD5A500CD99A1 /* Math */,
-				78E26DA22679582300EA1C2C /* Bundle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -554,7 +551,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				784905D526658C2800344EAC /* StretchyButton.swift in Sources */,
-				78E26DA32679582300EA1C2C /* Bundle.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,
 				78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */,
