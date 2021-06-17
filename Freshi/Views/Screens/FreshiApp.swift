@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct FreshiApp: App {
-    @StateObject var auth = Auth()
+    @StateObject var authStore = AuthStore()
     @StateObject var loader = Loader()
     @StateObject var onboarding = Onboarding()
     
@@ -18,9 +18,9 @@ struct FreshiApp: App {
     
     var body: some Scene {
         WindowGroup {
-            StartView(auth: auth)
+            ContentView(authStore: authStore)
                 // pass our order state into our Main view.
-                .environmentObject(auth)
+                .environmentObject(authStore)
                 .environmentObject(loader)
                 .environmentObject(onboarding)
                 // test dark mode:

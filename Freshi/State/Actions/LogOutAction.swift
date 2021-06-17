@@ -6,9 +6,9 @@
 //
 
 // Updates Auth state
-func logOutAction(auth: Auth){
+func logOutAction(authStore: AuthStore){
     // Set state to logged out.
-    auth.isloggedIn = false
+    authStore.isloggedIn = false
     // Clear user defaults data
     clearAllDataFromUserDefaults()
 }

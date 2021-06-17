@@ -7,6 +7,6 @@
 
 import Foundation
 
-func showLoadingOverLay(loader: Loader) {
+func showLoadingOverLayAction(loader: Loader) {
     loader.showLoadingOverlay = true
 }

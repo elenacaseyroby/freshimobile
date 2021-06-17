@@ -7,12 +7,12 @@
 
 import Foundation
 
-private func logIn(auth: Auth, authCreds: AuthCreds) {
+private func logIn(authStore: AuthStore, authCreds: AuthCreds) {
     // Set user auth creds in cache, so they persist.
     setAuthCredsInCache(authCreds: authCreds)
     // pass payload and action to root reducer
     DispatchQueue.main.async {
-        auth.isloggedIn = true
+        authStore.isloggedIn = true
     }
 }
 
@@ -20,7 +20,7 @@ private func logIn(auth: Auth, authCreds: AuthCreds) {
 func logInAction(
     username: String,
     password: String,
-    auth: Auth,
+    authStore: AuthStore,
     onSuccess: @escaping () -> Void,
     onError: @escaping (RequestError?) -> Void,
     onComplete: @escaping () -> Void){
@@ -54,7 +54,7 @@ func logInAction(
                             let token = tokenReponse.token!
                         let authCreds = AuthCreds(userId: userId, token: token)
                             // Update state
-                            logIn(auth: auth, authCreds: authCreds)
+                            logIn(authStore: authStore, authCreds: authCreds)
                             onSuccess()
                         }
                     }

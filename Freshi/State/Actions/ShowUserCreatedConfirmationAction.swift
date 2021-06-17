@@ -7,6 +7,6 @@
 
 import Foundation
 
-func showUserCreatedConfirmationScreen(onboarding: Onboarding) {
+func showUserCreatedConfirmationAction(onboarding: Onboarding) {
     onboarding.showSignUpCompletedScreen = true
 }

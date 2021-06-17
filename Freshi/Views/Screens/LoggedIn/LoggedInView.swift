@@ -9,10 +9,10 @@ import SwiftUI
 
 struct LoggedInView: View {
     // authentication state for app
-    @EnvironmentObject var auth: Auth
+    @EnvironmentObject var authStore: AuthStore
     var body: some View {
         Button("log out") {
-            logOutAction(auth: auth)
+            logOutAction(authStore: authStore)
         }
     }
 }

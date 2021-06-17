@@ -7,6 +7,6 @@
 
 import Foundation
 
-func hideUserCreatedConfirmationScreen(onboarding: Onboarding) {
+func hideUserCreatedConfirmationAction(onboarding: Onboarding) {
     onboarding.showSignUpCompletedScreen = false
 }

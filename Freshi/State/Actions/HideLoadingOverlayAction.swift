@@ -7,6 +7,6 @@
 
 import Foundation
 
-func hideLoadingOverLay(loader: Loader) {
+func hideLoadingOverLayAction(loader: Loader) {
     loader.showLoadingOverlay = false
 }

@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct StartView: View {
-    @EnvironmentObject var auth: Auth
+struct ContentView: View {
+    @EnvironmentObject var authStore: AuthStore
     @EnvironmentObject var loader: Loader
     @EnvironmentObject var onboarding: Onboarding
     
     // init runs everytime the auth state changes.
-    init(auth: Auth) {
+    init(authStore: AuthStore) {
         // if isloggedIn state hasn't been set, check if log in credentials are stored in user defaults cache.
-        if auth.isloggedIn == nil {
+        if authStore.isloggedIn == nil {
             // Check for auth token in cache and set auth.isLoggedIn accordingly.
             if getAuthCredsFromCache() != nil {
-                auth.isloggedIn = true
+                authStore.isloggedIn = true
                 return
             }
-            auth.isloggedIn = false
+            authStore.isloggedIn = false
         }
         // TODO: there will be a time when users have auth creds but they are expired.
         // how should we deal with them?  What does it look like when a request is made
@@ -33,7 +33,7 @@ struct StartView: View {
             if onboarding.showSignUpCompletedScreen {
                 // If no creds, show logged out view.
                 SignUpComplete()
-            } else if auth.isloggedIn! {
+            } else if authStore.isloggedIn! {
                 // If creds in state, show logged in view.
                 LoggedInView()
             } else {
@@ -47,9 +47,9 @@ struct StartView: View {
     }
 }
 
-struct StartView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let auth: Auth = Auth()
-        StartView(auth: auth)
+        let authStore: AuthStore = AuthStore()
+        ContentView(authStore: authStore)
     }
 }

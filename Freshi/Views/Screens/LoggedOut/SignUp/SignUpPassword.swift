@@ -19,7 +19,7 @@ struct SignUpPassword: View {
     @Binding var apiErrorField: String?
     
     // authentication state for app
-    @EnvironmentObject var auth: Auth
+    @EnvironmentObject var authStore: AuthStore
     // loader state controls when loading overlay shows in app
     @EnvironmentObject var loader: Loader
     // use to send to completion page
@@ -83,7 +83,7 @@ struct SignUpPassword: View {
             self.apiErrorField = nil
             self.apiErrorMessage = nil
             // make loader display while making API request
-            showLoadingOverLay(loader: self.loader)
+            showLoadingOverLayAction(loader: self.loader)
         }
         // Request is made
         createUserAction(
@@ -94,7 +94,7 @@ struct SignUpPassword: View {
                 logInAction(
                     username: user.username,
                     password: password,
-                    auth: auth,
+                    authStore: authStore,
                     onSuccess: {},
                     onError: { requestError in
                         if let requestError = requestError {
@@ -104,8 +104,8 @@ struct SignUpPassword: View {
                         // Once response is processed, loading screen disappears.
                         // Must send state update back to the main thread with DispatchQueue to update UI.
                         DispatchQueue.main.async {
-                            showUserCreatedConfirmationScreen(onboarding: self.onboarding)
-                            hideLoadingOverLay(loader: self.loader)
+                            showUserCreatedConfirmationAction(onboarding: self.onboarding)
+                            hideLoadingOverLayAction(loader: self.loader)
                         }
                     })
             },
@@ -120,7 +120,7 @@ struct SignUpPassword: View {
                     }
                     // Once response is processed, loading screen disappears.
                     // Must send state update back to the main thread with DispatchQueue to update UI.
-                    hideLoadingOverLay(loader: self.loader)
+                    hideLoadingOverLayAction(loader: self.loader)
                 }
             },
             onComplete: {})
