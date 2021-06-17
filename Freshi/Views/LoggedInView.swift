@@ -12,7 +12,7 @@ struct LoggedInView: View {
     @EnvironmentObject var auth: Auth
     var body: some View {
         Button("log out") {
-            auth.logOut()
+            logOutAction(auth: auth)
         }
     }
 }

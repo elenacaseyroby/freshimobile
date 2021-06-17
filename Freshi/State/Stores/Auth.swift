@@ -12,30 +12,5 @@ import SwiftUI
 class Auth: ObservableObject {
     // @Published tells the ObservableObject protocol which properties to publish changes for
     @Published var isloggedIn: Bool? = nil
-    
-    // initialize and set is logged in
-    func checkIfLoggedIn() {
-        // Check for auth token in cache and set auth.isLoggedIn accordingly.
-        if getAuthCredsFromCache() != nil {
-            self.isloggedIn = true
-            return
-        }
-        self.isloggedIn = false
-    }
-    
-    // Clear Auth to log out.
-    func logOut() {
-        // Set state to logged out.
-        self.isloggedIn = false
-        // Clear user defaults data
-        clearAllDataFromUserDefaults()
-    }
-    func logIn(authCreds: AuthCreds) {
-        // Set user auth creds in cache, so they persist.
-        setAuthCredsInCache(authCreds: authCreds)
-        // pass payload and action to root reducer
-        DispatchQueue.main.async {
-            self.isloggedIn = true
-        }
-    }
+
 }

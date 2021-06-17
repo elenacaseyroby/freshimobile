@@ -86,12 +86,12 @@ struct SignUpPassword: View {
             loader.showLoadingOverlay = true
         }
         // Request is made
-        handleCreateUser(
+        createUserAction(
             username: username,
             email: email,
             password: password,
             onSuccess: { user in
-                handleLogIn(
+                logInAction(
                     username: user.username,
                     password: password,
                     auth: auth,

@@ -7,8 +7,17 @@
 
 import Foundation
 
+private func logIn(auth: Auth, authCreds: AuthCreds) {
+    // Set user auth creds in cache, so they persist.
+    setAuthCredsInCache(authCreds: authCreds)
+    // pass payload and action to root reducer
+    DispatchQueue.main.async {
+        auth.isloggedIn = true
+    }
+}
+
 // Updates Auth state
-func handleLogIn(
+func logInAction(
     username: String,
     password: String,
     auth: Auth,
@@ -45,7 +54,7 @@ func handleLogIn(
                             let code = tokenReponse.token!
                             let authCreds = AuthCreds(userId: userId, code: code)
                             // Update state
-                            auth.logIn(authCreds: authCreds)
+                            logIn(auth: auth, authCreds: authCreds)
                             onSuccess()
                         }
                     }

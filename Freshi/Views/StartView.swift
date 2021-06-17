@@ -16,8 +16,16 @@ struct StartView: View {
     init(auth: Auth) {
         // if isloggedIn state hasn't been set, check if log in credentials are stored in user defaults cache.
         if auth.isloggedIn == nil {
-            auth.checkIfLoggedIn()
+            // Check for auth token in cache and set auth.isLoggedIn accordingly.
+            if getAuthCredsFromCache() != nil {
+                auth.isloggedIn = true
+                return
+            }
+            auth.isloggedIn = false
         }
+        // TODO: there will be a time when users have auth creds but they are expired.
+        // how should we deal with them?  What does it look like when a request is made
+        // to an endpoint using an expired auth token?
     }
     
     var body: some View {

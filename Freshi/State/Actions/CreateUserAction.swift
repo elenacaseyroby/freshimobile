@@ -15,7 +15,7 @@ struct CreateUserError: Codable {
 }
 
 // Doesn't update state
-func handleCreateUser(
+func createUserAction(
     username: String,
     email: String,
     password: String,
