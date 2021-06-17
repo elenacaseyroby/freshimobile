@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// @main specifies that this is the starting point of our app.
 @main
 struct FreshiApp: App {
     @StateObject var authStore = AuthStore()
