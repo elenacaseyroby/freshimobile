@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ResetPasswordReset: View {
+struct ResetPassword: View {
     // State used to pop back one view
     @Environment(\.presentationMode) var presentationMode
     
@@ -139,8 +139,8 @@ struct ResetPasswordReset: View {
     }
 }
 // strictly for dev previews in xcode.
-struct ResetPasswordReset_Previews: PreviewProvider {
+struct ResetPassword_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPasswordReset()
+        ResetPassword()
     }
 }
