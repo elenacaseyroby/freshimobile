@@ -9,9 +9,7 @@ import SwiftUI
 
 
 struct ResetPassword: View {
-    // State used to pop back one view
-    @Environment(\.presentationMode) var presentationMode
-    
+    @Binding var selection: String
     @State var password: String = ""
     @State var secondPassword: String = ""
     @State var errorMessage: String? = nil
@@ -60,7 +58,7 @@ struct ResetPassword: View {
                 Header(
                     title: "Password Recovery",
                     onExit: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.selection = "landing"
                     })
                 Line()
             }
@@ -109,9 +107,12 @@ struct ResetPassword: View {
                     Text("Remember your password?")
                         .foregroundColor(Color("highContrast"))
                         .fontStyle(fontStyle: .subheadline)
-                    NavLink(label: "Log in", color: Color("interactiveFocus")) {
-                        LogIn()
-                    }
+                    Button("Log in") {
+                            self.selection = "log-in"
+                        }
+                        .fontStyle(fontStyle: .subheadline)
+                        .foregroundColor(Color("interactiveFocus"))
+                    
                     Spacer()
                 }
                 // Submit button
@@ -141,6 +142,6 @@ struct ResetPassword: View {
 // strictly for dev previews in xcode.
 struct ResetPassword_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPassword()
+        ResetPassword(selection: .constant("reset-password"))
     }
 }

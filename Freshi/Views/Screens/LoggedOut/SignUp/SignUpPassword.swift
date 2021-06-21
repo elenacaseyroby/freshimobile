@@ -11,6 +11,7 @@ import SwiftUI
 
 struct SignUpPassword: View {
     // args
+    @Binding var selection: String
     @Binding var password: String
     @Binding var email: String
     @Binding var username: String
@@ -179,6 +180,7 @@ struct SignUpPassword: View {
                 }
             }
             SignUpButtons(
+                selection: $selection,
                 submitLabel: "Create account",
                 submitButtonDisabled: (
                     self.password.count < 8 ||
@@ -198,6 +200,7 @@ struct SignUpPassword: View {
 struct SignUpPassword_Previews: PreviewProvider {
     static var previews: some View {
         SignUpPassword(
+            selection: .constant("log in"),
             password: .constant("password"),
             email: .constant("email@email.com"),
             username: .constant("username"),

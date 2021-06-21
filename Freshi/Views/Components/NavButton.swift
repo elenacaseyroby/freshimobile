@@ -55,7 +55,7 @@ struct NavButton<Content: View>: View {
 struct NavButton_Previews: PreviewProvider {
     static var previews: some View {
         NavButton(label: "Log in", state: StretchyButtonState.focused) {
-            LogIn()
+            LogIn(selection: .constant("reset-password"))
         }
     }
 }

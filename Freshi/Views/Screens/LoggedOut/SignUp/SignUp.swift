@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct SignUp: View {
+    @Binding var selection: String
     // Tracks form state.
     @State var username: String = ""
     @State var email: String = ""
@@ -17,9 +18,6 @@ struct SignUp: View {
     // This will only be set if you get to the last page of the form, submit and it fails and gets naved back here.
     @State var apiErrorMessage: String? = nil
     @State var apiErrorField: String? = nil
-    
-    // State used to pop back one view
-    @Environment(\.presentationMode) var presentationMode
     
     // Controls progress bar.
     @State var currentPage: Float = 1
@@ -41,7 +39,7 @@ struct SignUp: View {
                 Header(
                     title: "Create an account",
                     onExit: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.selection = "landing"
                     })
                 // Show progress from last page to current page.
                 ProgressBar(
@@ -52,6 +50,7 @@ struct SignUp: View {
             // Form
             if pages[self.currentPage] == "username" {
                 SignUpUsername(
+                    selection: $selection,
                     username: $username,
                     currentPage: $currentPage,
                     apiErrorMessage: $apiErrorMessage,
@@ -59,6 +58,7 @@ struct SignUp: View {
             }
             if pages[self.currentPage] == "email" {
                 SignUpEmail(
+                    selection: $selection,
                     email: $email,
                     currentPage: $currentPage,
                     apiErrorMessage: $apiErrorMessage,
@@ -66,6 +66,7 @@ struct SignUp: View {
             }
             if pages[self.currentPage] == "password" {
                 SignUpPassword(
+                    selection: $selection,
                     password: $password,
                     email: $email,
                     username: $username,
@@ -104,6 +105,6 @@ struct SignUp: View {
 // strictly for dev previews in xcode.
 struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp()
+        SignUp(selection: .constant("sign-up"))
     }
 }

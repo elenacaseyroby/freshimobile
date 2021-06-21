@@ -14,13 +14,14 @@
 		784905C42661A17E00344EAC /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C32661A17E00344EAC /* Header.swift */; };
 		784905C62661A62F00344EAC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C52661A62F00344EAC /* Line.swift */; };
 		784905C926653FFE00344EAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905C826653FFE00344EAC /* ContentView.swift */; };
-		784905CB2665405B00344EAC /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905CA2665405B00344EAC /* LoggedInView.swift */; };
+		784905CB2665405B00344EAC /* LoggedInMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905CA2665405B00344EAC /* LoggedInMain.swift */; };
 		784905D12665717C00344EAC /* StretchyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D02665717B00344EAC /* StretchyImage.swift */; };
 		784905D526658C2800344EAC /* StretchyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D426658C2800344EAC /* StretchyButton.swift */; };
 		784905D72666B0EE00344EAC /* SignUpEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D62666B0EE00344EAC /* SignUpEmail.swift */; };
-		784905D92666B36B00344EAC /* RequestEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D82666B36B00344EAC /* RequestEmail.swift */; };
+		784905D92666B36B00344EAC /* RequestPasswordReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905D82666B36B00344EAC /* RequestPasswordReset.swift */; };
 		784905DB2666B3CC00344EAC /* TermsAndConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905DA2666B3CC00344EAC /* TermsAndConditions.swift */; };
 		784905EB266720E100344EAC /* LandingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784905EA266720E100344EAC /* LandingHeader.swift */; };
+		785D4B3D26801BC400A4DEF2 /* LoggedOutMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785D4B3C26801BC400A4DEF2 /* LoggedOutMain.swift */; };
 		786775C72655B78100716DCE /* FreshiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775C62655B78100716DCE /* FreshiApp.swift */; };
 		786775CB2655B78600716DCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CA2655B78600716DCE /* Assets.xcassets */; };
 		786775CE2655B78600716DCE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 786775CD2655B78600716DCE /* Preview Assets.xcassets */; };
@@ -39,8 +40,7 @@
 		78D47F44267BE5940041E3B1 /* HideSignUpConfirmationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F43267BE5940041E3B1 /* HideSignUpConfirmationAction.swift */; };
 		78D47F46267BE5B50041E3B1 /* HideLoadingOverlayAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F45267BE5B50041E3B1 /* HideLoadingOverlayAction.swift */; };
 		78D47F50267BF2360041E3B1 /* ScreenManagerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F4F267BF2360041E3B1 /* ScreenManagerStore.swift */; };
-		78D47F57267C25D00041E3B1 /* NavToDeepLinkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F56267C25D00041E3B1 /* NavToDeepLinkAction.swift */; };
-		78D47F59267C29D00041E3B1 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F58267C29D00041E3B1 /* DeepLink.swift */; };
+		78D47F57267C25D00041E3B1 /* DeepLinkFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F56267C25D00041E3B1 /* DeepLinkFunctions.swift */; };
 		78E26D8A2672C74100EA1C2C /* SignUpButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D892672C74100EA1C2C /* SignUpButtons.swift */; };
 		78E26D8E2673C58900EA1C2C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8D2673C58900EA1C2C /* RequestError.swift */; };
 		78E26D90267414AE00EA1C2C /* FreshiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8F267414AE00EA1C2C /* FreshiRequest.swift */; };
@@ -91,13 +91,14 @@
 		784905C32661A17E00344EAC /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		784905C52661A62F00344EAC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		784905C826653FFE00344EAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		784905CA2665405B00344EAC /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
+		784905CA2665405B00344EAC /* LoggedInMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInMain.swift; sourceTree = "<group>"; };
 		784905D02665717B00344EAC /* StretchyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyImage.swift; sourceTree = "<group>"; };
 		784905D426658C2800344EAC /* StretchyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StretchyButton.swift; sourceTree = "<group>"; };
 		784905D62666B0EE00344EAC /* SignUpEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmail.swift; sourceTree = "<group>"; };
-		784905D82666B36B00344EAC /* RequestEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEmail.swift; sourceTree = "<group>"; };
+		784905D82666B36B00344EAC /* RequestPasswordReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPasswordReset.swift; sourceTree = "<group>"; };
 		784905DA2666B3CC00344EAC /* TermsAndConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditions.swift; sourceTree = "<group>"; };
 		784905EA266720E100344EAC /* LandingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeader.swift; sourceTree = "<group>"; };
+		785D4B3C26801BC400A4DEF2 /* LoggedOutMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutMain.swift; sourceTree = "<group>"; };
 		786775C32655B78100716DCE /* Freshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		786775C62655B78100716DCE /* FreshiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiApp.swift; sourceTree = "<group>"; };
 		786775CA2655B78600716DCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,8 +123,7 @@
 		78D47F43267BE5940041E3B1 /* HideSignUpConfirmationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideSignUpConfirmationAction.swift; sourceTree = "<group>"; };
 		78D47F45267BE5B50041E3B1 /* HideLoadingOverlayAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideLoadingOverlayAction.swift; sourceTree = "<group>"; };
 		78D47F4F267BF2360041E3B1 /* ScreenManagerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenManagerStore.swift; sourceTree = "<group>"; };
-		78D47F56267C25D00041E3B1 /* NavToDeepLinkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavToDeepLinkAction.swift; sourceTree = "<group>"; };
-		78D47F58267C29D00041E3B1 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
+		78D47F56267C25D00041E3B1 /* DeepLinkFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkFunctions.swift; sourceTree = "<group>"; };
 		78E26D892672C74100EA1C2C /* SignUpButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtons.swift; sourceTree = "<group>"; };
 		78E26D8D2673C58900EA1C2C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		78E26D8F267414AE00EA1C2C /* FreshiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiRequest.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		7829A4BA26681C7A00488394 /* PasswordReset */ = {
 			isa = PBXGroup;
 			children = (
-				784905D82666B36B00344EAC /* RequestEmail.swift */,
+				784905D82666B36B00344EAC /* RequestPasswordReset.swift */,
 				78E26D952677B5AC00EA1C2C /* ResetPassword.swift */,
 			);
 			path = PasswordReset;
@@ -375,7 +375,6 @@
 				78D47F48267BEB060041E3B1 /* LoggedIn */,
 				786775C62655B78100716DCE /* FreshiApp.swift */,
 				784905C826653FFE00344EAC /* ContentView.swift */,
-				78D47F58267C29D00041E3B1 /* DeepLink.swift */,
 				7829A4B726681C3400488394 /* T&C */,
 			);
 			path = Screens;
@@ -389,7 +388,7 @@
 				78D47F4C267BEBD40041E3B1 /* Post */,
 				78D47F4B267BEBC70041E3B1 /* Search */,
 				78D47F4A267BEBB90041E3B1 /* Home */,
-				784905CA2665405B00344EAC /* LoggedInView.swift */,
+				784905CA2665405B00344EAC /* LoggedInMain.swift */,
 			);
 			path = LoggedIn;
 			sourceTree = "<group>";
@@ -401,6 +400,7 @@
 				7829A4BA26681C7A00488394 /* PasswordReset */,
 				7829A4BB26681C8900488394 /* LogIn */,
 				7829A4B926681C6900488394 /* SignUp */,
+				785D4B3C26801BC400A4DEF2 /* LoggedOutMain.swift */,
 			);
 			path = LoggedOut;
 			sourceTree = "<group>";
@@ -459,7 +459,6 @@
 				78D47F43267BE5940041E3B1 /* HideSignUpConfirmationAction.swift */,
 				78D47F41267BE5550041E3B1 /* ShowLoadingOverlayAction.swift */,
 				78D47F45267BE5B50041E3B1 /* HideLoadingOverlayAction.swift */,
-				78D47F56267C25D00041E3B1 /* NavToDeepLinkAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -484,6 +483,7 @@
 		78E5A0F2266EB3BA00CD99A1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				78D47F56267C25D00041E3B1 /* DeepLinkFunctions.swift */,
 				78E5A107266FD5A500CD99A1 /* Math */,
 			);
 			path = Helpers;
@@ -633,9 +633,9 @@
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,
 				78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */,
 				78D47F44267BE5940041E3B1 /* HideSignUpConfirmationAction.swift in Sources */,
-				784905D92666B36B00344EAC /* RequestEmail.swift in Sources */,
+				784905D92666B36B00344EAC /* RequestPasswordReset.swift in Sources */,
 				78E26D9D267931B000EA1C2C /* LogInAction.swift in Sources */,
-				784905CB2665405B00344EAC /* LoggedInView.swift in Sources */,
+				784905CB2665405B00344EAC /* LoggedInMain.swift in Sources */,
 				784905C42661A17E00344EAC /* Header.swift in Sources */,
 				7829A4AC2668093500488394 /* LogIn.swift in Sources */,
 				78E5A109266FDF2E00CD99A1 /* NavButton.swift in Sources */,
@@ -646,8 +646,7 @@
 				78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
-				78D47F57267C25D00041E3B1 /* NavToDeepLinkAction.swift in Sources */,
-				78D47F59267C29D00041E3B1 /* DeepLink.swift in Sources */,
+				78D47F57267C25D00041E3B1 /* DeepLinkFunctions.swift in Sources */,
 				7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */,
 				78E5A102266FD4BC00CD99A1 /* SignUpComplete.swift in Sources */,
 				78E26D8E2673C58900EA1C2C /* RequestError.swift in Sources */,
@@ -655,6 +654,7 @@
 				78E5A0F4266EB3EB00CD99A1 /* roundToDecPlace.swift in Sources */,
 				784905C926653FFE00344EAC /* ContentView.swift in Sources */,
 				78E5A0F6266EBE5200CD99A1 /* ProgressBar.swift in Sources */,
+				785D4B3D26801BC400A4DEF2 /* LoggedOutMain.swift in Sources */,
 				784905EB266720E100344EAC /* LandingHeader.swift in Sources */,
 				789CA52F2655C44600A1CD5E /* AuthStore.swift in Sources */,
 				78E5A10D266FE8AD00CD99A1 /* NavLink.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SignUpUsername: View {
     // args
+    @Binding var selection: String
     @Binding var username: String
     @Binding var currentPage: Float
     @Binding var apiErrorMessage: String?
@@ -83,6 +84,7 @@ struct SignUpUsername: View {
                 }
             }
             SignUpButtons(
+                selection: $selection,
                 submitLabel: "Next",
                 submitButtonDisabled: self.username.count < 3,
                 onSubmit: self.submit,
@@ -97,6 +99,7 @@ struct SignUpUsername: View {
 struct SignUpUsername_Previews: PreviewProvider {
     static var previews: some View {
         SignUpUsername(
+            selection: .constant("log-in"),
             username: .constant("ecroby"),
             currentPage: .constant(1),
             apiErrorMessage: .constant("Email is too long"),

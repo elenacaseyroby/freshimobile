@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct Landing: View {
+    @Binding var selection: String
     var body: some View {
         NavigationView{
             VStack(alignment: .center, spacing: 0){
@@ -17,21 +18,27 @@ struct Landing: View {
                 .navigationBarHidden(true)
                 StretchyImage(imageName: "landing-collage")
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
-                    NavButton(label: "Log in", state: StretchyButtonState.neutral) {
-                        LogIn()
+                    Button("Log in") {
+                        self.selection = "log-in"
                     }
-                    NavButton(label: "Create an account", state: StretchyButtonState.focused) {
-                        SignUp()
+                        .stretchyButton(state: StretchyButtonState.neutral)
+                    Button("Create an account") {
+                        self.selection = "sign-up"
                     }
+                        .stretchyButton(state: StretchyButtonState.focused)
                     // Links
                     HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
-                        NavLink(label: "Terms & Conditions", color: Color("interactiveFocus")) {
-                            TermsAndConditions()
+                        Button("Terms & Conditions") {
+                            self.selection = "t&c"
                         }
+                        .fontStyle(fontStyle: .subheadline)
+                        .foregroundColor(Color("interactiveFocus"))
                         Image("dot")
-                        NavLink(label: "Reset Password", color: Color("interactiveFocus")) {
-                            RequestPasswordReset()
+                        Button("Reset Password") {
+                            self.selection = "reset-password"
                         }
+                        .fontStyle(fontStyle: .subheadline)
+                        .foregroundColor(Color("interactiveFocus"))
                     }
                     Text("© freshi 2021")
                     .fontStyle(fontStyle: .caption)
@@ -50,6 +57,6 @@ struct Landing: View {
 // strictly for dev previews in xcode.
 struct Landing_Previews: PreviewProvider {
     static var previews: some View {
-        Landing()
+        Landing(selection: .constant("log-in"))
     }
 }

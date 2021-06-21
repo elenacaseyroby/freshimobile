@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct LogIn: View {
+    @Binding var selection: String
     // Authentication state for app
     @EnvironmentObject var authStore: AuthStore
     
@@ -33,9 +34,6 @@ struct LogIn: View {
     
     // State to control exit icon
     @State var navToRoot: Bool = false
-    
-    // State used to pop back one view
-    @Environment(\.presentationMode) var presentationMode
     
     enum ActiveTextbox {
         case username, password, none
@@ -117,7 +115,7 @@ struct LogIn: View {
                 Header(
                     title: "Log in",
                     onExit: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.selection = "landing"
                     })
                 Line()
             }
@@ -152,13 +150,17 @@ struct LogIn: View {
             VStack (alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
                 // Links
                 HStack(alignment: .center, spacing: 5){
-                    NavLink(label: "Sign up", color: Color("interactiveFocus")) {
-                        SignUp()
+                    Button("Sign up") {
+                        self.selection = "sign-up"
                     }
+                        .fontStyle(fontStyle: .subheadline)
+                        .foregroundColor(Color("interactiveFocus"))
                     Image("dot")
-                    NavLink(label: "Forgot username or password?", color: Color("interactiveFocus")) {
-                        RequestPasswordReset()
+                    Button("Forgot username or password?") {
+                        self.selection = "request-password-reset"
                     }
+                        .fontStyle(fontStyle: .subheadline)
+                        .foregroundColor(Color("interactiveFocus"))
                 }
                 // Buttons
                 Button("Log in") {
@@ -185,7 +187,7 @@ struct LogIn: View {
 // strictly for dev previews in xcode.
 struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
-        LogIn()
+        LogIn(selection: .constant("log-in"))
     }
 }
 

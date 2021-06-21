@@ -9,13 +9,20 @@ import SwiftUI
 
 
 struct TermsAndConditions: View {
+    @Binding var selection: String
+    var selectionOnExit: String
     var body: some View {
+        Button("exit") {
+            self.selection = selectionOnExit
+        }
         Text("Terms and conditions!")
     }
 }
 // strictly for dev previews in xcode.
 struct TermsAndConditions_Previews: PreviewProvider {
     static var previews: some View {
-        TermsAndConditions()
+        TermsAndConditions(
+            selection: .constant("landing"),
+            selectionOnExit: "landing")
     }
 }

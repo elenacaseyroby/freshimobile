@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoggedInView: View {
+struct LoggedInMain: View {
     // Manages overlays and screen redirects.
     @EnvironmentObject var screenManagerStore: ScreenManagerStore
     
@@ -27,8 +27,8 @@ struct LoggedInView: View {
     }
 }
 
-struct LoggedInView_Previews: PreviewProvider {
+struct LoggedInMain_Previews: PreviewProvider {
     static var previews: some View {
-        LoggedInView()
+        LoggedInMain()
     }
 }

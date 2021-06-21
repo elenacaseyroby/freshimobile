@@ -43,10 +43,10 @@ struct ContentView: View {
         VStack {
             if showLoggedInLanding() {
                 // If creds in state, show logged in view.
-                LoggedInView()
+                LoggedInMain()
             } else {
                 // if logged out, show logged out landing.
-                Landing()
+                LoggedOutMain()
             }
         }
         .overlay(

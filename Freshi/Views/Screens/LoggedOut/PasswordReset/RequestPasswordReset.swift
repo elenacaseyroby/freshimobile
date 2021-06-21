@@ -9,9 +9,7 @@ import SwiftUI
 
 
 struct RequestPasswordReset: View {
-    // State used to pop back one view
-    @Environment(\.presentationMode) var presentationMode
-    
+    @Binding var selection: String
     @State var email: String = ""
     @State var errorMessage: String? = nil
     @State var apiErrorMessage: String? = nil
@@ -48,7 +46,7 @@ struct RequestPasswordReset: View {
                 Header(
                     title: "Password Recovery",
                     onExit: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.selection = "landing"
                     })
                 Line()
             }
@@ -79,9 +77,11 @@ struct RequestPasswordReset: View {
                     Text("New user?")
                         .foregroundColor(Color("highContrast"))
                         .fontStyle(fontStyle: .subheadline)
-                    NavLink(label: "Sign up", color: Color("interactiveFocus")) {
-                        SignUp()
+                    Button("Sign up") {
+                        self.selection = "sign-up"
                     }
+                        .foregroundColor(Color("highContrast"))
+                        .fontStyle(fontStyle: .subheadline)
                     Spacer()
                 }
                 // Submit button
@@ -107,6 +107,6 @@ struct RequestPasswordReset: View {
 // strictly for dev previews in xcode.
 struct RequestPasswordReset_Previews: PreviewProvider {
     static var previews: some View {
-        RequestPasswordReset()
+        RequestPasswordReset(selection: .constant("log-in"))
     }
 }

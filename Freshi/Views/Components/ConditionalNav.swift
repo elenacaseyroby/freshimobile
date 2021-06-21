@@ -50,7 +50,7 @@ struct ConditionalNav<Content: View>: View {
 struct ConditionalNav_Previews: PreviewProvider {
     static var previews: some View {
         ConditionalNav(navigateToDestination: true) {
-            LogIn()
+            LogIn(selection: .constant("log-in"))
         }
     }
 }

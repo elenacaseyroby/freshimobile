@@ -56,7 +56,7 @@ struct NavLink<Content: View>: View {
 struct NavLink_Previews: PreviewProvider {
     static var previews: some View {
         NavLink(label: "Log in", color: Color("interactiveFocus")) {
-            LogIn()
+            LogIn(selection: .constant("log-in"))
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpButtons: View {
+    @Binding var selection: String
     let submitLabel: String
     let submitButtonDisabled: Bool
     let onSubmit: () -> Void
@@ -20,9 +21,11 @@ struct SignUpButtons: View {
                 Text("Already have an account?")
                     .foregroundColor(Color("highContrast"))
                     .fontStyle(fontStyle: .subheadline)
-                NavLink(label: "Log in", color: Color("interactiveFocus")) {
-                    LogIn()
-                }
+                Button("Already have an account?") {
+                        self.selection = "log-in"
+                    }
+                    .fontStyle(fontStyle: .subheadline)
+                    .foregroundColor(Color("interactiveFocus"))
                 Spacer()
             }
             // Buttons
@@ -60,6 +63,7 @@ struct SignUpButtons: View {
 struct SignUpButtons_Previews: PreviewProvider {
     static var previews: some View {
         SignUpButtons(
+            selection: .constant("sign-up"),
             submitLabel: "Next",
             submitButtonDisabled: false,
             onSubmit: {

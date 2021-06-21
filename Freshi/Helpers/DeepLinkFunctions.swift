@@ -20,17 +20,17 @@ private func queryComponents(query: String) -> [String: String] {
     return queryComponents
 }
 
-func setDeepLinkUrlAction(url: URL?, screenManagerStore: ScreenManagerStore) {
-    screenManagerStore.deepLinkUrl = url
-//    print("-------------------------")
-//    print(url)
-//    //freshi://localhost:8000/resetPassword?userId=10&authToken=aksdlkhgjshakfh
-//    //freshi://www.freshi.io/resetPassword?userId=10&authToken=aksdlkhgjshakfh
-//
-//    print(url.query) //  Optional("userId=10&authToken=aksdlkhgjshakfh")
-//    print(url.path) // /resetPassword
-//    print(url.pathComponents) // ["/", "resetPassword"]
-//    print(url.scheme)
-//    // parse destination
-//    // parse parameters
-}
+//func setDeepLinkUrlAction(url: URL?, screenManagerStore: ScreenManagerStore) {
+//    screenManagerStore.deepLinkUrl = url
+////    print("-------------------------")
+////    print(url)
+////    //freshi://localhost:8000/resetPassword?userId=10&authToken=aksdlkhgjshakfh
+////    //freshi://www.freshi.io/resetPassword?userId=10&authToken=aksdlkhgjshakfh
+////
+////    print(url.query) //  Optional("userId=10&authToken=aksdlkhgjshakfh")
+////    print(url.path) // /resetPassword
+////    print(url.pathComponents) // ["/", "resetPassword"]
+////    print(url.scheme)
+////    // parse destination
+////    // parse parameters
+//}
