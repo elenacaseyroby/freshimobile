@@ -39,6 +39,8 @@
 		78D47F44267BE5940041E3B1 /* HideSignUpConfirmationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F43267BE5940041E3B1 /* HideSignUpConfirmationAction.swift */; };
 		78D47F46267BE5B50041E3B1 /* HideLoadingOverlayAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F45267BE5B50041E3B1 /* HideLoadingOverlayAction.swift */; };
 		78D47F50267BF2360041E3B1 /* ScreenManagerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F4F267BF2360041E3B1 /* ScreenManagerStore.swift */; };
+		78D47F57267C25D00041E3B1 /* NavToDeepLinkAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F56267C25D00041E3B1 /* NavToDeepLinkAction.swift */; };
+		78D47F59267C29D00041E3B1 /* DeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D47F58267C29D00041E3B1 /* DeepLink.swift */; };
 		78E26D8A2672C74100EA1C2C /* SignUpButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D892672C74100EA1C2C /* SignUpButtons.swift */; };
 		78E26D8E2673C58900EA1C2C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8D2673C58900EA1C2C /* RequestError.swift */; };
 		78E26D90267414AE00EA1C2C /* FreshiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E26D8F267414AE00EA1C2C /* FreshiRequest.swift */; };
@@ -120,6 +122,8 @@
 		78D47F43267BE5940041E3B1 /* HideSignUpConfirmationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideSignUpConfirmationAction.swift; sourceTree = "<group>"; };
 		78D47F45267BE5B50041E3B1 /* HideLoadingOverlayAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideLoadingOverlayAction.swift; sourceTree = "<group>"; };
 		78D47F4F267BF2360041E3B1 /* ScreenManagerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenManagerStore.swift; sourceTree = "<group>"; };
+		78D47F56267C25D00041E3B1 /* NavToDeepLinkAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavToDeepLinkAction.swift; sourceTree = "<group>"; };
+		78D47F58267C29D00041E3B1 /* DeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLink.swift; sourceTree = "<group>"; };
 		78E26D892672C74100EA1C2C /* SignUpButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButtons.swift; sourceTree = "<group>"; };
 		78E26D8D2673C58900EA1C2C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		78E26D8F267414AE00EA1C2C /* FreshiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshiRequest.swift; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 				78D47F48267BEB060041E3B1 /* LoggedIn */,
 				786775C62655B78100716DCE /* FreshiApp.swift */,
 				784905C826653FFE00344EAC /* ContentView.swift */,
+				78D47F58267C29D00041E3B1 /* DeepLink.swift */,
 				7829A4B726681C3400488394 /* T&C */,
 			);
 			path = Screens;
@@ -454,6 +459,7 @@
 				78D47F43267BE5940041E3B1 /* HideSignUpConfirmationAction.swift */,
 				78D47F41267BE5550041E3B1 /* ShowLoadingOverlayAction.swift */,
 				78D47F45267BE5B50041E3B1 /* HideLoadingOverlayAction.swift */,
+				78D47F56267C25D00041E3B1 /* NavToDeepLinkAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -640,6 +646,8 @@
 				78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
+				78D47F57267C25D00041E3B1 /* NavToDeepLinkAction.swift in Sources */,
+				78D47F59267C29D00041E3B1 /* DeepLink.swift in Sources */,
 				7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */,
 				78E5A102266FD4BC00CD99A1 /* SignUpComplete.swift in Sources */,
 				78E26D8E2673C58900EA1C2C /* RequestError.swift in Sources */,

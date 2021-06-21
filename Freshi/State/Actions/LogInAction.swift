@@ -12,7 +12,7 @@ private func logIn(authStore: AuthStore, authCreds: AuthCredsModel) {
     setAuthCredsInCache(authCreds: authCreds)
     // pass payload and action to root reducer
     DispatchQueue.main.async {
-        authStore.isloggedIn = true
+        authStore.isLoggedIn = true
     }
 }
 

@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct LoggedInView: View {
+    // Manages overlays and screen redirects.
+    @EnvironmentObject var screenManagerStore: ScreenManagerStore
+    
+    func showSignUpCompletedScreen() -> Bool {
+        return self.screenManagerStore.showSignUpCompletedScreen
+    }
     // authentication state for app
     @EnvironmentObject var authStore: AuthStore
     var body: some View {
-        Button("log out") {
-            logOutAction(authStore: authStore)
+        if showSignUpCompletedScreen() {
+            SignUpComplete()
+        } else {
+            Button("log out") {
+                logOutAction(authStore: authStore)
+            }
         }
     }
 }
