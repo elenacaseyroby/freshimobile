@@ -18,12 +18,16 @@ struct LoggedOutMain: View {
                 Landing(selection: $selection)
             case "log-in":
                 LogIn(selection: $selection)
+                    .transition(.move(edge: .bottom))
             case "sign-up":
                 SignUp(selection: $selection)
+                    .transition(.move(edge: .bottom))
             case "request-passord-reset":
                 RequestPasswordReset(selection: $selection)
+                    .transition(.move(edge: .bottom))
             case "reset-password":
                 ResetPassword(selection: $selection)
+                    .transition(.move(edge: .bottom))
             case "t&c":
                 TermsAndConditions(
                     selection: $selection,
@@ -31,7 +35,6 @@ struct LoggedOutMain: View {
                     .transition(.move(edge: .bottom))
             default:
                 Landing(selection: $selection)
-                    .transition(.move(edge: .top))
             }
         }
         .onOpenURL { url in

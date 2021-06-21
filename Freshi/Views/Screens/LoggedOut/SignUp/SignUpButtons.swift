@@ -22,7 +22,9 @@ struct SignUpButtons: View {
                     .foregroundColor(Color("highContrast"))
                     .fontStyle(fontStyle: .subheadline)
                 Button("Already have an account?") {
-                        self.selection = "log-in"
+                        withAnimation {
+                            self.selection = "log-in"
+                        }
                     }
                     .fontStyle(fontStyle: .subheadline)
                     .foregroundColor(Color("interactiveFocus"))

@@ -19,23 +19,31 @@ struct Landing: View {
                 StretchyImage(imageName: "landing-collage")
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 15) {
                     Button("Log in") {
-                        self.selection = "log-in"
+                        withAnimation {
+                            self.selection = "log-in"
+                        }
                     }
                         .stretchyButton(state: StretchyButtonState.neutral)
                     Button("Create an account") {
-                        self.selection = "sign-up"
+                        withAnimation {
+                            self.selection = "sign-up"
+                        }
                     }
                         .stretchyButton(state: StretchyButtonState.focused)
                     // Links
                     HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 5) {
                         Button("Terms & Conditions") {
-                            self.selection = "t&c"
+                            withAnimation {
+                                self.selection = "t&c"
+                            }
                         }
                         .fontStyle(fontStyle: .subheadline)
                         .foregroundColor(Color("interactiveFocus"))
                         Image("dot")
                         Button("Reset Password") {
-                            self.selection = "reset-password"
+                            withAnimation {
+                                self.selection = "reset-password"
+                            }
                         }
                         .fontStyle(fontStyle: .subheadline)
                         .foregroundColor(Color("interactiveFocus"))

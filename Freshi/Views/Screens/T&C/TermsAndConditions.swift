@@ -13,7 +13,9 @@ struct TermsAndConditions: View {
     var selectionOnExit: String
     var body: some View {
         Button("exit") {
-            self.selection = selectionOnExit
+            withAnimation {
+                self.selection = selectionOnExit
+            }
         }
         Text("Terms and conditions!")
     }

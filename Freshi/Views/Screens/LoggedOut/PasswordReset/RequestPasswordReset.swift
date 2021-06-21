@@ -46,7 +46,9 @@ struct RequestPasswordReset: View {
                 Header(
                     title: "Password Recovery",
                     onExit: {
-                        self.selection = "landing"
+                        withAnimation {
+                            self.selection = "landing"
+                        }
                     })
                 Line()
             }
@@ -78,7 +80,9 @@ struct RequestPasswordReset: View {
                         .foregroundColor(Color("highContrast"))
                         .fontStyle(fontStyle: .subheadline)
                     Button("Sign up") {
-                        self.selection = "sign-up"
+                        withAnimation {
+                            self.selection = "sign-up"
+                        }
                     }
                         .foregroundColor(Color("highContrast"))
                         .fontStyle(fontStyle: .subheadline)

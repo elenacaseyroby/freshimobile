@@ -39,7 +39,9 @@ struct SignUp: View {
                 Header(
                     title: "Create an account",
                     onExit: {
-                        self.selection = "landing"
+                        withAnimation {
+                            self.selection = "landing"
+                        }
                     })
                 // Show progress from last page to current page.
                 ProgressBar(

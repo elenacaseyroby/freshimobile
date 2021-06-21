@@ -115,7 +115,9 @@ struct LogIn: View {
                 Header(
                     title: "Log in",
                     onExit: {
-                        self.selection = "landing"
+                        withAnimation {
+                            self.selection = "landing"
+                        }
                     })
                 Line()
             }
@@ -151,13 +153,17 @@ struct LogIn: View {
                 // Links
                 HStack(alignment: .center, spacing: 5){
                     Button("Sign up") {
-                        self.selection = "sign-up"
+                        withAnimation {
+                            self.selection = "sign-up"
+                        }
                     }
                         .fontStyle(fontStyle: .subheadline)
                         .foregroundColor(Color("interactiveFocus"))
                     Image("dot")
                     Button("Forgot username or password?") {
-                        self.selection = "request-password-reset"
+                        withAnimation {
+                            self.selection = "request-password-reset"
+                        }
                     }
                         .fontStyle(fontStyle: .subheadline)
                         .foregroundColor(Color("interactiveFocus"))
