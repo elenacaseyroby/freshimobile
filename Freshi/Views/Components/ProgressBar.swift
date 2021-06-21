@@ -67,13 +67,13 @@ struct ProgressBar: View {
                 }
             }
             .cornerRadius(15)
-            .onAppear(perform: {
+            .onAppear() {
                 var animateFromPage: Float = 0.0
                 if let prevPage = prevPage {
                     animateFromPage = prevPage
                 }
                 self.setAnimationInstructions(prevPage: animateFromPage, currentPage: self.currentPage)
-            })
+            }
             .onChange(of: currentPage, perform: { [currentPage] nextPage in
                 self.setAnimationInstructions(prevPage: currentPage, currentPage: nextPage)
             })

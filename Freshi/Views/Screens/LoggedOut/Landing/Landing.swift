@@ -42,7 +42,7 @@ struct Landing: View {
                         Image("dot")
                         Button("Reset Password") {
                             withAnimation {
-                                self.selection = "reset-password"
+                                self.selection = "request-password-reset"
                             }
                         }
                         .fontStyle(fontStyle: .subheadline)

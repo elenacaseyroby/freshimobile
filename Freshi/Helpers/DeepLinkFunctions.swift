@@ -7,8 +7,17 @@
 
 import Foundation
 
-private func queryComponents(query: String) -> [String: String] {
+// ex deep link formats:
+// freshi://localhost:8000/reset-password?userId=10&authToken=aksdlkhgjshakfh
+// freshi://www.freshi.io/reset-password?userId=10&authToken=aksdlkhgjshakfh
+func queryComponents(query: String) -> [String: String] {
+    // Input example"
     // userId=10&authToken=aksdlkhgjshakfh
+    // Output example:
+    // [
+    //      "userId" : "10",
+    //      "authToken" : "klasjlfkaghsasd",
+    // ]
     var queryComponents: [String: String] = [:]
     let queryKeyValuePairs = query.components(separatedBy: "&")
     for keyValueString in queryKeyValuePairs {
@@ -19,18 +28,3 @@ private func queryComponents(query: String) -> [String: String] {
     }
     return queryComponents
 }
-
-//func setDeepLinkUrlAction(url: URL?, screenManagerStore: ScreenManagerStore) {
-//    screenManagerStore.deepLinkUrl = url
-////    print("-------------------------")
-////    print(url)
-////    //freshi://localhost:8000/resetPassword?userId=10&authToken=aksdlkhgjshakfh
-////    //freshi://www.freshi.io/resetPassword?userId=10&authToken=aksdlkhgjshakfh
-////
-////    print(url.query) //  Optional("userId=10&authToken=aksdlkhgjshakfh")
-////    print(url.path) // /resetPassword
-////    print(url.pathComponents) // ["/", "resetPassword"]
-////    print(url.scheme)
-////    // parse destination
-////    // parse parameters
-//}

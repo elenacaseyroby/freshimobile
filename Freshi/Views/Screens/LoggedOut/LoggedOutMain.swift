@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LoggedOutMain: View {
     @State var selection: String = ""
+    @State var url: URL? = nil
     
     var body: some View {
         VStack {
@@ -22,11 +23,13 @@ struct LoggedOutMain: View {
             case "sign-up":
                 SignUp(selection: $selection)
                     .transition(.move(edge: .bottom))
-            case "request-passord-reset":
+            case "request-password-reset":
                 RequestPasswordReset(selection: $selection)
                     .transition(.move(edge: .bottom))
             case "reset-password":
-                ResetPassword(selection: $selection)
+                ResetPassword(
+                    selection: $selection,
+                    url: self.url)
                     .transition(.move(edge: .bottom))
             case "t&c":
                 TermsAndConditions(
@@ -38,6 +41,7 @@ struct LoggedOutMain: View {
             }
         }
         .onOpenURL { url in
+            self.url = url
             self.selection = url.lastPathComponent
         }
     }
