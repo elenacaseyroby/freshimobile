@@ -65,6 +65,7 @@
 		78E5A10D266FE8AD00CD99A1 /* NavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10C266FE8AD00CD99A1 /* NavLink.swift */; };
 		78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */; };
 		78E5A111267126E400CD99A1 /* PopToRootNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A110267126E400CD99A1 /* PopToRootNavView.swift */; };
+		78F3FC1C26A22E8200C23B9C /* PasswordResetEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3FC1B26A22E8200C23B9C /* PasswordResetEmail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		78E5A10C266FE8AD00CD99A1 /* NavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLink.swift; sourceTree = "<group>"; };
 		78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalNav.swift; sourceTree = "<group>"; };
 		78E5A110267126E400CD99A1 /* PopToRootNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootNavView.swift; sourceTree = "<group>"; };
+		78F3FC1B26A22E8200C23B9C /* PasswordResetEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetEmail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 		789CA5242655C22300A1CD5E /* APIRequests */ = {
 			isa = PBXGroup;
 			children = (
+				78F3FC1A26A22E5400C23B9C /* FreshiRequests */,
 				78E26D8D2673C58900EA1C2C /* RequestError.swift */,
 				78E26D8F267414AE00EA1C2C /* FreshiRequest.swift */,
 			);
@@ -502,6 +505,14 @@
 			path = Math;
 			sourceTree = "<group>";
 		};
+		78F3FC1A26A22E5400C23B9C /* FreshiRequests */ = {
+			isa = PBXGroup;
+			children = (
+				78F3FC1B26A22E8200C23B9C /* PasswordResetEmail.swift */,
+			);
+			path = FreshiRequests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -652,6 +663,7 @@
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
 				78D47F57267C25D00041E3B1 /* DeepLinkFunctions.swift in Sources */,
 				7829A4C62669287C00488394 /* FormErrorMessage.swift in Sources */,
+				78F3FC1C26A22E8200C23B9C /* PasswordResetEmail.swift in Sources */,
 				78E5A102266FD4BC00CD99A1 /* SignUpComplete.swift in Sources */,
 				78E26D8E2673C58900EA1C2C /* RequestError.swift in Sources */,
 				78E5A100266FD4B000CD99A1 /* SignUpPassword.swift in Sources */,

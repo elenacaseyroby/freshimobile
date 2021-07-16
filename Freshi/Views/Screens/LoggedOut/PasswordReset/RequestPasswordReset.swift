@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct RequestPasswordReset: View {
+struct PasswordResetEmail: View {
     @Binding var selection: String
     @State var email: String = ""
     @State var errorMessage: String? = nil
@@ -109,8 +109,8 @@ struct RequestPasswordReset: View {
     }
 }
 // strictly for dev previews in xcode.
-struct RequestPasswordReset_Previews: PreviewProvider {
+struct PasswordResetEmail_Previews: PreviewProvider {
     static var previews: some View {
-        RequestPasswordReset(selection: .constant("log-in"))
+        PasswordResetEmail(selection: .constant("log-in"))
     }
 }
