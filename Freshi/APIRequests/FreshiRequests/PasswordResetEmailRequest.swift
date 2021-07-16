@@ -8,14 +8,14 @@
 import Foundation
 
 
-struct CreateUserError: Codable {
+struct PasswordResetEmailError: Codable {
     var status_code: Int?
     var error_message: String?
     var error_field: String?
 }
 
 // Doesn't update state
-func createUserAction(
+func PasswordResetEmailRequest(
     username: String,
     email: String,
     password: String,
