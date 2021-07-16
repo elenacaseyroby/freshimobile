@@ -40,24 +40,16 @@ func logInAction(
         method: "POST",
         headers: headers,
         onComplete: {(data, requestError) in
+            // if request succeeded, return data.
             if let data = data {
                 if let tokenResponse = try? JSONDecoder().decode(TokenResponse.self, from: data) {
-                    // if request succeeded and error, return error
-                    if var error = requestError {
-                        // Add additional info from error message
-                        error.errorMessage = tokenResponse.detail!
-                        // Return error to View
-                        onError(error)
-                    // if request succeeded and no error, log in.
-                    } else {
-                            let userId = tokenResponse.user_id!
-                            let token = tokenResponse.token!
-                        let authCreds = AuthCredsModel(userId: userId, token: token)
-                            // Update state
-                            logIn(authStore: authStore, authCreds: authCreds)
-                            onSuccess()
-                        }
-                    }
+                    let userId = tokenResponse.user_id!
+                    let token = tokenResponse.token!
+                    let authCreds = AuthCredsModel(userId: userId, token: token)
+                    // Update state
+                    logIn(authStore: authStore, authCreds: authCreds)
+                    onSuccess()
+                }
             // if request failed, return error.
             } else if let requestError = requestError {
                 // Return error to View
