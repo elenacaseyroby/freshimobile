@@ -39,10 +39,6 @@ func FreshiRequest(
     }
     request.httpBody = encoded
     
-    struct FreshiResponse: Codable {
-        var detail: String?
-    }
-    
     // URLSession automatically runs in the background thread – an independent piece of code that’s running at the same time as the rest of our program. This means the network request can be running without stopping our UI from being interactive.
     URLSession.shared.dataTask(with: request) {(data, response, error) in
         // Return error if request failed altogether.
@@ -63,15 +59,9 @@ func FreshiRequest(
             onComplete(data, nil)
             return
         }
-        // If error check for error detail.
-        if let data = data {
-            if let freshiResponse = try? JSONDecoder().decode(FreshiResponse.self, from: data) {
-                errorMessage = freshiResponse.detail
-            }
-        }
         let requestError = RequestError(statusCode: statusCode, errorMessage: errorMessage)
         // Else return data and error (might be more descriptive error message in the data in this case).
-        onComplete(nil, requestError)
+        onComplete(data, requestError)
         return
     // Without resume() the request does nothing and you’ll be staring at a blank screen. But with it the request starts immediately, it will automatically run in the background, and won’t be destroyed even after our method ends.
     }.resume()

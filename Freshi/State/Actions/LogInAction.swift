@@ -35,13 +35,31 @@ func logInAction(
         var token: String?
         
     }
+    struct TokenErrorResponse: Codable {
+        var detail: String?
+    }
     FreshiRequest(
         endpoint: "token/",
         method: "POST",
         headers: headers,
         onComplete: {(data, requestError) in
-            // if request succeeded, return data.
-            if let data = data {
+            // If request failed, get any extra info and return RequestError.
+            if let requestError = requestError {
+                // Return error to View
+                // If error check for error detail.
+                var errorMessage: String?
+                if let data = data {
+                    if let errorResponse = try? JSONDecoder().decode(TokenErrorResponse.self, from: data) {
+                        errorMessage = errorResponse.detail
+                    }
+                }
+                onError(RequestError(
+                    statusCode: requestError.statusCode,
+                    errorMessage: errorMessage == nil ? requestError.errorMessage : errorMessage
+                ))
+            }
+            // If request succeeded, return data.
+            else if let data = data {
                 if let tokenResponse = try? JSONDecoder().decode(TokenResponse.self, from: data) {
                     let userId = tokenResponse.user_id!
                     let token = tokenResponse.token!
@@ -50,10 +68,6 @@ func logInAction(
                     logIn(authStore: authStore, authCreds: authCreds)
                     onSuccess()
                 }
-            // if request failed, return error.
-            } else if let requestError = requestError {
-                // Return error to View
-                onError(requestError)
             }
             onComplete()
         })
