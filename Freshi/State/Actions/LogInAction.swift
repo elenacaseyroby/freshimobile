@@ -41,9 +41,7 @@ func logInAction(
         headers: headers,
         onComplete: {(data, requestError) in
             if let data = data {
-                print(data)
                 if let tokenResponse = try? JSONDecoder().decode(TokenResponse.self, from: data) {
-                    print(tokenResponse)
                     // if request succeeded and error, return error
                     if var error = requestError {
                         // Add additional info from error message
