@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ResetPasswordError: View {
+struct PasswordResetError: View {
     @Binding var selection: String
     
     var body: some View {
@@ -42,9 +42,9 @@ struct ResetPasswordError: View {
     }
 }
 // strictly for dev previews in xcode.
-struct ResetPasswordError_Previews: PreviewProvider {
+struct PasswordResetError_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPasswordError(
+        PasswordResetError(
             selection: .constant("reset-password"))
     }
 }

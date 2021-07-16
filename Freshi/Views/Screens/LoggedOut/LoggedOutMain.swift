@@ -27,7 +27,7 @@ struct LoggedOutMain: View {
                 PasswordResetEmail(selection: $selection)
                     .transition(.move(edge: .bottom))
             case "reset-password":
-                ResetPassword(
+                PasswordReset(
                     selection: $selection,
                     url: self.url)
                     .transition(.move(edge: .bottom))

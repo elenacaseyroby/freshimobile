@@ -1,5 +1,5 @@
 //
-//  ResetPassword.swift
+//  PasswordReset.swift
 //  Freshi
 //
 //  Created by Casey Roby on 6/14/21.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ResetPassword: View {
+struct PasswordReset: View {
     @Binding var selection: String
     @State var url: URL? = nil
     @State var password: String = ""
@@ -73,7 +73,7 @@ struct ResetPassword: View {
             if (
                 self.authToken == nil ||
                 self.userId == nil) {
-                ResetPasswordError(selection: $selection)
+                PasswordResetError(selection: $selection)
             } else {
                 VStack(alignment: .center, spacing: 20){
                     // Header
@@ -178,9 +178,9 @@ struct ResetPassword: View {
     }
 }
 // strictly for dev previews in xcode.
-struct ResetPassword_Previews: PreviewProvider {
+struct PasswordReset_Previews: PreviewProvider {
     static var previews: some View {
-        ResetPassword(
+        PasswordReset(
             selection: .constant("reset-password"),
             url: URL(string: "freshi://localhost:8000/reset-password?userId=10&authToken=aksdlkhgjshakfh")!)
     }
