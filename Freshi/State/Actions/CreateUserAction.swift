@@ -35,18 +35,13 @@ func createUserAction(
         body: body,
         onComplete: {(data, requestError) in
             if let requestError = requestError {
-                print("REQUEST ERROR")
-                print(requestError)
                 var createUserError = CreateUserError(
                     status_code: requestError.statusCode,
                     errorMessage: requestError.errorMessage
                 )
-                print(createUserError)
                 // gather error details.
                 if let data = data {
                     if let errors = try? JSONDecoder().decode([String: [String]].self, from: data) {
-                        print("MADE IT")
-                        print(errors)
                         createUserError.fieldErrors = errors
                     }
                 }
