@@ -55,7 +55,7 @@ func FreshiRequest(
         }
         
         // Just return data if no error
-        if statusCode == 200 {
+        if statusCode >= 200 && statusCode < 300 {
             onComplete(data, nil)
             return
         }
