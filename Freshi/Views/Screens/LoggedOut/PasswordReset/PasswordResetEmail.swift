@@ -15,6 +15,9 @@ struct PasswordResetEmail: View {
     @State var apiErrorMessage: String? = nil
     @State var textboxIsActive: Bool = false
     
+    // manages overlays and screen redirects
+    @EnvironmentObject var screenManagerStore: ScreenManagerStore
+    
     // func to decide state of textbox, ie which color border surrounds it.
     func textboxState(
         isActive: Bool,
@@ -36,7 +39,42 @@ struct PasswordResetEmail: View {
             self.errorMessage = error
             return
         }
-        print("send email or throw api error!")
+        // send email or throw api error
+        self.sendEmail(email: self.email)
+    }
+    
+    func sendEmail(email: String){
+        DispatchQueue.main.async {
+            // clear error message
+            self.errorMessage = nil
+            // Clear api errors
+            self.apiErrorMessage = nil
+            // make loader display while making API request
+            showLoadingOverLayAction(screenManagerStore: self.screenManagerStore)
+        }
+        // Request is made
+        passwordResetEmailRequest(
+            email: email,
+            onSuccess: {
+                // Trigger alert: Woohoo! Your password reset email has been sent to ".."!
+                withAnimation {
+                    self.selection = "landing"
+                }
+            },
+            onError: { requestError in
+                // Push changes in state to the main thread to update UI.
+                DispatchQueue.main.async {
+                    if let apiErrorMessage = requestError.errorMessage {
+                        self.apiErrorMessage = apiErrorMessage
+                    }
+                }
+            },
+            onComplete: {
+                // Once response is processed, loading screen disappears.
+                // Must send state update back to the main thread with DispatchQueue to update UI.
+                hideLoadingOverLayAction(
+                    screenManagerStore: self.screenManagerStore)
+            })
     }
     
     var body: some View {
