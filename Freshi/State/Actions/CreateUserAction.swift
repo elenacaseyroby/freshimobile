@@ -10,8 +10,10 @@ import Foundation
 
 struct CreateUserError: Codable {
     var status_code: Int?
-    var error_message: String?
-    var error_field: String?
+    var errorMessage: String?
+    // errors is a dictionary in this format:
+    // errorField: errorMessage
+    var fieldErrors: [String: [String]]?
 }
 
 // Doesn't update state
@@ -32,26 +34,29 @@ func createUserAction(
         method: "POST",
         body: body,
         onComplete: {(data, requestError) in
-            if let data = data {
-                    // if request succeeded and error, gather error details.
-                    if let requestError = requestError {
-                        if var error = try? JSONDecoder().decode(CreateUserError.self, from: data) {
-                            error.status_code = requestError.statusCode
-                            onError(error)
-                        }
-                    }
-                    // if request succeeded and no error, return user.
-                    else {
-                        if let user = try? JSONDecoder().decode(UserModel.self, from: data) {
-                            onSuccess(user)
-                        }
-                    }
-            } else if let requestError = requestError {
-                let error = CreateUserError(
+            if let requestError = requestError {
+                print("REQUEST ERROR")
+                print(requestError)
+                var createUserError = CreateUserError(
                     status_code: requestError.statusCode,
-                    error_message: requestError.errorMessage)
+                    errorMessage: requestError.errorMessage
+                )
+                print(createUserError)
+                // gather error details.
+                if let data = data {
+                    if let errors = try? JSONDecoder().decode([String: [String]].self, from: data) {
+                        print("MADE IT")
+                        print(errors)
+                        createUserError.fieldErrors = errors
+                    }
+                }
                 // If request failed return error.
-                onError(error)
+                onError(createUserError)
+            }
+            else if let data = data {
+                if let user = try? JSONDecoder().decode(UserModel.self, from: data) {
+                    onSuccess(user)
+                }
             }
             onComplete()})
 }

@@ -13,8 +13,7 @@ struct SignUpUsername: View {
     @Binding var selection: String
     @Binding var username: String
     @Binding var currentPage: Float
-    @Binding var apiErrorMessage: String?
-    @Binding var apiErrorField: String?
+    @Binding var apiErrors: SignUpAPIErrors
     
     // vars
     @State var isActive: Bool = false
@@ -22,16 +21,19 @@ struct SignUpUsername: View {
     
     func textboxState(
         isActive: Bool,
-        errorMessage: String?,
-        apiErrorField: String?) -> TextboxState {
-        if let apiErrorField = apiErrorField {
-            if apiErrorField == "username" {
-                return TextboxState.error
-            }
+        apiErrors: SignUpAPIErrors,
+        errorMessage: String?) -> TextboxState {
+        // red border if api error
+        if apiErrors.username != nil {
+            return TextboxState.error
         }
+        // red border if error before hitting api
+        // ex. username has less than 3 chars.
         if errorMessage != nil {
             return TextboxState.error
-        } else if isActive {
+        }
+        // active border is user is actively typing in box.
+        if isActive {
             return TextboxState.focused
         }
         return TextboxState.neutral
@@ -71,15 +73,13 @@ struct SignUpUsername: View {
                         .freshiLogin(
                             state: self.textboxState(
                                 isActive: self.isActive,
-                                errorMessage: self.errorMessage,
-                                apiErrorField: self.apiErrorField),
+                                apiErrors: self.apiErrors,
+                                errorMessage: self.errorMessage),
                             errorMessage: self.errorMessage
                         )
                     // render API error message
-                    if self.apiErrorField == "username" {
-                        if let apiErrorMessage = self.apiErrorMessage {
-                            FormErrorMessage(error: apiErrorMessage)
-                        }
+                    if let apiErrorMessage = self.apiErrors.username {
+                        FormErrorMessage(error: apiErrorMessage)
                     }
                 }
             }
@@ -102,8 +102,7 @@ struct SignUpUsername_Previews: PreviewProvider {
             selection: .constant("log-in"),
             username: .constant("ecroby"),
             currentPage: .constant(1),
-            apiErrorMessage: .constant("Email is too long"),
-            apiErrorField: .constant("email"))
+            apiErrors: .constant(SignUpAPIErrors()))
     }
 }
 

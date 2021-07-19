@@ -16,8 +16,7 @@ struct SignUpPassword: View {
     @Binding var email: String
     @Binding var username: String
     @Binding var currentPage: Float
-    @Binding var apiErrorMessage: String?
-    @Binding var apiErrorField: String?
+    @Binding var apiErrors: SignUpAPIErrors
     
     // authentication state for app
     @EnvironmentObject var authStore: AuthStore
@@ -38,12 +37,10 @@ struct SignUpPassword: View {
     func textboxState(
         thisTextbox: ActiveTextbox,
         activeTextbox: ActiveTextbox,
-        error: Bool,
-        apiErrorField: String?) -> TextboxState {
-        if let apiErrorField = apiErrorField {
-            if apiErrorField == "password" {
-                return TextboxState.error
-            }
+        apiErrors: SignUpAPIErrors,
+        error: Bool) -> TextboxState {
+        if apiErrors.password != nil {
+            return TextboxState.error
         }
         if error {
             return TextboxState.error
@@ -77,9 +74,13 @@ struct SignUpPassword: View {
     
     func createUser(username: String, email: String, password: String) {
         DispatchQueue.main.async {
+            // clear error message
+            self.errorMessage = nil
             // Clear api errors
-            self.apiErrorField = nil
-            self.apiErrorMessage = nil
+            self.apiErrors.email = nil
+            self.apiErrors.username = nil
+            self.apiErrors.password = nil
+            self.apiErrors.server = nil
             // make loader display while making API request
             showLoadingOverLayAction(screenManagerStore: self.screenManagerStore)
         }
@@ -96,7 +97,7 @@ struct SignUpPassword: View {
                     onSuccess: {},
                     onError: { requestError in
                         if let requestError = requestError {
-                            self.apiErrorMessage = requestError.errorMessage
+                            self.errorMessage = requestError.errorMessage
                         }
                     }, onComplete: {
                         // Once response is processed, loading screen disappears.
@@ -112,11 +113,30 @@ struct SignUpPassword: View {
             onError: { createUserError in
                 // Push changes in state to the main thread to update UI.
                 DispatchQueue.main.async {
-                    if let field = createUserError.error_field {
-                        self.apiErrorField = field
+                    if let apiErrors = createUserError.fieldErrors {
+                        for (errorField, errorMessages) in apiErrors {
+                            if errorField == "email" {
+                                self.apiErrors.email = (
+                                    errorMessages.count > 0 ?
+                                    errorMessages[0] : nil
+                                )
+                            }
+                            if errorField == "username" {
+                                self.apiErrors.username = (
+                                    errorMessages.count > 0 ?
+                                    errorMessages[0] : nil
+                                )
+                            }
+                            if errorField == "password" {
+                                self.apiErrors.password = (
+                                    errorMessages.count > 0 ?
+                                    errorMessages[0] : nil
+                                )
+                            }
+                        }
                     }
-                    if let message = createUserError.error_message {
-                        self.apiErrorMessage = message
+                    if let serverError = createUserError.errorMessage {
+                        self.apiErrors.server = serverError
                     }
                     // Once response is processed, loading screen disappears.
                     // Must send state update back to the main thread with DispatchQueue to update UI.
@@ -148,8 +168,8 @@ struct SignUpPassword: View {
                         state: self.textboxState(
                             thisTextbox: ActiveTextbox.first,
                             activeTextbox: self.activeTextbox,
-                            error: self.errorMessage != nil ? true : false,
-                            apiErrorField: self.apiErrorField
+                            apiErrors: self.apiErrors,
+                            error: self.errorMessage != nil ? true : false
                         ),
                         onTap: {
                             self.activeTextbox = ActiveTextbox.first})
@@ -160,22 +180,20 @@ struct SignUpPassword: View {
                             state: self.textboxState(
                                 thisTextbox: ActiveTextbox.second,
                                 activeTextbox: self.activeTextbox,
-                                error: self.errorMessage != nil ? true : false,
-                                apiErrorField: self.apiErrorField
+                                apiErrors: self.apiErrors,
+                                error: self.errorMessage != nil ? true : false
                             ),
                             // Only show error message under second password
                             errorMessage: self.errorMessage,
                             onTap: {
                                 self.activeTextbox = ActiveTextbox.second})
                     // render API error message
-                    if (
-                        self.apiErrorField == "password" ||
-                        self.apiErrorField == nil ) {
-                        // Show message if password related or server related
-                        // (server related if no field specified).
-                        if let apiErrorMessage = self.apiErrorMessage {
-                            FormErrorMessage(error: apiErrorMessage)
-                        }
+                    // Show message if password related or server related
+                    if let apiErrorMessage = self.apiErrors.password {
+                        FormErrorMessage(error: apiErrorMessage)
+                    }
+                    if let apiErrorMessage = self.apiErrors.server {
+                        FormErrorMessage(error: apiErrorMessage)
                     }
                 }
             }
@@ -205,7 +223,6 @@ struct SignUpPassword_Previews: PreviewProvider {
             email: .constant("email@email.com"),
             username: .constant("username"),
             currentPage: .constant(1),
-            apiErrorMessage: .constant("Email is too long"),
-            apiErrorField: .constant("email"))
+            apiErrors: .constant(SignUpAPIErrors()))
     }
 }

@@ -13,8 +13,7 @@ struct SignUpEmail: View {
     @Binding var selection: String
     @Binding var email: String
     @Binding var currentPage: Float
-    @Binding var apiErrorMessage: String?
-    @Binding var apiErrorField: String?
+    @Binding var apiErrors: SignUpAPIErrors
     
     // vars
     @State var isActive: Bool = false
@@ -22,15 +21,17 @@ struct SignUpEmail: View {
     
     func textboxState(
         isActive: Bool,
-        errorMessage: String?,
-        apiErrorField: String?) -> TextboxState {
-        if let apiErrorField = apiErrorField {
-            if apiErrorField == "email" {
-                return TextboxState.error
-            }
+        apiErrors: SignUpAPIErrors,
+        errorMessage: String?) -> TextboxState {
+        // red border if api returns error regarding email
+        if apiErrors.email != nil {
+            return TextboxState.error
         }
+        // red border if email error before submitting to api
+        // ex. please enter valid email
         if errorMessage != nil {
             return TextboxState.error
+        // focused border if textbox active
         } else if isActive {
             return TextboxState.focused
         }
@@ -71,15 +72,13 @@ struct SignUpEmail: View {
                         .freshiLogin(
                             state: self.textboxState(
                                 isActive: self.isActive,
-                                errorMessage: self.errorMessage,
-                                apiErrorField: self.apiErrorField),
+                                apiErrors: self.apiErrors,
+                                errorMessage: self.errorMessage),
                             errorMessage: self.errorMessage
                         )
                     // render API error message
-                    if self.apiErrorField == "email" {
-                        if let apiErrorMessage = self.apiErrorMessage {
-                            FormErrorMessage(error: apiErrorMessage)
-                        }
+                    if let apiErrorMessage = self.apiErrors.email {
+                        FormErrorMessage(error: apiErrorMessage)
                     }
                 }
             }
@@ -102,8 +101,7 @@ struct SignUpEmail_Previews: PreviewProvider {
             selection: .constant("log-in"),
             email: .constant("ecroby@gmail.com"),
             currentPage: .constant(1),
-            apiErrorMessage: .constant("Email is too long"),
-            apiErrorField: .constant("email"))
+            apiErrors: .constant(SignUpAPIErrors()))
     }
 }
 

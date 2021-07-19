@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+struct SignUpAPIErrors: Codable, Equatable {
+    var email: String?
+    var password: String?
+    var username: String?
+    var server: String?
+}
 
 struct SignUp: View {
     @Binding var selection: String
@@ -14,10 +20,11 @@ struct SignUp: View {
     @State var username: String = ""
     @State var email: String = ""
     @State var password: String = ""
-    
     // This will only be set if you get to the last page of the form, submit and it fails and gets naved back here.
-    @State var apiErrorMessage: String? = nil
-    @State var apiErrorField: String? = nil
+    @State var apiErrors: SignUpAPIErrors = SignUpAPIErrors()
+    
+//    @State var apiErrorMessage: String? = nil
+//    @State var apiErrorField: String? = nil
     
     // Controls progress bar.
     @State var currentPage: Float = 1
@@ -31,7 +38,6 @@ struct SignUp: View {
         3: "password",
 //        4: "complete", this is its own page now
     ]
-    
     var body: some View {
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
             // Header
@@ -55,16 +61,14 @@ struct SignUp: View {
                     selection: $selection,
                     username: $username,
                     currentPage: $currentPage,
-                    apiErrorMessage: $apiErrorMessage,
-                    apiErrorField: $apiErrorField)
+                    apiErrors: $apiErrors)
             }
             if pages[self.currentPage] == "email" {
                 SignUpEmail(
                     selection: $selection,
                     email: $email,
                     currentPage: $currentPage,
-                    apiErrorMessage: $apiErrorMessage,
-                    apiErrorField: $apiErrorField)
+                    apiErrors: $apiErrors)
             }
             if pages[self.currentPage] == "password" {
                 SignUpPassword(
@@ -73,8 +77,7 @@ struct SignUp: View {
                     email: $email,
                     username: $username,
                     currentPage: $currentPage,
-                    apiErrorMessage: $apiErrorMessage,
-                    apiErrorField: $apiErrorField)
+                    apiErrors: $apiErrors)
             }
             Spacer()
         }
@@ -83,24 +86,23 @@ struct SignUp: View {
         .onAppear() {
             // keyboard appears immediately
         }
-        .onChange(of: apiErrorField, perform: { field in
-            // if nil do nothing
-            if field == nil {
-                return
-            }
+        .onChange(of: apiErrors, perform: { field in
             // If api returns error, show page relevant to error.
-            for key in self.pages.keys {
-                if self.pages[key] == field {
-                    self.currentPage = key
-                }
-                if self.pages[key] == field {
-                    self.currentPage = key
-                }
-                if self.pages[key] == field {
-                    self.currentPage = key
+            // Find first page with errors:
+            var currentPageTitle = ""
+            if apiErrors.username != nil {
+                currentPageTitle = "username"
+            } else if apiErrors.email != nil {
+                currentPageTitle = "email"
+            } else if apiErrors.password != nil {
+                currentPageTitle = "password"
+            }
+            // Then set current page to that page.
+            for (pageNumber, pageTitle) in self.pages {
+                if pageTitle == currentPageTitle {
+                    self.currentPage = pageNumber
                 }
             }
-                
         })
     }
 }
