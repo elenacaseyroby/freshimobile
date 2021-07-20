@@ -66,6 +66,7 @@
 		78E5A10F266FF15400CD99A1 /* ConditionalNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */; };
 		78E5A111267126E400CD99A1 /* PopToRootNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A110267126E400CD99A1 /* PopToRootNavView.swift */; };
 		78F3FC1C26A22E8200C23B9C /* PasswordResetEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3FC1B26A22E8200C23B9C /* PasswordResetEmailRequest.swift */; };
+		78F3FC1E26A72FA000C23B9C /* ResetPasswordAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3FC1D26A72FA000C23B9C /* ResetPasswordAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		78E5A10E266FF15400CD99A1 /* ConditionalNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalNav.swift; sourceTree = "<group>"; };
 		78E5A110267126E400CD99A1 /* PopToRootNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootNavView.swift; sourceTree = "<group>"; };
 		78F3FC1B26A22E8200C23B9C /* PasswordResetEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetEmailRequest.swift; sourceTree = "<group>"; };
+		78F3FC1D26A72FA000C23B9C /* ResetPasswordAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -458,6 +460,7 @@
 		78E26D9A26792F5D00EA1C2C /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				78F3FC1D26A72FA000C23B9C /* ResetPasswordAction.swift */,
 				78D47F3B267AA3F00041E3B1 /* CreateUserAction.swift */,
 				78E26D9C267931B000EA1C2C /* LogInAction.swift */,
 				78D47F3D267ACC990041E3B1 /* LogOutAction.swift */,
@@ -678,6 +681,7 @@
 				78D47F3C267AA3F00041E3B1 /* CreateUserAction.swift in Sources */,
 				7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */,
 				789CA5372655D41500A1CD5E /* UserModel.swift in Sources */,
+				78F3FC1E26A72FA000C23B9C /* ResetPasswordAction.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
 				78D47F46267BE5B50041E3B1 /* HideLoadingOverlayAction.swift in Sources */,
 				78D47F42267BE5550041E3B1 /* ShowLoadingOverlayAction.swift in Sources */,

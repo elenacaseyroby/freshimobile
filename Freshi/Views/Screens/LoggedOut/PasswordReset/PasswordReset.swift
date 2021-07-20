@@ -18,9 +18,16 @@ struct PasswordReset: View {
     @State var textboxIsActive: Bool = false
     @State var activeTextbox: ActiveTextbox = ActiveTextbox.none
     
+    @State var showAlert: Bool = false
+    
     // These are extracted from the url.
     @State var authToken: String? = nil
     @State var userId: Int? = nil
+    
+    // authentication state for app
+    @EnvironmentObject var authStore: AuthStore
+    // manages overlays and screen redirects
+    @EnvironmentObject var screenManagerStore: ScreenManagerStore
     
     enum ActiveTextbox {
         case first, second, none
@@ -65,7 +72,38 @@ struct PasswordReset: View {
             self.errorMessage = error
             return
         }
-        print("set password")
+        if let authToken = authToken {
+            setPassword(password: password, authToken: authToken)
+        } else {
+            // Show error alert if no authToken was passed in url.
+            showAlert.toggle()
+        }
+    }
+    
+    func setPassword(password: String, authToken: String) {
+        DispatchQueue.main.async {
+            // clear error message
+            self.errorMessage = nil
+            // Clear api errors
+            self.apiErrorMessage = nil
+            // make loader display while making API request
+            showLoadingOverLayAction(screenManagerStore: self.screenManagerStore)
+        }
+        resetPasswordAction(
+            password: password,
+            authToken: authToken,
+            authStore: authStore,
+            onSuccess: {},
+            onError: { requestError in
+                self.apiErrorMessage = requestError.errorMessage
+            },
+            onComplete: {
+                DispatchQueue.main.async {
+                    hideLoadingOverLayAction(
+                        screenManagerStore: self.screenManagerStore)
+                }
+            }
+        )
     }
     
     var body: some View {
@@ -160,6 +198,19 @@ struct PasswordReset: View {
                                 StretchyButtonState.focused))
                     }
                     Spacer()
+                }
+                .alert(isPresented:$showAlert) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text("There has been an error. Please request a new password reset email"),
+                        dismissButton:.default(
+                            Text("Request email"),
+                            action: {
+                                withAnimation {
+                                    self.selection = "request-password-reset"
+                                }
+                            })
+                    )
                 }
                 .padding(.horizontal, GlobalStyles.padding)
                 .background(Color("background"))

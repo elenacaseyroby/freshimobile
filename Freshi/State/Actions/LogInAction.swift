@@ -7,7 +7,8 @@
 
 import Foundation
 
-private func logIn(authStore: AuthStore, authCreds: AuthCredsModel) {
+// also used in ResetPasswordAction
+func setAuthCreds(authStore: AuthStore, authCreds: AuthCredsModel) {
     // Set user auth creds in cache, so they persist.
     setAuthCredsInCache(authCreds: authCreds)
     // pass payload and action to root reducer
@@ -65,7 +66,7 @@ func logInAction(
                     let token = tokenResponse.token!
                     let authCreds = AuthCredsModel(userId: userId, token: token)
                     // Update state
-                    logIn(authStore: authStore, authCreds: authCreds)
+                    setAuthCreds(authStore: authStore, authCreds: authCreds)
                     onSuccess()
                 }
             }
