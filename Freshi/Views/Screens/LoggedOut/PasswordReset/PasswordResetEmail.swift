@@ -15,6 +15,8 @@ struct PasswordResetEmail: View {
     @State var apiErrorMessage: String? = nil
     @State var textboxIsActive: Bool = false
     
+    @State var showEmailSentAlert: Bool = false
+    
     // manages overlays and screen redirects
     @EnvironmentObject var screenManagerStore: ScreenManagerStore
     
@@ -56,10 +58,8 @@ struct PasswordResetEmail: View {
         passwordResetEmailRequest(
             email: email,
             onSuccess: {
-                // Trigger alert: Woohoo! Your password reset email has been sent to ".."!
-                withAnimation {
-                    self.selection = "landing"
-                }
+                // Trigger alert
+                showEmailSentAlert.toggle()
             },
             onError: { requestError in
                 // Push changes in state to the main thread to update UI.
@@ -132,6 +132,19 @@ struct PasswordResetEmail: View {
                 Button("Send Recovery Email"){
                     self.submit()
                 }
+                .alert(isPresented:$showEmailSentAlert) {
+                    Alert(
+                        title: Text("Woohoo!"),
+                        message: Text("Your password reset email has been sent to " + email),
+                        dismissButton:.default(
+                            Text("Got it!"),
+                            action: {
+                                withAnimation {
+                                    self.selection = "landing"
+                                }
+                            })
+                    )
+                }
                 // can't click button until enabled
                 .disabled(self.email.count < 5)
                 .stretchyButton(
@@ -145,7 +158,6 @@ struct PasswordResetEmail: View {
         }
         .padding(.horizontal, GlobalStyles.padding)
         .background(Color("background"))
-        
     }
 }
 // strictly for dev previews in xcode.
