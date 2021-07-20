@@ -124,7 +124,7 @@ struct PasswordResetEmail: View {
                             self.selection = "sign-up"
                         }
                     }
-                        .foregroundColor(Color("highContrast"))
+                        .foregroundColor(Color("interactiveFocus"))
                         .fontStyle(fontStyle: .subheadline)
                     Spacer()
                 }
