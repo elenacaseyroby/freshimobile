@@ -72,8 +72,10 @@ struct PasswordResetEmail: View {
             onComplete: {
                 // Once response is processed, loading screen disappears.
                 // Must send state update back to the main thread with DispatchQueue to update UI.
-                hideLoadingOverLayAction(
-                    screenManagerStore: self.screenManagerStore)
+                DispatchQueue.main.async {
+                    hideLoadingOverLayAction(
+                        screenManagerStore: self.screenManagerStore)
+                }
             })
     }
     
