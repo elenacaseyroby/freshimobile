@@ -21,7 +21,7 @@ struct SignUpButtons: View {
                 Text("Already have an account?")
                     .foregroundColor(Color("highContrast"))
                     .fontStyle(fontStyle: .subheadline)
-                Button("Already have an account?") {
+                Button("Log in") {
                         withAnimation {
                             self.selection = "log-in"
                         }
