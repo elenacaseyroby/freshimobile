@@ -67,6 +67,7 @@
 		78E5A111267126E400CD99A1 /* PopToRootNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E5A110267126E400CD99A1 /* PopToRootNavView.swift */; };
 		78F3FC1C26A22E8200C23B9C /* PasswordResetEmailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3FC1B26A22E8200C23B9C /* PasswordResetEmailRequest.swift */; };
 		78F3FC1E26A72FA000C23B9C /* ResetPasswordAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3FC1D26A72FA000C23B9C /* ResetPasswordAction.swift */; };
+		78F3FC2426B0B1EE00C23B9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F3FC2326B0B1EE00C23B9C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		78E5A110267126E400CD99A1 /* PopToRootNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopToRootNavView.swift; sourceTree = "<group>"; };
 		78F3FC1B26A22E8200C23B9C /* PasswordResetEmailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetEmailRequest.swift; sourceTree = "<group>"; };
 		78F3FC1D26A72FA000C23B9C /* ResetPasswordAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAction.swift; sourceTree = "<group>"; };
+		78F3FC2326B0B1EE00C23B9C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +386,7 @@
 				786775C62655B78100716DCE /* FreshiApp.swift */,
 				784905C826653FFE00344EAC /* ContentView.swift */,
 				7829A4B726681C3400488394 /* T&C */,
+				78F3FC2326B0B1EE00C23B9C /* LaunchScreen.storyboard */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F3FC2426B0B1EE00C23B9C /* LaunchScreen.storyboard in Resources */,
 				786775CE2655B78600716DCE /* Preview Assets.xcassets in Resources */,
 				786775CB2655B78600716DCE /* Assets.xcassets in Resources */,
 			);
