@@ -59,6 +59,9 @@ func FreshiRequest(
             onComplete(data, nil)
             return
         }
+        if statusCode == 500 && errorMessage == nil {
+            errorMessage = "Server error. Please try again later or reach out to Freshi support."
+        }
         let requestError = RequestError(statusCode: statusCode, errorMessage: errorMessage)
         // Else return data and error (might be more descriptive error message in the data in this case).
         onComplete(data, requestError)
