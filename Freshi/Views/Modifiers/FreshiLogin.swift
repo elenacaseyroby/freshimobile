@@ -34,6 +34,9 @@ func getEmailError(email: String) -> String? {
     if !email.contains("@") {
         return "Please enter valid email"
     }
+    if !email.contains(".") {
+        return "Please enter valid email"
+    }
     if email.count > 60 {
         return "Email too long. Must less than 60 characters in length."
     }

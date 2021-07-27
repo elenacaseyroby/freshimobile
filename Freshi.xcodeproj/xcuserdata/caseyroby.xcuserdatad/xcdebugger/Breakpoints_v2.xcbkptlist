@@ -14,42 +14,26 @@
             filePath = "Freshi/Views/StartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "previews"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "53C4E618-C9D9-4A06-8663-FC2AB6AE723C - 451af0ef1d2c0217"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Freshi.StartView_Previews.previews.getter : some"
-                  moduleName = "Freshi"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caseyroby/Freshi/freshimobile/Freshi/Views/StartView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "53C4E618-C9D9-4A06-8663-FC2AB6AE723C - 451af0ef1d2c0236"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Freshi.StartView_Previews.previews.getter : some"
-                  moduleName = "Freshi"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/caseyroby/Freshi/freshimobile/Freshi/Views/StartView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "291">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D1F3664-1136-4D22-871B-4AB5DAEC44C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Freshi/Views/Screens/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "previews"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

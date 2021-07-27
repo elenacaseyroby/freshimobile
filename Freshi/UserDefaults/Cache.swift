@@ -11,8 +11,16 @@ func userDefaultKeyExists(key: String) -> Bool {
     return UserDefaults.standard.object(forKey: key) != nil
 }
 
-// Actual functions
-func setAuthCredsInCache(authCreds: AuthCreds) {
+// General functions
+func clearAllDataFromUserDefaults() {
+    let domain = Bundle.main.bundleIdentifier!
+    UserDefaults.standard.removePersistentDomain(forName: domain)
+    // To push the changes immediately, force update via the synchronize call.
+    UserDefaults.standard.synchronize()
+}
+
+// AuthCreds functions
+func setAuthCredsInCache(authCreds: AuthCredsModel) {
     // Encode creds and save in user defaults cache
     let encoder = JSONEncoder()
     if let encoded = try? encoder.encode(authCreds) {
@@ -20,14 +28,14 @@ func setAuthCredsInCache(authCreds: AuthCreds) {
     }
 }
 
-func getAuthCredsFromCache() -> AuthCreds? {
+func getAuthCredsFromCache() -> AuthCredsModel? {
     // Get creds from user defaults cache and decode.
     if !userDefaultKeyExists(key: "AUTH_CREDS") {
         return nil
     }
     if let encodedAuthCreds = UserDefaults.standard.object(forKey: "AUTH_CREDS") as? Data {
         let decoder = JSONDecoder()
-        if let authCreds = try? decoder.decode(AuthCreds.self, from: encodedAuthCreds) {
+        if let authCreds = try? decoder.decode(AuthCredsModel.self, from: encodedAuthCreds) {
             return authCreds
         }
     }
@@ -36,11 +44,4 @@ func getAuthCredsFromCache() -> AuthCreds? {
 
 func clearAuthCredsFromCache() {
     UserDefaults.standard.removeObject(forKey: "AUTH_CREDS")
-}
-
-func clearAllDataFromUserDefaults() {
-    let domain = Bundle.main.bundleIdentifier!
-    UserDefaults.standard.removePersistentDomain(forName: domain)
-    // To push the changes immediately, force update via the synchronize call.
-    UserDefaults.standard.synchronize()
 }
