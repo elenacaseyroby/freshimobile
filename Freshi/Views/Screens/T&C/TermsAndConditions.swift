@@ -17,7 +17,7 @@ struct TermsAndConditions: View {
                 self.selection = selectionOnExit
             }
         }
-        Text("Terms and conditions!")
+        WebView(url: "http://localhost:3000/privacy-policy")
     }
 }
 // strictly for dev previews in xcode.
