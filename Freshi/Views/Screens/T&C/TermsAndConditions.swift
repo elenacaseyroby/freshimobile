@@ -11,13 +11,50 @@ import SwiftUI
 struct TermsAndConditions: View {
     @Binding var selection: String
     var selectionOnExit: String
+    @State var menuSelection: String = "Terms & Conditions"
+    
+    let urls: [String: String] = [
+        "Terms & Conditions": "http://localhost:3000/mobile-terms-and-conditions",
+        "Privacy Policy": "http://localhost:3000/mobile-privacy-policy",
+    ]
+    
     var body: some View {
-        Button("exit") {
-            withAnimation {
-                self.selection = selectionOnExit
+        VStack {
+            // Header
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10){
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
+                    Header(
+                        title: self.menuSelection,
+                        onExit: {
+                            withAnimation {
+                                self.selection = selectionOnExit
+                            }
+                        })
+                    Line()
+                }
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
+                    // Buttons
+                    Button("Terms") {
+                        self.menuSelection = "Terms & Conditions"
+                    }
+                    .stretchyButton(state: (
+                        self.menuSelection == "Terms & Conditions" ?
+                        StretchyButtonState.focused :
+                        StretchyButtonState.neutral))
+                    // Buttons
+                    Button("Privacy Policy") {
+                        self.menuSelection = "Privacy Policy"
+                    }
+                    .stretchyButton(state: (
+                        self.menuSelection == "Privacy Policy" ?
+                        StretchyButtonState.focused :
+                        StretchyButtonState.neutral))
+                }
             }
+            .padding(.leading, GlobalStyles.padding)
+            .padding(.trailing, GlobalStyles.padding)
+            WebView(url: urls[self.menuSelection]!)
         }
-        WebView(url: "http://localhost:3000/privacy-policy")
     }
 }
 // strictly for dev previews in xcode.
