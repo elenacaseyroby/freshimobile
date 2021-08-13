@@ -31,6 +31,10 @@
 		786775E42655B78700716DCE /* FreshiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775E32655B78700716DCE /* FreshiUITests.swift */; };
 		786775F22655B84800716DCE /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786775F12655B84800716DCE /* Landing.swift */; };
 		7885918826C594A5000EB51E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885918726C594A5000EB51E /* WebView.swift */; };
+		7885919326C709D7000EB51E /* PrivacyPolicyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919226C709D6000EB51E /* PrivacyPolicyStore.swift */; };
+		7885919526C70AFD000EB51E /* TermsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919426C70AFD000EB51E /* TermsStore.swift */; };
+		7885919726C70CA7000EB51E /* AuthCredsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919626C70CA7000EB51E /* AuthCredsCache.swift */; };
+		7885919926C71139000EB51E /* GetPrivacyPolicyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919826C71139000EB51E /* GetPrivacyPolicyAction.swift */; };
 		789CA52F2655C44600A1CD5E /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA52E2655C44600A1CD5E /* AuthStore.swift */; };
 		789CA5372655D41500A1CD5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5362655D41500A1CD5E /* UserModel.swift */; };
 		789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */; };
@@ -120,6 +124,10 @@
 		786775E52655B78700716DCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		786775F12655B84800716DCE /* Landing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
 		7885918726C594A5000EB51E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		7885919226C709D6000EB51E /* PrivacyPolicyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyStore.swift; sourceTree = "<group>"; };
+		7885919426C70AFD000EB51E /* TermsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsStore.swift; sourceTree = "<group>"; };
+		7885919626C70CA7000EB51E /* AuthCredsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsCache.swift; sourceTree = "<group>"; };
+		7885919826C71139000EB51E /* GetPrivacyPolicyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrivacyPolicyAction.swift; sourceTree = "<group>"; };
 		789CA52E2655C44600A1CD5E /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		789CA5362655D41500A1CD5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsModel.swift; sourceTree = "<group>"; };
@@ -260,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				7829A4CC2669B1B000488394 /* Cache.swift */,
+				7885919626C70CA7000EB51E /* AuthCredsCache.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -349,7 +358,9 @@
 			isa = PBXGroup;
 			children = (
 				789CA52E2655C44600A1CD5E /* AuthStore.swift */,
+				7885919226C709D6000EB51E /* PrivacyPolicyStore.swift */,
 				78D47F4F267BF2360041E3B1 /* ScreenManagerStore.swift */,
+				7885919426C70AFD000EB51E /* TermsStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -470,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				78F3FC1D26A72FA000C23B9C /* ResetPasswordAction.swift */,
+				7885919826C71139000EB51E /* GetPrivacyPolicyAction.swift */,
 				78D47F3B267AA3F00041E3B1 /* CreateUserAction.swift */,
 				78E26D9C267931B000EA1C2C /* LogInAction.swift */,
 				78D47F3D267ACC990041E3B1 /* LogOutAction.swift */,
@@ -672,6 +684,7 @@
 				781B8A10268146D9001AB1D2 /* PasswordResetError.swift in Sources */,
 				78E5A0DF266B148A00CD99A1 /* CircleLoader.swift in Sources */,
 				78D47F50267BF2360041E3B1 /* ScreenManagerStore.swift in Sources */,
+				7885919926C71139000EB51E /* GetPrivacyPolicyAction.swift in Sources */,
 				78E5A10B266FE55F00CD99A1 /* SignUp.swift in Sources */,
 				789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */,
 				789CA5472660471700A1CD5E /* FontStyle.swift in Sources */,
@@ -690,14 +703,17 @@
 				78E5A10D266FE8AD00CD99A1 /* NavLink.swift in Sources */,
 				78E5A0FB266F029800CD99A1 /* TextboxState.swift in Sources */,
 				78D47F3C267AA3F00041E3B1 /* CreateUserAction.swift in Sources */,
+				7885919526C70AFD000EB51E /* TermsStore.swift in Sources */,
 				7829A4C4266868E600488394 /* FreshiTextbox.swift in Sources */,
 				789CA5372655D41500A1CD5E /* UserModel.swift in Sources */,
 				78F3FC1E26A72FA000C23B9C /* ResetPasswordAction.swift in Sources */,
 				784905D12665717C00344EAC /* StretchyImage.swift in Sources */,
 				78D47F46267BE5B50041E3B1 /* HideLoadingOverlayAction.swift in Sources */,
 				78D47F42267BE5550041E3B1 /* ShowLoadingOverlayAction.swift in Sources */,
+				7885919726C70CA7000EB51E /* AuthCredsCache.swift in Sources */,
 				786775C72655B78100716DCE /* FreshiApp.swift in Sources */,
 				78E5A0D9266A9AFC00CD99A1 /* LoadingOverlay.swift in Sources */,
+				7885919326C709D7000EB51E /* PrivacyPolicyStore.swift in Sources */,
 				78E5A0FD266FD45A00CD99A1 /* SignUpUsername.swift in Sources */,
 				78E5A104266FD56E00CD99A1 /* percentAsDecimal.swift in Sources */,
 				789CA5492660694800A1CD5E /* GlobalStyles.swift in Sources */,

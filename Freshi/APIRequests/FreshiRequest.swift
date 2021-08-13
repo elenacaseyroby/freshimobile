@@ -21,9 +21,9 @@ func FreshiRequest(
     onComplete: @escaping (Data?, RequestError?) -> Void) {
     // TODO: Change this url before deploy
     // Staging
-    let baseURL = URL(string: "http://www.freshi-staging.us-east-1.elasticbeanstalk.com/api/v1/")!
+//    let baseURL = URL(string: "http://www.freshi-staging.us-east-1.elasticbeanstalk.com/api/v1/")!
     // Local
-    // let baseURL = URL(string: "http://localhost:8000/api/v1/")!
+    let baseURL = URL(string: "http://localhost:8000/api/v1/")!
     let url = baseURL.appendingPathComponent(endpoint)
     var request = URLRequest(url: url)
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -33,11 +33,15 @@ func FreshiRequest(
             request.setValue(headers[key], forHTTPHeaderField: key)
         }
     }
-    guard let encoded = try? JSONEncoder().encode(body) else {
-        print("Failed to encode body")
-        return
+    // iOS will not allow a body to be added to GET requests,
+    // so we skip the step of adding the body if the method is GET.
+    if method != "GET" {
+        guard let encoded = try? JSONEncoder().encode(body) else {
+            print("Failed to encode body")
+            return
+        }
+        request.httpBody = encoded
     }
-    request.httpBody = encoded
     
     // URLSession automatically runs in the background thread – an independent piece of code that’s running at the same time as the rest of our program. This means the network request can be running without stopping our UI from being interactive.
     URLSession.shared.dataTask(with: request) {(data, response, error) in
