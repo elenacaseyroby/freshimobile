@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var privacyPolicyStore: PrivacyPolicyStore
+    @EnvironmentObject var termsStore: TermsStore
     @EnvironmentObject var authStore: AuthStore
     // Manages overlays and screen redirects.
     @EnvironmentObject var screenManagerStore: ScreenManagerStore
@@ -58,6 +59,12 @@ struct ContentView: View {
             // privacy policy
             getPrivacyPolicyAction(
                 privacyPolicyStore: privacyPolicyStore,
+                onSuccess: {},
+                onError: { requestError in },
+                onComplete: {}
+            )
+            getTermsAction(
+                termsStore: termsStore,
                 onSuccess: {},
                 onError: { requestError in },
                 onComplete: {}

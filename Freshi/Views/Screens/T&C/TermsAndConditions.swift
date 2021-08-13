@@ -11,13 +11,10 @@ import WebKit
 
 struct TermsAndConditions: View {
     @EnvironmentObject var privacyPolicyStore: PrivacyPolicyStore
+    @EnvironmentObject var termsStore: TermsStore
     @Binding var selection: String
     var selectionOnExit: String
     @State var menuSelection: String = "Terms & Conditions"
-    
-    var tchtml: String = """
-        <h2>Termsss</h2>
-    """
     
     var body: some View {
         VStack {
@@ -56,7 +53,7 @@ struct TermsAndConditions: View {
                 HTMLView(htmlContent: privacyPolicyStore.body)
             }
             if menuSelection == "Terms & Conditions" {
-                HTMLView(htmlContent: tchtml)
+                HTMLView(htmlContent: termsStore.body)
             }
         }
         .padding(.leading, GlobalStyles.padding)

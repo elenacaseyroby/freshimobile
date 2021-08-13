@@ -35,6 +35,7 @@
 		7885919526C70AFD000EB51E /* TermsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919426C70AFD000EB51E /* TermsStore.swift */; };
 		7885919726C70CA7000EB51E /* AuthCredsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919626C70CA7000EB51E /* AuthCredsCache.swift */; };
 		7885919926C71139000EB51E /* GetPrivacyPolicyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919826C71139000EB51E /* GetPrivacyPolicyAction.swift */; };
+		7885919D26C730FD000EB51E /* GetTermsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885919C26C730FD000EB51E /* GetTermsAction.swift */; };
 		789CA52F2655C44600A1CD5E /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA52E2655C44600A1CD5E /* AuthStore.swift */; };
 		789CA5372655D41500A1CD5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA5362655D41500A1CD5E /* UserModel.swift */; };
 		789CA539265DAFFF00A1CD5E /* AuthCredsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */; };
@@ -128,6 +129,7 @@
 		7885919426C70AFD000EB51E /* TermsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsStore.swift; sourceTree = "<group>"; };
 		7885919626C70CA7000EB51E /* AuthCredsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsCache.swift; sourceTree = "<group>"; };
 		7885919826C71139000EB51E /* GetPrivacyPolicyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPrivacyPolicyAction.swift; sourceTree = "<group>"; };
+		7885919C26C730FD000EB51E /* GetTermsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTermsAction.swift; sourceTree = "<group>"; };
 		789CA52E2655C44600A1CD5E /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		789CA5362655D41500A1CD5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		789CA538265DAFFE00A1CD5E /* AuthCredsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredsModel.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			children = (
 				78F3FC1D26A72FA000C23B9C /* ResetPasswordAction.swift */,
 				7885919826C71139000EB51E /* GetPrivacyPolicyAction.swift */,
+				7885919C26C730FD000EB51E /* GetTermsAction.swift */,
 				78D47F3B267AA3F00041E3B1 /* CreateUserAction.swift */,
 				78E26D9C267931B000EA1C2C /* LogInAction.swift */,
 				78D47F3D267ACC990041E3B1 /* LogOutAction.swift */,
@@ -667,6 +670,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7885919D26C730FD000EB51E /* GetTermsAction.swift in Sources */,
 				784905D526658C2800344EAC /* StretchyButton.swift in Sources */,
 				786775F22655B84800716DCE /* Landing.swift in Sources */,
 				7829A4CD2669B1B000488394 /* Cache.swift in Sources */,

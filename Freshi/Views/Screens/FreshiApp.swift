@@ -11,6 +11,7 @@ import SwiftUI
 @main
 struct FreshiApp: App {
     @StateObject var privacyPolicyStore = PrivacyPolicyStore()
+    @StateObject var termsStore = TermsStore()
     @StateObject var authStore = AuthStore()
     // Manages overlays and screen redirects.
     @StateObject var screenManagerStore = ScreenManagerStore()
@@ -24,6 +25,7 @@ struct FreshiApp: App {
                 .environmentObject(authStore)
                 .environmentObject(screenManagerStore)
                 .environmentObject(privacyPolicyStore)
+                .environmentObject(termsStore)
                 // test dark mode:
 //                .preferredColorScheme(.dark)
                 
