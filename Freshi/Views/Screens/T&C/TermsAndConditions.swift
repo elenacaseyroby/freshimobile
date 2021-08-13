@@ -81,7 +81,7 @@ struct TermsAndConditions: View {
         }
         .padding(.leading, GlobalStyles.padding)
         .padding(.trailing, GlobalStyles.padding)
-        .preferredColorScheme(.light)
+        .background(Color("background"))
     }
 }
 // strictly for dev previews in xcode.
