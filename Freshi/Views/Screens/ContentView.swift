@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var privacyPolicyStore: PrivacyPolicyStore
+    @EnvironmentObject var termsStore: TermsStore
     @EnvironmentObject var authStore: AuthStore
     // Manages overlays and screen redirects.
     @EnvironmentObject var screenManagerStore: ScreenManagerStore
@@ -52,6 +54,22 @@ struct ContentView: View {
         .overlay(
             LoadingOverlay(animation:LoaderAnimation.bubbles, isLoading: self.screenManagerStore.showLoadingOverlay)
          )
+        .onAppear() {
+            // Load the following pieces of state on app load:
+            // privacy policy
+            getPrivacyPolicyAction(
+                privacyPolicyStore: privacyPolicyStore,
+                onSuccess: {},
+                onError: { requestError in },
+                onComplete: {}
+            )
+            getTermsAction(
+                termsStore: termsStore,
+                onSuccess: {},
+                onError: { requestError in },
+                onComplete: {}
+            )
+        }
     }
 }
 

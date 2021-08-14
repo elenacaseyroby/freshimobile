@@ -10,6 +10,8 @@ import SwiftUI
 // @main specifies that this is the starting point of our app.
 @main
 struct FreshiApp: App {
+    @StateObject var privacyPolicyStore = PrivacyPolicyStore()
+    @StateObject var termsStore = TermsStore()
     @StateObject var authStore = AuthStore()
     // Manages overlays and screen redirects.
     @StateObject var screenManagerStore = ScreenManagerStore()
@@ -22,6 +24,8 @@ struct FreshiApp: App {
                 // pass our order state into our Main view.
                 .environmentObject(authStore)
                 .environmentObject(screenManagerStore)
+                .environmentObject(privacyPolicyStore)
+                .environmentObject(termsStore)
                 // test dark mode:
 //                .preferredColorScheme(.dark)
                 

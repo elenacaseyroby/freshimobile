@@ -26,13 +26,22 @@ struct PasswordResetError: View {
                     .fontStyle(fontStyle: .headline)
                     .foregroundColor(Color("highContrast"))
                     .multilineTextAlignment(.center)
-                Button("Request a new password reset email") {
-                    withAnimation {
-                        self.selection = "request-password-reset"
+                VStack(alignment: .center, spacing: 0) {
+                    Button("Click Here") {
+                        withAnimation {
+                            self.selection = "request-password-reset"
+                        }
                     }
+                    .fontStyle(fontStyle: .headline)
+                    .foregroundColor(Color("interactiveFocus"))
+                    Button("to request a new password reset email") {
+                        withAnimation {
+                            self.selection = "request-password-reset"
+                        }
+                    }
+                    .fontStyle(fontStyle: .headline)
+                    .foregroundColor(Color("highContrast"))
                 }
-                .fontStyle(fontStyle: .headline)
-                .foregroundColor(Color("interactiveFocus"))
             }
             Spacer()
             Spacer()

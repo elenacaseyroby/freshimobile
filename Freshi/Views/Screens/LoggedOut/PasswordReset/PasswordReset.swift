@@ -96,6 +96,15 @@ struct PasswordReset: View {
             onSuccess: {},
             onError: { requestError in
                 self.apiErrorMessage = requestError.errorMessage
+                if requestError.statusCode == 401 {
+                    // If there is an authentication error
+                    // then the auth token has likely expired.
+                    // In this case nullify the token and userId
+                    // so that the PasswordResetError screen renders.
+                    self.authToken = nil
+                    self.userId = nil
+                }
+                print(requestError.statusCode)
             },
             onComplete: {
                 DispatchQueue.main.async {

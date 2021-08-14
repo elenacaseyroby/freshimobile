@@ -6,18 +6,59 @@
 //
 
 import SwiftUI
+import WebKit
 
 
 struct TermsAndConditions: View {
+    @EnvironmentObject var privacyPolicyStore: PrivacyPolicyStore
+    @EnvironmentObject var termsStore: TermsStore
     @Binding var selection: String
     var selectionOnExit: String
+    @State var menuSelection: String = "Terms & Conditions"
+    
     var body: some View {
-        Button("exit") {
-            withAnimation {
-                self.selection = selectionOnExit
+        VStack {
+            // Header
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10){
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 0){
+                    Header(
+                        title: self.menuSelection,
+                        onExit: {
+                            withAnimation {
+                                self.selection = selectionOnExit
+                            }
+                        })
+                    Line()
+                }
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10) {
+                    // Buttons
+                    Button("Terms") {
+                        self.menuSelection = "Terms & Conditions"
+                    }
+                    .stretchyButton(state: (
+                        self.menuSelection == "Terms & Conditions" ?
+                        StretchyButtonState.focused :
+                        StretchyButtonState.neutral))
+                    // Buttons
+                    Button("Privacy Policy") {
+                        self.menuSelection = "Privacy Policy"
+                    }
+                    .stretchyButton(state: (
+                        self.menuSelection == "Privacy Policy" ?
+                        StretchyButtonState.focused :
+                        StretchyButtonState.neutral))
+                }
+            }
+            if menuSelection == "Privacy Policy" {
+                HTMLView(htmlContent: privacyPolicyStore.body)
+            }
+            if menuSelection == "Terms & Conditions" {
+                HTMLView(htmlContent: termsStore.body)
             }
         }
-        Text("Terms and conditions!")
+        .padding(.leading, GlobalStyles.padding)
+        .padding(.trailing, GlobalStyles.padding)
+        .background(Color("background"))
     }
 }
 // strictly for dev previews in xcode.
