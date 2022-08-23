@@ -1,6 +1,6 @@
 # Freshi Mobile
 
-Freshi: now you can find, save and share recipes all from one place!
+Freshi: Deciding what to eat has never been so easy!
 
 # Logged out experience
 https://youtu.be/lHTcv0pEw1M
